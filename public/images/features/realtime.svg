@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="293px" height="205px" viewBox="0 0 293 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 23</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-23.6%" y="-28.1%" width="147.2%" height="172.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-23" filter="url(#filter-1)" transform="translate(29.000000, 13.000000)">
+            <g id="Group-22" transform="translate(0.000000, 82.500000)">
+                <rect id="Rectangle-7-Copy" stroke="#9E5D94" stroke-width="15" x="153.75" y="17.5" width="36.25" height="36.25" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-4" fill="#9E5D94" x="117.5" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-5" fill="#9E5D94" x="87.5" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-6" fill="#B86CAC" x="58.75" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <g id="Group-21" fill="#B86CAC">
+                    <rect id="Rectangle-7-Copy-7" x="30" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                    <path d="M29.8483496,66.0767946 L2.66242789,38.890873 L2.66242789,38.890873 C1.1979618,37.4264069 1.1979618,35.0520382 2.66242789,33.5875721 L29.8483496,6.40165043 L29.8483496,6.40165043 C31.3128157,4.93718434 33.6871843,4.93718434 35.1516504,6.40165043 C35.8549118,7.10491185 36.25,8.05873902 36.25,9.05330086 L36.25,63.4251442 L36.25,63.4251442 C36.25,65.496212 34.5710678,67.1751442 32.5,67.1751442 C31.5054382,67.1751442 30.551611,66.7800561 29.8483496,66.0767946 Z" id="Rectangle-7-Copy-2"></path>
+                </g>
+            </g>
+            <g id="Group-22-Copy" transform="translate(136.250000, 36.250000) scale(-1, 1) translate(-136.250000, -36.250000) translate(37.500000, 0.000000)">
+                <rect id="Rectangle-7-Copy" stroke="#466EB3" stroke-width="15" x="153.75" y="17.5" width="36.25" height="36.25" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-4" fill="#466EB3" x="117.5" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-5" fill="#466EB3" x="87.5" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <rect id="Rectangle-7-Copy-6" fill="#4F7CCB" x="58.75" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                <g id="Group-21" fill="#4F7CCB">
+                    <rect id="Rectangle-7-Copy-7" x="30" y="16.25" width="18.75" height="38.75" rx="3.75"></rect>
+                    <path d="M29.8483496,66.0767946 L2.66242789,38.890873 L2.66242789,38.890873 C1.1979618,37.4264069 1.1979618,35.0520382 2.66242789,33.5875721 L29.8483496,6.40165043 L29.8483496,6.40165043 C31.3128157,4.93718434 33.6871843,4.93718434 35.1516504,6.40165043 C35.8549118,7.10491185 36.25,8.05873902 36.25,9.05330086 L36.25,63.4251442 L36.25,63.4251442 C36.25,65.496212 34.5710678,67.1751442 32.5,67.1751442 C31.5054382,67.1751442 30.551611,66.7800561 29.8483496,66.0767946 Z" id="Rectangle-7-Copy-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

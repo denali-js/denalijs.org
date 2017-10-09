@@ -1,0 +1,156 @@
+@import 'normalize';
+@import 'fira-code-font';
+
+$white: #fff;
+$black: #000;
+$brand-primary: #009ff5;
+$text-color: #223843;
+$light-text-color: desaturate(lighten(#223843, 20%), 40%);
+$link-color: $brand-primary;
+
+@mixin breakpoint-below($width) {
+  @media(max-width: $width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-above($width) {
+  @media(min-width: $width) {
+    @content;
+  }
+}
+
+:root {
+  color: $text-color;
+  font-family: 'Lato';
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $brand-primary;
+
+  > .ember-view {
+    display: flex;
+    height: 100%;
+  }
+}
+
+a, button {
+  text-decoration: none;
+  transition: transform ease-out 0.1s;
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform ease-out 0.1s;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Merriweather';
+  font-weight: 900;
+}
+
+p {
+  line-height: 1.3;
+}
+
+code {
+  display: inline-block;
+  padding: 0 0.3em;
+  font-size: 0.9em;
+  font-family: 'Fira Code', monospaced;
+  letter-spacing: -1px;
+}
+
+.emoji {
+  height: 1em;
+  margin: 0 0.1em;
+  border-radius: 2px;
+}
+
+@keyframes busy {
+  to {transform: rotate(360deg);}
+}
+.busy {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: inherit;
+    animation: busy .6s linear infinite;
+  }
+}
+
+%container {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: center;
+  width: 900px;
+  
+  @include breakpoint-below(900px) {
+    width: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+.container {
+  @extend %container;
+}
+
+%sheet {
+  background-color: $white;
+}
+
+%sheet-alternate {
+  background-color: darken($white, 2%);
+}
+
+%btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0.8em;
+  border-radius: 3px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba($black, 0.2);
+  transition: box-shadow ease-out 0.1s, 
+              transform ease-out 0.1s;
+
+  &:hover {
+    box-shadow: 0 3px 4px rgba($black, 0.2);
+    transition: box-shadow ease-out 0.1s;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform ease-out 0.1s;
+  }
+}
+
+%btn-invert {
+  background-color: $white;
+  color: $brand-primary;
+}
+
+@mixin dot($size: 1em, $color: $white) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  background-color: $color;
+}
+
+@import 'pod-styles';

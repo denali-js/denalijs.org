@@ -1,0 +1,33 @@
+.generic {
+  &::before {
+    content: attr(data-letter);
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 3px;
+    color: rgba($white, 0.7);
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  $base: desaturate(lighten($brand-primary, 10%), 30%);
+  $letters: (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z);
+  @each $letter in $letters {
+    $index: index($letters, $letter);
+    &[data-letter="#{$letter}"] {
+      &::before {
+        $rotation:  $index * (360 / length($letters));
+        $letter-color: adjust-hue($base, $rotation);
+        background: linear-gradient(#{$rotation}deg, $letter-color, darken($letter-color, 15%));
+      }
+    }
+  } 
+}
+
+img {
+  width: 1.5em;
+  height: 1.5em;
+}

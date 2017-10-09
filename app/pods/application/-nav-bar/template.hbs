@@ -1,0 +1,27 @@
+<div class="contours"></div>
+
+<header class="header">
+  {{#link-to 'index' class='brand'}}
+    <img src="/images/logo.svg" alt="Denali logo" class="logo">
+    <div class="wordmark">Denali</div>
+  {{/link-to}}
+
+  <nav class="nav">
+    {{#link-to 'why-denali' class='nav-link'}}Why Denali?{{/link-to}}
+    {{#link-to 'docs' class='nav-link'}}Docs{{/link-to}}
+    {{#link-to 'addons' class='nav-link'}}Addons{{/link-to}}
+    {{#link-to 'community' class='nav-link'}}Community{{/link-to}}
+  </nav>
+
+  {{#link-to 'docs' class='quickstart'}}Quickstart{{/link-to}}
+</header>
+
+<main class="main">
+  {{yield}}
+</main>
+
+<footer class="footer">
+  <div class="legal">
+    Copyright {{year}} Dave Wasmer & contributors | Map background © Mapbox
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+<div class="search">
+  {{#if search.isRunning}}
+    <div class="busy"></div>
+  {{else}}
+    <img src="/images/search.svg" alt="" class="search-icon">
+  {{/if}}
+  <input class='search-term' type='search' value={{searchTerm}} placeholder='Search addons ...' onkeyup={{action (perform search) value='target.value'}} autofocus>
+</div>
+
+{{#if (not searchTerm)}}
+  <div class="featured-addons">
+    {{#each featured as |addon|}}
+      {{addons/index/-page/addon class="featured" addon=addon}}
+    {{/each}}
+  </div>
+{{else}}
+  <div class="results">
+    {{#each searchResults as |addon|}} 
+      {{addons/index/-page/addon class="result" addon=addon}}
+    {{else}}
+      {{#if searchResults.isLoaded}}
+        <div class="no-results">
+          <img src="/images/not-found.svg" alt="" class="graphic">
+          <p class="description">
+            <strong>Bummer!</strong><br>
+            I couldn't find anything. Keep in mind it may take up to a day for addons to appear here.
+          </p>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+{{/if}}
