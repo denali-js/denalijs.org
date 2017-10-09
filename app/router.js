@@ -13,13 +13,7 @@ Router.map(function() {
   this.route('roadmap');
 
   this.route('docs');
-  this.route('addons', function() {
-    this.route('addon', { path: '/:addonName' }, function() {
-      this.route('quickstart');
-      this.route('guide/*guideName');
-      this.route('api/*referenceId');
-    });
-  });
+  this.route('addons', function() {});
 
 });
 
