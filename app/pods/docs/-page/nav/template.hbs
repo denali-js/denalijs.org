@@ -1,0 +1,52 @@
+{{#liquid-bind activeNavMenu use="docsNav" as |activeMenu|}}
+
+  <div class="menu-toggle" data-nav="version" {{action (action 'toggleNavMenu' 'version')}}>
+    {{currentVersion.displayName}}
+    {{#if (eq activeMenu 'version')}}
+      <div class="menu-dropdown">
+        <div class="menu-dropdown-content">
+          Pick a version, any version!
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="menu-toggle" data-nav="guides" {{action (action 'toggleNavMenu' 'guides')}}>
+    Guides 
+
+    {{#if (eq activeMenu 'guides')}}
+      <div class="menu-dropdown">
+        <div class="menu-dropdown-content">
+          guide me, master
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="menu-toggle" data-nav="api" {{action (action 'toggleNavMenu' 'api')}}>
+    API Reference
+    {{#if (eq activeMenu 'api')}}
+      <div class="menu-dropdown">
+        <div class="menu-dropdown-content">
+          a-p-who?        
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="menu-toggle" data-nav="visibility" {{action (action 'toggleNavMenu' 'visibility')}}>
+    Visibility Controls
+    {{#if (eq activeMenu 'visibility')}}
+      <div class="menu-dropdown">
+        <div class="menu-dropdown-content">
+          cloak of inheritance        
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="search">
+
+  </div>
+
+{{/liquid-bind}}

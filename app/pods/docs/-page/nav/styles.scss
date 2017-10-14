@@ -1,0 +1,28 @@
+& {
+  @extend %container, %sheet, %shadow-height-1;
+  border: 1px solid rgba($black, 0.5);
+  border-bottom-color: rgba($black, 0.6);
+  border-radius: 3px;
+}
+
+& > .liquid-container,
+& > .liquid-container > .liquid-child {
+  display: flex;
+  overflow: visible;
+}
+
+.menu-toggle {
+  position: relative;
+  padding: 1em;
+  user-select: none;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  @extend %sheet, %shadow-height-1;
+  position: absolute;
+  top: 100%;
+  margin-top: 2em;
+  padding: 2em;
+  overflow: hidden;
+}

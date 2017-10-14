@@ -20,4 +20,19 @@ export default function() {
     return addons.findBy((addon) => addon.name === params.name);
   });
 
+  this.get('/versions', function({ versions }, { queryParams }) {
+    let id = queryParams.version;
+    if (!id) {
+      return versions.all();
+    }
+    if (id.includes('.')) {
+      return versions.find(id);
+    }
+    return versions.findBy((version) => {
+      return version.channel === id || version.name === id;
+    });
+  });
+
+  this.get('/guides/:id');
+
 }

@@ -1,0 +1,15 @@
+<article class="guide-contents">
+  <header class="guide-header">
+    <h3 class="group">{{guide.group}}</h3>
+    <h1 class="title">{{guide.title}}</h1>
+    <p class="lede">{{guide.lede}}</p>
+  </header>
+
+  <div class="guide-body">
+    {{markdown-to-html guide.formattedBody extensions='create-sections-from-headers'}}
+  </div>
+  
+</article>
+
+<nav class="table-of-contents">
+</nav>
