@@ -3,19 +3,19 @@ $guides-nav-spacing: 16em;
 & {
   display: flex;
   flex: 1 0 auto;
-  flex-direction: column;
 }
 
 .guide-contents {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .guide-header {
   @extend %container;
   flex-direction: column;
   margin-bottom: 5em;
-  padding-left: $guides-nav-spacing;
+  // padding-left: $guides-nav-spacing;
   color: $white;
 
   .group {
@@ -61,7 +61,7 @@ $guides-nav-spacing: 16em;
 
     > .container {
       flex-direction: column;
-      padding-left: $guides-nav-spacing / $font-size;
+      // padding-left: $guides-nav-spacing / $font-size;
     }
   }
 

@@ -33,6 +33,21 @@ export default function() {
     });
   });
 
-  this.get('/guides/:id');
+  this.get('/versions/:id', function({ versions }, { params }) {
+    let id = params.id;
+    if (id.includes('.')) {
+      return versions.find(id);
+    }
+    return versions.findBy((version) => {
+      return version.channel === id || version.name === id;
+    });
+  });
+
+  this.get('/guides/:id', function({ guides }, { params }) {
+    let [ version, slug ] = params.id.split(':');
+    return guides.findBy((guide) => {
+      return guide.versionId === version && guide.slug === slug;
+    });
+  });
 
 }

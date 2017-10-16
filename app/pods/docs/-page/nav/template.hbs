@@ -5,7 +5,11 @@
     {{#if (eq activeMenu 'version')}}
       <div class="menu-dropdown">
         <div class="menu-dropdown-content">
-          Pick a version, any version!
+          {{#each versions as |version|}}
+            {{#change-route-model-link 'version' version.id}}
+              {{version.displayName}}
+            {{/change-route-model-link}}
+          {{/each}}
         </div>
       </div>
     {{/if}}
@@ -16,8 +20,27 @@
 
     {{#if (eq activeMenu 'guides')}}
       <div class="menu-dropdown">
-        <div class="menu-dropdown-content">
-          guide me, master
+        <div class="guides menu-dropdown-content">
+          <h5 class="menu-header">Guides</h5>
+          <p class="menu-subhead">
+            In depth walkthroughs of each part of the Denali framework.
+          </p>
+          <div class="guides-groups">
+            {{#each-in guidesByGroup as |groupName guides|}}
+              <div class="guides-group">
+                <div class="group-header">
+                  {{groupName}}
+                </div>
+                <div class="group-list">
+                  {{#each guides as |guide|}}
+                    {{#link-to 'docs.guides.guide' guide.slug class='guide-link'}}
+                      {{guide.title}}
+                    {{/link-to}}
+                  {{/each}}
+                </div>
+              </div>
+            {{/each-in}}
+          </div>
         </div>
       </div>
     {{/if}}

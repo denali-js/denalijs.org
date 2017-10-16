@@ -1,8 +1,10 @@
 & {
   @extend %container, %sheet, %shadow-height-1;
+  position: relative;
   border: 1px solid rgba($black, 0.5);
   border-bottom-color: rgba($black, 0.6);
   border-radius: 3px;
+  z-index: 2;
 }
 
 & > .liquid-container,
@@ -25,4 +27,49 @@
   margin-top: 2em;
   padding: 2em;
   overflow: hidden;
+}
+
+.guides.menu-dropdown-content {
+  width: 30em;
+
+  .guides-groups {
+    columns: 2 auto;
+    margin-top: 1em;
+  }
+
+  .guides-group {
+    margin-bottom: 1.5em;
+    break-inside: avoid;
+  }
+
+  .menu-header {
+    margin: 0;
+    font-size: 2em;
+  }
+
+  .menu-subhead {
+    margin: 0;
+    font-family: $serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .group-header {
+    margin-bottom: 0.5em;
+    color: $brand-primary;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .group-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-link {
+    padding: 0.25em 0.25em;
+    color: inherit;
+  }
+
 }

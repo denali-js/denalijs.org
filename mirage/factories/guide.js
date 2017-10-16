@@ -2,7 +2,7 @@ import { Factory } from 'ember-cli-mirage';
 import { kebabCase } from 'lodash';
 
 export default Factory.extend({
-  id() { return this.slug },
+  id() { return this.version.id + ':' + this.slug; },
   title: null,
   body: null,
   group: null,
