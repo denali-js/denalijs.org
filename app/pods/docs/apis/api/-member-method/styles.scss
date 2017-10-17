@@ -1,0 +1,75 @@
+& {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 900;
+
+  .signatures {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+
+    .primary.signature {
+      position: relative;
+      margin-bottom: 1em;
+      font-size: 1.2em; 
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 3px;
+        width: 4em;
+        margin-top: 0.25em;
+        border-radius: 3px;
+        background-color: lighten($text-color, 30%);
+      }
+    }
+
+    .overloads {
+      margin-left: 0.5em;
+      opacity: 0.6;
+
+      .count {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .signature {
+    display: flex;
+  }
+
+  .method-name {
+    font-weight: 900;
+  }
+
+  .paren {
+    opacity: 0.8;
+  }
+
+  .value + .value {
+    &::before {
+      content: ',';
+      margin-right: 0.25em;
+    }
+  }
+}
+
+.source {
+  opacity: 0.4;
+}
+
+.method-section-header {
+  margin-top: 1em;
+  color: lighten($text-color, 50%);
+  font-size: 0.8em;
+  font-weight: 900;
+}

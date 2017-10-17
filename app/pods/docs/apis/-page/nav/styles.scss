@@ -1,0 +1,77 @@
+$nav-bg: $brand-primary;
+
+& {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  max-width: 20vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+.api-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  margin-top: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba($black, 0.2);
+    &:hover {
+      background-color: rgba($black, 0.5);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.pkg-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+.ungrouped {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+}
+
+.pkg-header {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 1em;
+  color: lighten($brand-primary, 50%);
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.api-link {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0.25em 1.25em;
+  color: $white;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visibility-controls {
+  padding: 1em;
+  color: $white;
+}

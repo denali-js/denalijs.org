@@ -1,0 +1,23 @@
+& {
+  display: flex;
+  margin-left: auto;
+}
+
+.flag {
+  padding: 0.6em;
+  border-radius: 3px;
+  color: $white;
+  font-size: 0.6em;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+
+  &.info {
+    background-color: lighten($text-color, 50%);
+  }
+  &.warning {
+    background-color: yellow;
+  }
+  &.danger {
+    background-color: red;
+  }
+}

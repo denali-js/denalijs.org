@@ -51,5 +51,8 @@ export default function() {
   });
 
   this.get('/apis/:id');
+  this.get('/api-classes/:id');
+  this.get('/api-functions/:id');
+  this.get('/api-interfaces/:id');
 
 }

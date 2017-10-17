@@ -1,0 +1,63 @@
+<div class="header">
+  <div class="signatures">
+    <div class="primary signature">
+      <div class="method-name">{{method.name}}</div>
+      <div class="paren">(</div> 
+        {{#each primarySignature.parameters as |parameter|}}
+          {{docs/apis/api/-value value=parameter}}
+        {{/each}}
+      <div class="paren">)</div> 
+      <div class="return">
+        {{docs/apis/api/-value value=overload.returns}}
+      </div>
+    </div>
+    {{#if overloads}}
+      <div class="overloads">
+        <div class="count">+{{pluralize overloads.length 'overload'}}</div>
+        {{#each overloads as |overload|}}
+          <div class="signature">
+            <div class="method-name">{{method.name}}</div>
+            <div class="paren">(</div> 
+              {{#each overload.parameters as |parameter|}}
+                {{docs/apis/api/-value value=parameter}}
+              {{/each}}
+            <div class="paren">)</div> 
+            <div class="return">
+              {{docs/apis/api/-value value=overload.returns}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+
+  {{docs/apis/api/-flags entry=method}}
+</div>
+
+<div class="source">
+  defined in {{method.file}} on line {{method.line}}
+</div>
+
+{{markdown-to-html entry.description class='method-description'}}
+
+{{#if primarySignature.parameters}}
+  <div class="method-parameters">
+    <div class="method-section-header">Parameters</div>
+    {{#each primarySignature.parameters as |parameter|}}
+      <div class="parameter">
+        {{docs/apis/api/-value value=parameter}}
+        <div class="description">
+          {{parameter.description}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
+
+<div class="method-return">
+  <div class="method-section-header">Returns</div>
+  {{docs/apis/api/-value value=primarySignature.return}}
+  <div class="description">
+    {{method.description}}
+  </div>
+</div>

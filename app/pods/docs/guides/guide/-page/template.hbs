@@ -2,9 +2,9 @@
   <header class="guide-header">
     <h3 class="group">{{guide.group}}</h3>
     <h1 class="title">{{guide.title}}</h1>
-    <p class="lede">{{guide.lede}}</p>
+    {{markdown-to-html (lede guide.body class='lede')}}
   </header>
-  {{markdown-to-html guide.formattedBody extensions='create-sections-from-headers' class='guide-body'}}
+  {{markdown-to-html (body-without-lede guide.body) extensions='create-sections-from-headers' class='guide-body'}}
 </article>
 
 {{#sticky-element class='table-of-contents-sticky-wrapper'}}

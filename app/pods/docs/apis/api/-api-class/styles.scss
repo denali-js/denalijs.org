@@ -1,0 +1,30 @@
+& {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.page {
+  @extend %sheet;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 4em;
+  overflow-y: auto;
+}
+
+.class-name {
+  margin: 0.25em 0 0;
+  font-size: 3em;
+}
+
+.class-source {
+  color: lighten($text-color, 50%);
+  font-style: italic;
+}
+
+.lede {
+  font-family: $serif;
+  font-weight: 200;
+  font-style: italic;
+}

@@ -11,6 +11,7 @@ $link-color: $brand-primary;
 
 $sans-serif: 'Lato', sans-serif;
 $serif: 'Merriweather', serif;
+$monospace: 'Fira Code', monospaced;
 
 @mixin breakpoint-below($width) {
   @media(max-width: $width) {
@@ -69,7 +70,7 @@ code {
   display: inline-block;
   padding: 0 0.3em;
   font-size: 0.9em;
-  font-family: 'Fira Code', monospaced;
+  font-family: $monospace;
   letter-spacing: -1px;
 }
 

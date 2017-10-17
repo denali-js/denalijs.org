@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   beforeModel() {
-    this.transitionTo('docs.guides.guide', 'introduction');
+    this.transitionTo('docs.guides.guide', 'overview/introduction');
   }
 
 })
