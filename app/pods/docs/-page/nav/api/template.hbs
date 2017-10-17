@@ -1,0 +1,33 @@
+<h5 class="menu-header">API Reference</h5>
+<p class="menu-subhead">
+  Detailed reference docs for every class, function, and interface.
+</p>
+
+<div class="api-list">
+  {{#if groupByPackage}}
+    {{#each-in byPackage as |pkgName pkg|}}
+    {{log pkg}}
+      <div class="pkg-group">
+        <div class="pkg-header">{{pkgName}}</div>
+        {{#each pkg as |entry|}}
+          {{#link-to 'docs.apis.api' entry.id class='api-link'}}
+            <i class='api-kind-icon {{entry.kind}}'></i>
+            {{entry.shortDisplayName}}
+          {{/link-to}}
+        {{/each}}
+      </div>
+    {{/each-in}}
+  {{else}}
+    <div class="ungrouped">
+      {{#each ungrouped as |entry|}}
+        {{#link-to 'docs.apis.api' entry.id class='api-link'}}
+          <i class='api-kind-icon {{entry.kind}}'></i>
+          {{entry.shortDisplayName}}
+        {{/link-to}}
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+Group by package?:
+{{input type='checkbox' checked=groupByPackage}}

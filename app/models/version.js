@@ -3,6 +3,7 @@ import DS from 'ember-data';
 
 const attr = DS.attr;
 const hasMany = DS.hasMany;
+const belongsTo = DS.belongsTo;
 const computed = Ember.computed;
 
 export default DS.Model.extend({
@@ -13,6 +14,7 @@ export default DS.Model.extend({
   name: attr('string'),
 
   guides: hasMany('guide'),
+  api: belongsTo('api'),
 
   displayName: computed('semver', 'channel', 'name', function() {
     let { semver, channel, name } = this.getProperties('semver', 'channel', 'name');

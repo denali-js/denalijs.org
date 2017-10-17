@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-const computed = Ember.computed;
-
 export default Ember.Component.extend({
 
   tagName: 'nav',
@@ -9,18 +7,19 @@ export default Ember.Component.extend({
 
   activeNavMenu: null,
 
-  guidesByGroup: computed('guides', function() {
-    let guides = this.get('guides');
-    return guides.reduce((groups, guide) => {
-      let groupName = guide.get('group');
-      let group = groups[groupName] = groups[groupName] || [];
-      group.push(guide);
-      return groups;
-    }, {});
-  }),
+  click(e) {
+    let $target = this.$(e.target);
+    if ($target.is('a')) {
+      this.set('activeNavMenu', null);
+    }
+  },
 
   actions: {
-    toggleNavMenu(menuToToggle) {
+    toggleNavMenu(menuToToggle, e) {
+      let openMenu = this.$('.menu-dropdown').get(0);
+      if (openMenu && (openMenu === e.target || $.contains(openMenu, e.target))) {
+        return;
+      }
       let active = this.get('activeNavMenu');
       if (active === menuToToggle) {
         this.set('activeNavMenu', null);

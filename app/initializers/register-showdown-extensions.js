@@ -7,9 +7,9 @@ export function initialize(/* application */) {
         type: 'output',
         filter: function (source) {
           let sectioned = source.replace(/(<h\d[^>]*>)/gi, function (match, header) {
-            return `</div></section><section><div class="container">${ header }`;
+            return `</section><section>${ header }`;
           });
-          return `<section><div class="container">${ sectioned }</div></section>`;
+          return `<section>${ sectioned }</section>`;
         }
       }
     ]

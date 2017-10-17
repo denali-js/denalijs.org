@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
-const attr = DS.attr;
 const computed = Ember.computed;
+const attr = DS.attr;
+const belongsTo = DS.belongsTo;
 
 const GRAF_MARKER = '\n\n';
 
@@ -13,6 +14,8 @@ const Guide = DS.Model.extend({
   group: attr('string'),
   slug: attr('string'),
   updatedAt: attr('date'),
+
+  version: belongsTo('version'),
 
   lede: computed('body', function() {
     let body = this.get('body');

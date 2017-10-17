@@ -1,5 +1,4 @@
 <div class="header">Table of Contents</div>
 {{#each guide.tableOfContents as |entry|}}
-  {{log entry}}
-  <a href="#{{entry.slug}}" class="toc-link level-{{entry.level}}">{{entry.title}}</a>
+  <a href="#{{entry.slug}}" class="toc-link {{if (eq tocPosition entry.slug) 'active'}} level-{{entry.level}}" {{action 'scrollToTarget' entry.slug}}>{{entry.title}}</a>
 {{/each}}

@@ -1,21 +1,31 @@
-$guides-nav-spacing: 16em;
-
 & {
+  @extend %container;
   display: flex;
   flex: 1 0 auto;
+}
+
+.table-of-contents-sticky-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.table-of-contents {
+  width: 15em;
+  margin-top: 5em;
 }
 
 .guide-contents {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  width: calc(100% - 15em);
 }
 
 .guide-header {
-  @extend %container;
   flex-direction: column;
-  margin-bottom: 5em;
-  // padding-left: $guides-nav-spacing;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-right: 3em;
   color: $white;
 
   .group {
@@ -42,26 +52,36 @@ $guides-nav-spacing: 16em;
 }
 
 .guide-body {
-  $font-size: 1;
-  @extend %sheet;
   display: flex;
   flex-direction: column;
-  font-size: $font-size * 1em;
   line-height: 1.5;
 
   section {
     display: flex;
+    position: relative;
     flex-direction: column;
     padding-top: 3em;
+    padding-right: 3em;
     padding-bottom: 3em;
 
-    &:nth-child(odd) { @extend %sheet-alternate;
-      border-bottom: 1px solid darken($white, 5%);
+    &::before {
+      @extend %sheet;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(50% + 5.5em);
+      width: 100vw;
+      margin-left: -50vw;
     }
 
-    > .container {
-      flex-direction: column;
-      // padding-left: $guides-nav-spacing / $font-size;
+    &:nth-child(odd)::before {
+      @extend %sheet-alternate;
+      border-bottom: 1px solid darken($white, 7%);
+    }
+
+    > * {
+      position: relative;
     }
   }
 

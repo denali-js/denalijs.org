@@ -1,0 +1,45 @@
+& {
+  width: 40em;
+}
+
+.api-list {
+  columns: 3 auto;
+  margin-top: 1em;
+}
+
+.pkg-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  break-inside: avoid;
+}
+
+.ungrouped {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  margin: 0;
+  font-size: 2em;
+}
+
+.menu-subhead {
+  margin: 0;
+  font-family: $serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pkg-header {
+  margin-bottom: 0.5em;
+  color: $brand-primary;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.api-link {
+  padding: 0.25em 0.25em;
+  color: inherit;
+}

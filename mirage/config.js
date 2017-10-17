@@ -50,4 +50,6 @@ export default function() {
     });
   });
 
+  this.get('/apis/:id');
+
 }

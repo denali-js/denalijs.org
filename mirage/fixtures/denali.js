@@ -1,3 +1,9 @@
+// TODO
+// - add internal (i.e. not publically supported interface) flag to distinguish from public/private/protected access
+// - add since tags
+// - add parentClass
+// - add parentInterface to interfaces
+// - add kind (i.e. class, function, interface) property
 export default {
     "name": "denali",
     "versions": {

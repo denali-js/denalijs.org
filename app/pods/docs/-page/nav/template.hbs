@@ -1,6 +1,6 @@
 {{#liquid-bind activeNavMenu use="docsNav" as |activeMenu|}}
 
-  <div class="menu-toggle" data-nav="version" {{action (action 'toggleNavMenu' 'version')}}>
+  <div class="menu-toggle" data-nav="version" onclick={{action (action 'toggleNavMenu' 'version')}}>
     {{currentVersion.displayName}}
     {{#if (eq activeMenu 'version')}}
       <div class="menu-dropdown">
@@ -15,54 +15,31 @@
     {{/if}}
   </div>
 
-  <div class="menu-toggle" data-nav="guides" {{action (action 'toggleNavMenu' 'guides')}}>
+  <div class="menu-toggle" data-nav="guides" onclick={{action (action 'toggleNavMenu' 'guides')}}>
     Guides 
 
     {{#if (eq activeMenu 'guides')}}
       <div class="menu-dropdown">
-        <div class="guides menu-dropdown-content">
-          <h5 class="menu-header">Guides</h5>
-          <p class="menu-subhead">
-            In depth walkthroughs of each part of the Denali framework.
-          </p>
-          <div class="guides-groups">
-            {{#each-in guidesByGroup as |groupName guides|}}
-              <div class="guides-group">
-                <div class="group-header">
-                  {{groupName}}
-                </div>
-                <div class="group-list">
-                  {{#each guides as |guide|}}
-                    {{#link-to 'docs.guides.guide' guide.slug class='guide-link'}}
-                      {{guide.title}}
-                    {{/link-to}}
-                  {{/each}}
-                </div>
-              </div>
-            {{/each-in}}
-          </div>
-        </div>
+        {{docs/-page/nav/guides guides=guides class='guides menu-dropdown-content'}}
       </div>
     {{/if}}
   </div>
 
-  <div class="menu-toggle" data-nav="api" {{action (action 'toggleNavMenu' 'api')}}>
+  <div class="menu-toggle" data-nav="api" onclick={{action (action 'toggleNavMenu' 'api')}}>
     API Reference
     {{#if (eq activeMenu 'api')}}
       <div class="menu-dropdown">
-        <div class="menu-dropdown-content">
-          a-p-who?        
-        </div>
+        {{docs/-page/nav/api api=api class='api menu-dropdown-content'}}
       </div>
     {{/if}}
   </div>
 
-  <div class="menu-toggle" data-nav="visibility" {{action (action 'toggleNavMenu' 'visibility')}}>
+  <div class="menu-toggle" data-nav="visibility" onclick={{action (action 'toggleNavMenu' 'visibility')}}>
     Visibility Controls
     {{#if (eq activeMenu 'visibility')}}
       <div class="menu-dropdown">
         <div class="menu-dropdown-content">
-          cloak of inheritance        
+          
         </div>
       </div>
     {{/if}}
