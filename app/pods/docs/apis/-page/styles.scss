@@ -1,9 +1,190 @@
 & {
   display: flex;
+  flex: 1 1 auto;
+  height: 100vh;
+  background-color: $api-bg;
+}
+
+.contours {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  left: 0;
+  background-image: url('/images/contours.png');
+  background-size: 50% auto;
+  background-repeat: none repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  max-width: 14em;
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;;
+  align-items: center;
+  padding: 1em;
+  color: $white;
+}
+
+.logo {
+  height: 1.5em;
+  margin-right: 0.25em;
+}
+
+.wordmark {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.submark {
+  font-weight: 300;
+}
+
+.apis {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding-bottom: 3em;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid $api-bg;
+    border-radius: 12px;
+    background-color: rgba(white, 0.3);
+    &:hover {
+      background-color: rgba(white, 0.5);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.apis-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.group-header {
+  padding: 1em 1rem 0.75em;
+  color: rgba($white, 0.5);
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.api-link {
+  display: block;
+  flex: 0 0 auto;
+  position: relative;
+  padding: 0.35em 1rem;
+  color: rgba($white, 0.8);
+  font-size: 0.9em;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+
+  &.active, &:hover {
+    color: $white;
+    letter-spacing: 0.5px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0.5em;
+      bottom: 0;
+      width: 3px;
+      border-radius: 3px;
+      background-color: adjust-color($api-bg, $lightness: 50%, $saturation: 80%);
+    }
+  }
+
+  &.active {
+    font-weight: 900;
+  }
 }
 
 .api-main {
   display: flex;
   flex: 1 1 auto;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-right: 0.5em;
+  background-color: $off-white;
+  border-bottom: 1px solid darken($white, 10%);
+  z-index: 3;
+
+  .search {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 1em;
+    left: 1.2em;
+    height: 0.9em;
+    opacity: 0.5;
+  }
+
+  .links a {
+    margin: 0 1em;
+    color: lighten($text-color, 40%);
+    font-size: 0.8em;
+  }
+
+  .search-term {
+    flex: 1 1 auto;
+    margin-right: 1em;
+    padding: 1em 1em 1em 3em;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 0.9em;
+
+    &::placeholder {
+      color: darken($white, 25%);
+      font-weight: 300;
+    }
+  }
+}
+
+.api-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background-color: $off-white;
   overflow-y: auto;
+
+  & > .liquid-container,
+  & > .liquid-container > .liquid-child {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
 }

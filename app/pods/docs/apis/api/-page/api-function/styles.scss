@@ -1,0 +1,15 @@
+& {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  margin-top: 4em;
+}
+
+.reference, .example {
+  border-bottom: none;
+}
+
+.member-header {
+  @extend %no-line-heading;
+  font-size: 1.5em;
+}

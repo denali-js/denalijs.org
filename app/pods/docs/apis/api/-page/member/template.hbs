@@ -1,0 +1,14 @@
+<div class="reference">
+  {{yield}}
+</div>
+<div class="example">
+  {{#if entry.example}}
+    <pre>
+      <code>
+        {{entry.example}}
+      </code>
+    </pre>
+  {{else}}
+    <a class="missing-example" href="https://github.com/denali-js/denali/edit/v{{version.semver}}/{{entry.file}}#L{{entry.line}}" target="_blank">Add an @example …</a>
+  {{/if}}
+</div>

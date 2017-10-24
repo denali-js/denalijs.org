@@ -1,0 +1,68 @@
+& {
+  display: flex;
+  flex-direction: column;
+}
+
+.transition-wave {
+  margin-bottom: -8px;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  flex-direction: column;
+
+}
+
+.headline {
+  @extend %no-line-heading;
+  margin: 0;
+  padding: 1em 0 0.5em;
+  color: white;
+  font-size: 6em;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 4em;
+}
+
+.help-options {
+  margin-bottom: 8em;
+}
+
+.help-option {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 3em;
+  margin-bottom: 5em;
+
+  .logo {
+    width: 4em;
+    margin-right: 1em;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.3em;
+    font-weight: 900;
+  }
+  
+  .description {
+    margin-top: 0.5em;
+  }
+
+  .action {
+    @extend %btn;
+    background-color: $brand-primary-dark;
+    color: white;
+  }
+}

@@ -1,4 +1,59 @@
-{{docs/apis/-page/nav api=api}}
+<div class="contours"></div>
+
+<div class="sidebar">
+
+  <div class="brand">
+    <img src="/images/logo.svg" alt="" class="logo">
+    <div class="wordmark">Denali <span class="submark">API</span></div>
+  </div>
+
+  {{-ui/version-menu version=version}}
+
+  <nav class="apis">
+    {{#if groupByPackage}}
+      {{#each-in byPackage as |pkgName apis|}}
+        <div class="apis-group">
+          <div class="group-header">
+            {{pkgName}}
+          </div>
+          <div class="group-list">
+            {{#each apis as |api|}}
+              {{#link-to 'docs.apis.api' version.id api.slug title=api.shortDisplayName class='api-link'}}
+                <i class='api-kind-icon {{api.kind}}'></i>
+                {{api.shortDisplayName}}
+              {{/link-to}}
+            {{/each}}
+          </div>
+        </div>
+      {{/each-in}}
+    {{else}}
+      <div class="apis-group">
+        <div class="group-list">
+          {{#each ungrouped as |api|}}
+            {{#link-to 'docs.apis.api' version.id api.slug title=api.shortDisplayName class='api-link'}}
+              <i class='api-kind-icon {{api.kind}}'></i>
+              {{api.shortDisplayName}}
+            {{/link-to}}
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+  </nav>
+</div>
+
 <div class="api-main">
-  {{yield}}
+  <div class="meta">
+    <div class="search">
+      <img src="/images/search.svg" alt="" class="search-icon">
+      <input class='search-term' placeholder='Search the API …'>
+    </div>
+    <div class="links">
+      {{#link-to 'marketing.index'}}denalijs.org{{/link-to}}
+      {{#link-to 'docs.guides' version.id}}Guides{{/link-to}}
+    </div>
+  </div>
+
+  <div class="api-content">
+    {{yield}}
+  </div>
 </div>

@@ -15,13 +15,18 @@ const ApiClass = DS.Model.extend({
   deprecated: attr('boolean'),
   internal: attr('boolean'),
   since: attr('string'),
-  methods: attr(),
-  properties: attr(),
+  signatures: attr(),
 
   api: belongsTo('api'),
 
   shortDisplayName: computed('name', function() {
     return this.get('name') + '()';
+  }),
+
+  slug: computed(function() {
+    let pkg = this.get('pkg');
+    let name = this.get('name');
+    return [ 'function', pkg, name ].join('/');
   })
 
 });

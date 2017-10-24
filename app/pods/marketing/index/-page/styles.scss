@@ -1,0 +1,142 @@
+& {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  @extend %container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  color: $white;
+
+  .terminal {
+    display: flex;
+    flex: 0 0 auto;
+    width: 80%;
+    height: 340px;
+    background-color: #272822;
+    border-radius: 3px;
+    box-shadow: 0 4px 16px rgba($black, 0.2),
+                0 2px 8px rgba($black, 0.2);
+  }
+
+  .window-controls {
+    display: flex;
+    padding: 0.4em;
+  }
+
+  .dot {
+    @include dot(7px, rgba($white, 0.1));
+    margin: 0.1em;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    padding-left: 2em;
+    text-align: center;
+  }
+
+  .headline {
+    @extend %no-line-heading;
+    margin-bottom: 0;
+    font-size: 5.5em;
+  }
+
+  .subhead {
+    font-size: 1.4em;
+    font-weight: 300;
+  }
+
+}
+
+.wave {
+  width: 100vw;
+  margin-bottom: -1em;
+}
+
+.features {
+  background-color: $white;
+  background-image: url('/images/wave2.svg');
+  background-position: 0 20em;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  padding: 12em 0;
+
+  &:nth-child(even) {
+    .graphic {
+      order: 2;
+    }
+
+    .copy {
+      order: 1;
+      padding-left: 0;
+      padding-right: 2em;
+    }
+  }
+
+  .container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .graphic {
+    width: 30%;
+  }
+
+  .copy {
+    flex: 0.6 0 45%;
+    padding-left: 2em;
+  }
+
+  .headline {
+    position: relative;
+    margin-bottom: 0.5em;
+    font-size: 2.5em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.1em;
+      width: 3em;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $text-color;
+      opacity: 0.7;
+    }
+  }
+
+  .description {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  .cta-link {
+    position: relative;
+    color: $link-color;
+    font-family: 'Merriweather', serif;
+    font-size: 1.3em;
+    font-style: italic;
+    text-decoration: underline;
+
+    &::after {
+      content: '→';
+      position: absolute;
+      left: 100%;
+      margin-left: 0.2em;
+      text-decoration: none;
+    }
+  }
+
+}

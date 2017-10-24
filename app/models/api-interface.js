@@ -3,6 +3,7 @@ import DS from 'ember-data';
 
 const attr = DS.attr;
 const belongsTo = DS.belongsTo;
+const computed = Ember.computed;
 const { alias } = Ember.computed;
 
 const ApiInterface = DS.Model.extend({
@@ -20,7 +21,13 @@ const ApiInterface = DS.Model.extend({
 
   api: belongsTo('api'),
 
-  shortDisplayName: alias('name')
+  shortDisplayName: alias('name'),
+
+  slug: computed(function() {
+    let pkg = this.get('pkg');
+    let name = this.get('name');
+    return [ 'interface', pkg, name ].join('/');
+  })
 
 });
 

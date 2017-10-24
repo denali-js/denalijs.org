@@ -1,18 +1,22 @@
 import Ember from 'ember';
 
+const hash = Ember.RSVP.hash;
+
 export default Ember.Route.extend({
 
   model({ slug }) {
-    let version = this.modelFor('docs').version.id;
+    let version = this.modelFor('docs');
     let [ kind, pkg, name ] = slug.split('/');
-    return this.store.findRecord(`api-${ kind }`, [ version, pkg, name ].join(':'));
+    let type = `api-${ kind }`;
+    let id = [ version.id, pkg, name ].join(':');
+    return hash({
+      entry: this.store.findRecord(type, id),
+      version
+    });
   },
 
   serialize(api) {
-    let kind = api.constructor.modelName.split('-')[1];
-    let pkg = api.get('pkg');
-    let name = api.get('name');
-    return { slug: [ kind, pkg, name ].join('/') };
+    return { slug: api.get('slug') };
   }
 
 });

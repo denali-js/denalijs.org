@@ -1,0 +1,196 @@
+$guides-nav-width: 14em;
+
+& {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100vh;
+  background-color: $guides-bg;
+
+}
+
+.contours {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  left: 0;
+  background-image: url('/images/contours.png');
+  background-size: 50% auto;
+  background-repeat: none repeat;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  width: calc(50vw - (#{$container-width} / 2) + #{$guides-nav-width});
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;;
+  align-items: center;
+  width: $guides-nav-width;
+  padding: 1em;
+  color: $white;
+}
+
+.logo {
+  height: 1.5em;
+  margin-right: 0.25em;
+}
+
+.wordmark {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.submark {
+  font-weight: 300;
+}
+
+.version-menu {
+  width: $guides-nav-width;
+}
+
+.guides {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: $guides-nav-width;
+  padding-bottom: 3em;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(white, 0.3);
+    &:hover {
+      background-color: rgba(white, 0.5);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.guides-group {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.group-header {
+  padding: 1em 1rem 0.5em;
+  color: rgba($white, 0.4);
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.guide-link {
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  padding: 0.25em 1rem;
+  color: rgba($white, 0.8);
+  font-size: 0.9em;
+  font-weight: 600;
+  transform-origin: 2em 50%;
+
+  &.active, &:hover {
+    color: $white;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0.5em;
+      bottom: 0;
+      width: 3px;
+      border-radius: 3px;
+      background-color: adjust-color($guides-bg, $lightness: 40%, $saturation: 80%);
+    }
+  }
+
+  &.active {
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+}
+
+.guide-main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  position: absolute;
+  width: calc(#{$container-width} - #{$guides-nav-width});
+  background-color: $off-white;
+  border-bottom: 1px solid darken($white, 10%);
+  z-index: 3;
+
+  .search {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    height: 1em;
+    opacity: 0.5;
+  }
+
+  .links a {
+    margin: 0 1em;
+    color: lighten($text-color, 40%);
+    font-size: 0.8em;
+  }
+
+  .search-term {
+    flex: 1 1 auto;
+    margin-right: 1em;
+    padding: 1em 1em 1em 3em;
+    border-color: transparent;
+    background-color: transparent;
+
+    &::placeholder {
+      color: darken($white, 25%);
+      font-weight: 300;
+    }
+  }
+}
+
+.guide-content {
+  display: flex;
+  flex: 1 1 auto;
+  width: calc((100vw / 2) + ((#{$container-width} / 2) - #{$guides-nav-width}));
+  background-color: $off-white;
+  overflow-y: auto;
+
+  & > .liquid-container,
+  & > .liquid-container > .liquid-child {
+    overflow: visible;
+  }
+}
+
+.guide-container {
+  padding: 4em 2em 2em;
+  width: calc(#{$container-width} - #{$guides-nav-width});
+}

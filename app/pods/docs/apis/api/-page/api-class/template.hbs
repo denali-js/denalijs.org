@@ -1,0 +1,40 @@
+<div class="entry-intro">
+  <div class="class-header">
+    <h1 class="class-name">{{entry.name}}</h1>
+    <div class="class-source">defined in {{entry.file}}</div>
+  </div>
+  {{markdown-to-html (lede entry.description) class='lede'}}
+  {{markdown-to-html (body-without-lede entry.description) class='description'}}
+</div>
+
+{{#if entry.staticProperties}}
+  {{#each-in entry.staticProperties as |name property|}}
+    {{#docs/apis/api/-page/member version=version entry=property}}
+      {{docs/apis/api/-page/member-property version=version property=property}}
+    {{/docs/apis/api/-page/member}}
+  {{/each-in}}
+{{/if}}
+
+{{#if entry.staticMethods}}
+  {{#each-in entry.staticMethods as |name method|}}
+    {{#docs/apis/api/-page/member version=version entry=method}}
+      {{docs/apis/api/-page/member-method version=version method=method}}
+    {{/docs/apis/api/-page/member}}
+  {{/each-in}}
+{{/if}}
+
+{{#if entry.properties}}
+  {{#each-in entry.properties as |name property|}}
+    {{#docs/apis/api/-page/member version=version entry=property}}
+      {{docs/apis/api/-page/member-property version=version property=property}}
+    {{/docs/apis/api/-page/member}}
+  {{/each-in}}
+{{/if}}
+
+{{#if entry.methods}}
+  {{#each-in entry.methods as |name method|}}
+    {{#docs/apis/api/-page/member version=version entry=method}}
+      {{docs/apis/api/-page/member-method version=version method=method}}
+    {{/docs/apis/api/-page/member}}
+  {{/each-in}}
+{{/if}}

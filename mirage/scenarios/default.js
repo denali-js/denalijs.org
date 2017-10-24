@@ -19,6 +19,7 @@ export default function(server) {
         title: guideData.title,
         body: guideData.body,
         group: guideData.group,
+        order: guideData.order,
         version
       });
     });

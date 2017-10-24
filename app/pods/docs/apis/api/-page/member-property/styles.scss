@@ -1,0 +1,13 @@
+& {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+}
+
+.value {
+  position: relative;
+}
+
+.property-description p:first-child {
+  margin-top: 0;
+}

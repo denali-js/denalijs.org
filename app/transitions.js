@@ -1,7 +1,8 @@
 export default function(){
+
   this.transition(
-    this.toRoute('docs.apis'),
-    this.use('toUp'),
-    this.debug()
+    this.hasClass('active-comparison'),
+    this.use('slotFromLeft')
   );
+  
 }

@@ -1,0 +1,14 @@
+<div class="member-header">
+  {{docs/apis/api/-page/value value=property}}
+
+  {{docs/apis/api/-page/flags entry=property}}
+</div>
+
+<div class="source">
+  defined in
+  <a href="https://github.com/denali-js/denali/blob/v{{version.semver}}/{{property.file}}#L{{property.line}}" target="_blank">
+    {{property.file}} on line {{property.line}}
+  </a>
+</div>
+
+{{markdown-to-html property.description class='property-description'}}

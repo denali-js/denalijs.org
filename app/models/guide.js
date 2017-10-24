@@ -13,6 +13,7 @@ const Guide = DS.Model.extend({
   body: attr('string'),
   group: attr('string'),
   slug: attr('string'),
+  order: attr('number'),
   updatedAt: attr('date'),
 
   version: belongsTo('version'),

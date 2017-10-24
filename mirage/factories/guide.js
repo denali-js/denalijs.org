@@ -6,6 +6,7 @@ export default Factory.extend({
   title: null,
   body: null,
   group: null,
+  order: null,
   slug() {
     let group = kebabCase(this.group.toLowerCase());
     let title = kebabCase(this.title.toLowerCase());

@@ -1,0 +1,11 @@
+{{#if value.name}}
+  <div class="value-name">{{value.name}}</div>
+{{/if}}
+{{#if value.type}}
+  <div class="value-type">
+    {{#if (or (and value.name value.type) forceColon)}}
+      <div class="colon">:</div>
+    {{/if}}
+    {{value.type}}
+  </div>
+{{/if}}

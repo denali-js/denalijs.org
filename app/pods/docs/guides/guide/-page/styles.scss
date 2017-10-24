@@ -1,46 +1,29 @@
 & {
-  @extend %container;
   display: flex;
   flex: 1 0 auto;
-}
-
-.table-of-contents-sticky-wrapper {
-  position: relative;
-  z-index: 2;
-}
-
-.table-of-contents {
-  width: 15em;
-  margin-top: 5em;
-}
-
-.guide-contents {
-  display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  width: calc(100% - 15em);
 }
 
 .guide-header {
   flex-direction: column;
   margin-top: 2em;
-  margin-bottom: 2em;
-  padding-right: 3em;
-  color: $white;
 
   .group {
-    margin: 1.4em 0 0.5em;
+    @extend %no-line-heading;
+    margin: 3em 0 0em;
     font-weight: 700;
     letter-spacing: 0.2px;
     opacity: 0.7;
   }
 
   .title {
+    @extend %no-line-heading;
     margin: 0;
-    font-size: 3.5em;
+    font-size: 4em;
   }
 
   .lede {
+    @extend %no-line-heading;
     font-size: 1.1em;
     font-family: $serif;
     font-style: italic;
@@ -60,29 +43,8 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    padding-top: 3em;
-    padding-right: 3em;
-    padding-bottom: 3em;
-
-    &::before {
-      @extend %sheet;
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: calc(50% + 5.5em);
-      width: 100vw;
-      margin-left: -50vw;
-    }
-
-    &:nth-child(odd)::before {
-      @extend %sheet-alternate;
-      border-bottom: 1px solid darken($white, 7%);
-    }
-
-    > * {
-      position: relative;
-    }
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
   h1, h2 {

@@ -8,12 +8,14 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
 
-  this.route('why-denali');
-  this.route('community');
-  this.route('roadmap');
+  this.route('marketing', { path: '/' }, function() {
+    this.route('why-denali', { resetNamespace: true });
+    this.route('community', { resetNamespace: true });
+    this.route('roadmap', { resetNamespace: true });
+    this.route('addons', { resetNamespace: true }, function() {});
+  });
 
   this.route('docs', { path: '/docs/:version' }, function() {
-    this.route('quickstart');
     this.route('guides', function() {
       this.route('guide', { path: '/*slug' });
     });
@@ -21,8 +23,6 @@ Router.map(function() {
       this.route('api', { path: '/*slug' });
     });
   });
-
-  this.route('addons', function() {});
 
 });
 

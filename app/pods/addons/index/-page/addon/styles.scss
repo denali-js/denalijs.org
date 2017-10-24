@@ -20,12 +20,6 @@
   &:nth-child(odd) {
     background-color: darken($white, 2%);
   }
-
-  &:hover {
-    .headline {
-      text-decoration: underline;
-    }
-  }
 }
 
 .graphic {

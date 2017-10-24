@@ -46,30 +46,43 @@
 
 }
 
-.featured-addons {
+.featured-addons,
+.results {
   @extend %container;
   flex-wrap: wrap;
 
+  .addon {
+    .wrapper {
+      box-shadow: 0 4px 16px rgba($black, 0.2);
+      transition: box-shadow ease-out 0.1s,
+                  transform ease-out 0.1s;
 
+      &:hover {
+        box-shadow: 0 7px 28px rgba($black, 0.3),
+                    0 3px 8px rgba($black, 0.2);
+        transform: translateY(-2px);
+        transition: box-shadow ease-out 0.1s,
+                    transform ease-out 0.1s;
+      }
+    }
+  }
+}
+
+.featured-addons {
   .addon {
     width: 33%;
     padding: 1em;
 
     .wrapper {
       flex-direction: column;
-      box-shadow: 0 4px 16px rgba($black, 0.2);
     }
   }
 }
 
 .results {
-  @extend %container;
-  flex-direction: column;
-
   .addon {
-    flex: 1 0 auto;    
+    flex: 1 1 auto;    
     margin: 0.5em 0;
-    box-shadow: 0 4px 16px rgba($black, 0.2);
 
     .wrapper {
       padding: 2em;
@@ -80,6 +93,8 @@
     }
 
     .headline {
+      @extend %no-line-heading;
+      margin-bottom: 0;
       font-size: 2em;
     }
   }
