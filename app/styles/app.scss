@@ -7,7 +7,7 @@ $black: #000;
 $off-white: darken($white, 2%);
 $brand-primary: #009ff5;
 $brand-primary-dark: #15517c;
-$text-color: #223843;
+$text-color: #37586b;
 $light-text-color: desaturate(lighten(#223843, 20%), 40%);
 $link-color: $brand-primary;
 
@@ -145,7 +145,7 @@ input {
   flex: 0 0 auto;
   align-self: center;
   width: $container-width;
-  
+
   @include breakpoint-below(900px) {
     width: 100%;
     padding-left: 2em;
@@ -182,13 +182,13 @@ input {
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba($black, 0.2);
-  transition: box-shadow ease-out 0.1s, 
+  transition: box-shadow ease-out 0.1s,
               transform ease-out 0.1s;
 
   &:hover {
-    transform: translateY(-1px);    
+    transform: translateY(-1px);
     box-shadow: 0 3px 8px rgba($black, 0.3);
-    transition: box-shadow ease-out 0.1s, 
+    transition: box-shadow ease-out 0.1s,
                 transform ease-out 0.1s;
   }
 

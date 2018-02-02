@@ -7,7 +7,7 @@ export default function() {
 
   this.get('/addons', function({ addons }, { queryParams }) {
     if (queryParams['filter[featured]']) {
-      return addons.where((addon) => addon.featured); 
+      return addons.where((addon) => addon.featured);
     }
     let query = queryParams.query;
     return addons.where((addon) => {
@@ -54,5 +54,7 @@ export default function() {
   this.get('/api-classes/:id');
   this.get('/api-functions/:id');
   this.get('/api-interfaces/:id');
+
+  this.passthrough('https://api.mapbox.com/**');
 
 }

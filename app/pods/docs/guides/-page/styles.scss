@@ -2,10 +2,10 @@ $guides-nav-width: 14em;
 
 & {
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   height: 100vh;
   background-color: $guides-bg;
-
 }
 
 .contours {
@@ -23,11 +23,10 @@ $guides-nav-width: 14em;
 
 .sidebar {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0.75 0 $guides-nav-width;
   flex-direction: column;
   align-items: flex-end;
   position: relative;
-  width: calc(50vw - (#{$container-width} / 2) + #{$guides-nav-width});
 }
 
 .brand {
@@ -138,8 +137,6 @@ $guides-nav-width: 14em;
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-  position: absolute;
-  width: calc(#{$container-width} - #{$guides-nav-width});
   background-color: $off-white;
   border-bottom: 1px solid darken($white, 10%);
   z-index: 3;
@@ -180,7 +177,6 @@ $guides-nav-width: 14em;
 .guide-content {
   display: flex;
   flex: 1 1 auto;
-  width: calc((100vw / 2) + ((#{$container-width} / 2) - #{$guides-nav-width}));
   background-color: $off-white;
   overflow-y: auto;
 
@@ -193,4 +189,9 @@ $guides-nav-width: 14em;
 .guide-container {
   padding: 4em 2em 2em;
   width: calc(#{$container-width} - #{$guides-nav-width});
+
+  & > .liquid-container,
+  & > .liquid-container > .liquid-child {
+    overflow: visible;
+  }
 }
