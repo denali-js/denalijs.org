@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { run } from '@ember/runloop';
 
-const run = Ember.run;
-
-export default Ember.Component.extend({
+export default Component.extend({
 
   tagName: 'nav',
   classNames: [ 'table-of-contents' ],

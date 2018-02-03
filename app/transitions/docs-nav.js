@@ -1,7 +1,10 @@
-import Ember from 'ember';
-import { animate, stop, timeRemaining, isAnimating } from 'liquid-fire';
-
-const RSVP = Ember.RSVP;
+import RSVP from 'rsvp';
+import {
+  animate,
+  stop,
+  timeRemaining,
+  isAnimating
+} from 'liquid-fire';
 
 const duration = 0.2 * 1000;
 

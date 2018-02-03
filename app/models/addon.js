@@ -1,9 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
 import { truncate } from 'lodash';
 
 const attr = DS.attr;
-const computed = Ember.computed;
 
 export default DS.Model.extend({
 

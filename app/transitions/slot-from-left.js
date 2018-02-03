@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
 import { animate } from 'liquid-fire';
-
-const RSVP = Ember.RSVP;
 
 const duration = 300;
 const easing = 'easeOutExp';

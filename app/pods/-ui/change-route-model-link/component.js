@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import LinkComponent from '@ember/routing/link-component';
+import { inject as service } from '@ember/service';
 
-const service = Ember.inject.service;
-
-export default Ember.LinkComponent.extend({
+export default LinkComponent.extend({
 
   router: service(),
 

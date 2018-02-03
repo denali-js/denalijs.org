@@ -1,9 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import { mapValues, sortBy } from 'lodash';
 
-const computed = Ember.computed;
-
-export default Ember.Component.extend({
+export default Component.extend({
 
   groupByPackage: computed({
     get() {
@@ -42,7 +41,7 @@ export default Ember.Component.extend({
     }
   }),
 
-  ungrouped: computed('api.classes', 'api.functions', 'api.interfaces', function() {
+  ungrouped: computed('api.{classes,functions,interfaces}', function() {
     let classes = this.get('api.classes');
     let functions = this.get('api.functions');
     let interfaces = this.get('api.interfaces');

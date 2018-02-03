@@ -1,7 +1,7 @@
 /* global mapboxgl */
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
 
   didInsertElement() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2ZXdhc21lciIsImEiOiJVZ2FzMGc4In0.HAC3HhFlNYMmbj3ZBV8BWw';

@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 
 const GRAF_MARKER = '\n\n';
 
@@ -11,4 +11,4 @@ export function lede([ body ]) {
   return '';
 }
 
-export default Ember.Helper.helper(lede);
+export default helper(lede);

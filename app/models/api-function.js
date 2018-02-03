@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
 
-const computed = Ember.computed;
 const attr = DS.attr;
 const belongsTo = DS.belongsTo;
 

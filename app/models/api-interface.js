@@ -1,10 +1,9 @@
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
 
 const attr = DS.attr;
 const belongsTo = DS.belongsTo;
-const computed = Ember.computed;
-const { alias } = Ember.computed;
 
 const ApiInterface = DS.Model.extend({
 
