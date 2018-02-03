@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="36px" viewBox="0 0 75 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>legos</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-350.000000, -794.000000)">
+        <g id="legos" transform="translate(350.000000, 794.000000)">
+            <path d="M2,22 L24,22 C25.1045695,22 26,22.8954305 26,24 L26,35 C26,35.5522847 25.5522847,36 25,36 L1,36 C0.44771525,36 6.76353751e-17,35.5522847 0,35 L0,24 C-1.3527075e-16,22.8954305 0.8954305,22 2,22 Z" id="Rectangle-7" fill="#6D9ADE"></path>
+            <rect id="Rectangle-4" fill="#6D9ADE" x="4" y="19" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy" fill="#6D9ADE" x="14" y="19" width="8" height="4" rx="1"></rect>
+            <path d="M31,22 L73,22 C74.1045695,22 75,22.8954305 75,24 L75,35 C75,35.5522847 74.5522847,36 74,36 L30,36 C29.4477153,36 29,35.5522847 29,35 L29,24 C29,22.8954305 29.8954305,22 31,22 Z" id="Rectangle-7-Copy" fill="#5587D2"></path>
+            <path d="M2,3 L52,3 C53.1045695,3 54,3.8954305 54,5 L54,16 C54,16.5522847 53.5522847,17 53,17 L1,17 C0.44771525,17 6.76353751e-17,16.5522847 0,16 L0,5 C-1.3527075e-16,3.8954305 0.8954305,3 2,3 Z" id="Rectangle-7-Copy-2" fill="#6D9ADE"></path>
+            <rect id="Rectangle-4-Copy-3" fill="#5587D2" x="33" y="19" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-2" fill="#5587D2" x="43" y="19" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-5" fill="#5587D2" x="53" y="19" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-4" fill="#5587D2" x="63" y="19" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-9" fill="#6D9ADE" x="3" y="0" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-8" fill="#6D9ADE" x="13" y="0" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-7" fill="#6D9ADE" x="23" y="0" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-6" fill="#6D9ADE" x="33" y="0" width="8" height="4" rx="1"></rect>
+            <rect id="Rectangle-4-Copy-10" fill="#6D9ADE" x="43" y="0" width="8" height="4" rx="1"></rect>
+        </g>
+    </g>
+</svg>

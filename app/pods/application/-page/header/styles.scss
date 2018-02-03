@@ -1,4 +1,4 @@
-& {
+&.header {
   @extend %container;
   display: flex;
   position: absolute;
@@ -8,6 +8,7 @@
   padding-top: 1em;
   padding-bottom: 1em;
   color: $white;
+  z-index: 10;
 }
 
 .brand {
@@ -16,7 +17,7 @@
   position: absolute;
   left: 0;
   color: inherit;
-  font-size: 1.2em;
+  font-size: 1.28em;
 }
 
 .logo {
@@ -25,7 +26,7 @@
 }
 
 .wordmark {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .nav {
@@ -39,21 +40,83 @@
   position: relative;
   padding: 0.75em 1em;
   color: inherit;
-  font-weight: 700;
+  font-weight: 900;
   text-decoration: none;
   text-align: center;
-  letter-spacing: 0.5px;
+}
 
-  &.active {
-    &::after {
-      content: '';
-      position: absolute;
-      right: 1.25em;
-      bottom: 0.4em;
-      left: 1.25em;
-      height: 3px;
-      background-color: $white;
-      border-radius: 2px;
+.nav-dropdown {
+  .trigger {
+    user-select: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
     }
   }
+}
+
+&.content {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 30em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: $border-radius;
+  background-color: $white;
+  box-shadow: $box-shadow-2;
+  color: $text-color;
+
+  &::before {
+    $size: 15px;
+    content: '';
+    position: absolute;
+    top: -$size/2 + $border-radius;
+    left: calc(50% - #{$size}/2);
+    width: $size;
+    height: $size;
+    transform: rotate(45deg);
+    border-radius: $border-radius;
+    background-color: $white;
+  }
+}
+
+.docs-link {
+  display: flex;
+  flex: 0 0 50%;
+  flex-direction: column;
+  padding: 1em;
+
+  svg {
+    transition: filter 0.1s ease-out;
+  }
+
+  &:hover {
+    .docs-link-header,
+    .docs-link-description {
+      color: $text-color-hover;
+      transition: color 0.1s ease-out;
+    }
+    svg {
+      filter: grayscale(50%);
+      transition: filter 0.1s ease-out;
+    }
+  }
+}
+
+.docs-link-header {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  color: $text-color-dark;
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: color 0.1s ease-out;
+}
+
+.docs-link-description {
+  margin-top: 0.2em;
+  margin-bottom: 0;
+  color: $text-color;
+  transition: color 0.1s ease-out;
 }

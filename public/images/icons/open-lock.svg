@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="38px" viewBox="0 0 27 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>open-lock</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-20.000000, -792.000000)">
+        <g id="open-lock" transform="translate(20.000000, 794.000000)">
+            <path d="M2,15 L25,15 C26.1045695,15 27,15.8954305 27,17 L27,34 C27,35.1045695 26.1045695,36 25,36 L2,36 C0.8954305,36 1.3527075e-16,35.1045695 0,34 L0,17 C-1.3527075e-16,15.8954305 0.8954305,15 2,15 Z M14,29 C16.209139,29 18,27.209139 18,25 C18,22.790861 16.209139,21 14,21 C11.790861,21 10,22.790861 10,25 C10,27.209139 11.790861,29 14,29 Z" id="Combined-Shape" fill="#6D9ADE"></path>
+            <path d="M13.5,28.9690531 C13.6637971,28.9894783 13.8306698,29 14,29 C16.209139,29 18,27.209139 18,25 C18,22.790861 16.209139,21 14,21 C13.8306698,21 13.6637971,21.0105217 13.5,21.0309469 L13.5,15 L25,15 C26.1045695,15 27,15.8954305 27,17 L27,34 C27,35.1045695 26.1045695,36 25,36 L13.5,36 L13.5,28.9690531 Z" id="Combined-Shape-Copy" fill="#5587D2"></path>
+            <path d="M21,10.476331 L21,7.5 C21,3.35786438 17.6421356,0 13.5,0 C9.35786438,0 6,3.35786438 6,7.5 L6,15.3251953" id="Oval-2" stroke="#6D9ADE" stroke-width="4"></path>
+        </g>
+    </g>
+</svg>

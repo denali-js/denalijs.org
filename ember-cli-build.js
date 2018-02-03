@@ -7,7 +7,16 @@ module.exports = function(defaults) {
     // Add options here
     nodeModulesToVendor: [
       'node_modules/velocity-animate'
-    ]
+    ],
+    svg: {
+    optimize: {
+      plugins: [
+        { removeDoctype: false },
+        { removeTitle: true },
+        { removeDesc: true }
+      ]
+    }
+  }
   });
 
   // Use `app.import` to add additional libraries to the generated

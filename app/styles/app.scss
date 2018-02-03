@@ -5,19 +5,31 @@
 $white: #fff;
 $black: #000;
 $off-white: darken($white, 2%);
-$brand-primary: #009ff5;
+$brand-primary: #1359BF;
 $brand-primary-dark: #15517c;
-$text-color: #37586b;
-$light-text-color: desaturate(lighten(#223843, 20%), 40%);
+$text-color: #58798B;
+$text-color-dark: #3D4C5F;
+$text-color-hover: rgb(47, 55, 66);
+$light-text-color: $text-color; // TODO: remove
 $link-color: $brand-primary;
+$button-primary: #00CB63;
+$button-secondary: #002F69;
 
+$callout-bg: #F2F7FA;
+$callout-bg-dark: #3D4C5F;
 $guides-bg: #11865f;
 $api-bg: #3d3c8d;
 $code-bg: #393942;
 $api-example-bg: $code-bg;
 
-
 $container-width: 900px;
+$navbar-height: 5em;
+$border-radius: 3px;
+
+$shadow: rgba(#26689A, 0.17);
+$box-shadow-1: 0 6px 9px $shadow;
+$box-shadow-2: 0 8px 12px $shadow,
+               0 12px 30px $shadow;
 
 $sans-serif: 'Muli', sans-serif;
 $serif: 'Merriweather', serif;
@@ -38,7 +50,11 @@ $monospace: 'Fira Code', monospaced;
 :root {
   color: $text-color;
   font-family: $sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -68,20 +84,20 @@ a, button {
 
 h1,h2,h3,h4,h5,h6 {
   position: relative;
-  font-family: $serif;
-  font-weight: 900;
+  color: $text-color-dark;
+  font-weight: 700;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 0.25em;
-    width: 5em;
-    height: 2px;
-    border-radius: 100px;
-    background-color: rgba($text-color, 0.7);
-  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 100%;
+  //   left: 0;
+  //   margin-top: 0.25em;
+  //   width: 5em;
+  //   height: 2px;
+  //   border-radius: 100px;
+  //   background-color: rgba($text-color, 0.7);
+  // }
 }
 
 %no-line-heading::after {
@@ -118,6 +134,12 @@ input {
   display: flex;
   flex-direction: column;
   overflow: visible;
+}
+
+.emoji {
+  display: inline-block;
+  border-radius: 2px;
+  width: 1.2em;
 }
 
 @keyframes busy {
@@ -174,16 +196,13 @@ input {
   background-color: darken($white, 2%);
 }
 
-%shadow-height-1 {
-  box-shadow: 0 2px 8px rgba($black, 0.2);
-}
-
 %btn {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.5em 0.8em;
+  padding: 0.7em 1.2em;
   border-radius: 3px;
+  color: $white;
   font-weight: 900;
   text-decoration: none;
   cursor: pointer;
@@ -204,9 +223,24 @@ input {
   }
 }
 
+%btn-primary {
+  @extend %btn;
+  background-color: $button-primary;
+}
+
+%btn-secondary {
+  @extend %btn;
+  background-color: $button-secondary;
+}
+
 %btn-invert {
   background-color: $white;
   color: $brand-primary;
+}
+
+@mixin hero($base-color, $offset-color: adjust-color($base-color, $hue: -10deg, $lightness: +15%)) {
+  padding-top: $navbar-height;
+  background-image: linear-gradient(52deg, $base-color, $offset-color);
 }
 
 @mixin dot($size: 1em, $color: $white) {

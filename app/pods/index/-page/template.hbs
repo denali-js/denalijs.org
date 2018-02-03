@@ -1,185 +1,177 @@
 {{#-ui/contours-background}}
-
   <div class="hero">
-
-    <div class="terminal">
-      <div class="window-controls">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-      <div class="asciicast-container"></div>
-    </div>
 
     <div class="copy">
       <h1 class="headline">
-        Ship fast and scale.
+        Ship fast
+        <br>
+        &amp; scale.
       </h1>
       <p class="subhead">
-        A <strong>batteries-included Node.js API framework</strong> with a powerful addon system,<br>
-        best-in-class developer experience, and extensive documentation.
+        A <strong>layered contentions Node.js API framework</strong> for
+        building ambitious APIs with a powerful addon system, best-in-class
+        developer experience, and extensive documentation.
       </p>
+      <div class="cta">
+        {{#link-to 'docs.quickstart' class='cta-primary'}}Quickstart{{/link-to}}
+        {{#link-to 'features' class='cta-secondary'}}Features{{/link-to}}
+      </div>
     </div>
 
+    <div class="terminal-wrapper">
+      <div class="terminal">
+        <div class="window-controls">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="asciicast-container"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="transition">
+    <div class="block"></div>
+    <img src='images/transition-wave.svg' class='wave'>
+    <div class="block"></div>
   </div>
 {{/-ui/contours-background}}
 
-<img class="wave" src="/images/transition-wave-1.svg" alt="">
-
 <div class="features">
+
   <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/no-orm-lock-in.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          No ORM lock-in
-        </h2>
-        <p class="description">
-          Use whatever database you want. Denali helps you unleash the full
-          power of your data store with ORM Adapters, which let you bring your
-          own ORM.
-        </p>
-        {{#link-to 'docs.guides.guide' 'stable' 'data/orm-adapters' class='cta-link'}}
-          Learn more about ORM Adapters
-        {{/link-to}}
-      </div>
-
-    </div>
+    {{inline-svg 'images/icons/open-lock' class='feature-icon'}}
+    <h2 class="headline">
+      No ORM lock-in
+    </h2>
+    <p class="description">
+      Use whatever database you want. Denali helps you unleash the full
+      power of your data store with ORM Adapters, which let you bring your
+      own ORM.
+    </p>
+    {{#link-to 'docs.guides' class='cta-link'}}
+      Learn more about ORM Adapters
+    {{/link-to}}
   </div>
 
   <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/addons.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Powerful addons
-        </h2>
-        <p class="description">
-          Package your shared code as a Denali Addon, a full-featured
-          mini-app. Leverage a growing ecosystem to drop in functionality as
-          easily as <code>denali install</code>. In fact - Denali itself is
-          just another Denali addon <img src="/images/emoji/mindblown.gif" alt="" class="emoji">
-        </p>
-        {{#link-to 'addons' class='cta-link'}}
-          Browse the Addon ecosystem
-        {{/link-to}}
-      </div>
-
-    </div>
+    {{inline-svg 'images/icons/legos' class='feature-icon'}}
+    <h2 class="headline">
+      Powerful addons
+    </h2>
+    <p class="description">
+      Leverage a growing ecosystem to drop in functionality as easily as denali
+      install. Addons are extremely flexible; in fact - Denali itself is just
+      another Denali addon.
+    </p>
+    {{#link-to 'addons' class='cta-link'}}
+      Browse the Addon ecosystem
+    {{/link-to}}
   </div>
 
   <div class="feature">
-    <div class="container">
+    {{inline-svg 'images/icons/trophy' class='feature-icon'}}
+    <h2 class="headline">
+      Developer Experience
+    </h2>
+    <p class="description">
+      We've invested heavily in a top-notch developer experience (DX). From
+      versioned docs to debugging tools, building with Denali leaves you
+      with a smile.
+    </p>
+    {{#link-to 'docs.guides' class='cta-link'}}
+      Check out the CLI docs
+    {{/link-to}}
+  </div>
+</div>
 
-      <img src="/images/features/dx.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Developer Experience
-        </h2>
+<div class="callout">
+  <div class="container">
+    <div class="copy">
+      <h2 class="headline">
+        Power when you want it, <br>
+        flexibility when you need it.
+      </h2>
+      <p class='description'>
+        Denali is a “layered convention” framework, which means strong
+        conventions for common patterns, and exposing lower levels for when you
+        need the flexibility.
+      </p>
+      <p class="description">
+        Need to add a simple, straightforward endpoint? Use the powerful tools
+        baked in.
+      </p>
+      <p class="description">
+        Want to customize every step of the build tooling? Sure thing, dive right in!
+      </p>
+      <p class="description">
+        Spend time building your app, not the plumbing.
+      </p>
+    </div>
+    <div class="media">
+      <img src="/images/layers.svg" class="bg">
+      <div class="tile">
+        <h3 class="headline">
+          Powerful abstractions
+        </h3>
         <p class="description">
-          We've invested heavily in a top-notch developer experience (DX). From
-          versioned docs to debugging tools, building with Denali leaves you
-          with a smile.
+          Actions, Denali's controller layer, provide a powerful base to build
+          your app on.
         </p>
-        {{#link-to 'docs.guides.guide' 'stable' 'utilities/cli' class='cta-link'}}
-          Check out the CLI docs
+        {{#link-to 'index' class='cta'}}
+          Learn more about Actions
         {{/link-to}}
       </div>
-
-    </div>
-  </div>
-
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/testing.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Testing baked in
-        </h2>
+      <div class="tile">
+        <h3 class="headline">
+          Flexible escape valves
+        </h3>
         <p class="description">
-          Denali has testing baked into the core framework. In fact, Denali's
-          own test suite uses the same tooling that apps and addons do. Whether
-          it's fully mocked acceptance tests or unit testing modules via
-          Denali's dependency injection system, we've got you covered.
+          See how the Mailer addon adds custom build steps to support email
+          templates
         </p>
-        {{#link-to 'docs.guides.guide' 'stable' 'testing/acceptance' class='cta-link'}}
-          Check out the testing tools
+        {{#link-to 'index' class='cta'}}
+          Learn how to customize your build
         {{/link-to}}
       </div>
-
     </div>
   </div>
+</div>
 
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/languages.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Bring your own language
-        </h2>
-        <p class="description">
-          The CLI is built around a powerful build system, allowing you to
-          author your code in any language you want. Apps and addons can mix
-          and match languages with ease. Plus, Denali itself is written in
-          Typescript, so type definitions are always up to date.
-        </p>
-        {{#link-to 'addons' class='cta-link'}}
-          Add a language compiler to your project
-        {{/link-to}}
+<div class="testimonials">
+  <div class="testimonial">
+    <div class="quote">
+      Haha, oh god, I love Denali ...
+    </div>
+    <div class="attribution">
+      <img src="/images/testimonials/avatar-chris-watts.jpg" alt="Chris Watts" class="avatar">
+      <div class="details">
+        <div class="name">Chris Watts</div>
+        <div class="title">Founder @ Shuffl</div>
       </div>
-
     </div>
   </div>
-
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/realtime.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Realtime ready
-        </h2>
-        <p class="description">
-          First class realtime abstractions let you build modern mobile and web
-          apps with ease. Denali focuses on giving you the right abstractions
-          to get the job done well.
-        </p>
-        Coming soon
+  <div class="testimonial">
+    <div class="quote">
+      Denali is the most exciting thing we've seen in the Node ecosystem in a while
+    </div>
+    <div class="attribution">
+      <img src="/images/testimonials/avatar-chris-ball.png" alt="Chris Ball" class="avatar">
+      <div class="details">
+        <div class="name">Chris Ball</div>
+        <div class="title">Managing Partner @ Echobind</div>
       </div>
-
     </div>
   </div>
+</div>
 
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/community.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Helping hands when you need it
-        </h2>
-        <p class="description">
-          With an active Slack community, quick answers to StackOverflow
-          questions, a discussion forum for longer threads, and weekly free
-          office hours with core team, you'll get the help you need and feel
-          right at home.
-        </p>
-        {{#link-to 'community' class='cta-link'}}
-          Find some help
-        {{/link-to}}
-      </div>
-
+<div class="users">
+  <div class="container">
+    <h3 class="headline">Companies Using Denali</h3>
+    <div class="logos">
+      <img src="/images/users/logo-shuffl.png" alt="Shuffl Logo" class="logo">
+      <img src="/images/users/logo-echobind.png" alt="Echobind Logo" class="logo">
     </div>
   </div>
 </div>

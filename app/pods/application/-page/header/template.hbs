@@ -1,35 +1,44 @@
-{{#link-to 'index' class='brand'}}
-  <img src="/images/logo.svg" alt="Denali logo" class="logo">
-  <div class="wordmark">Denali</div>
-{{/link-to}}
+<header class='header'>
+  {{#link-to 'index' class='brand'}}
+    {{inline-svg 'images/logo.svg' class="logo"}}
+    <div class="wordmark">Denali</div>
+  {{/link-to}}
 
-<nav class="nav">
-  {{#link-to 'features' class='nav-link'}}Features{{/link-to}}
-  <div class="nav-hover-menu">
-    <div class="trigger nav-link">Docs</div>
-    <div class="content">
-      <h4 class='docs-link-header'>Quickstart</h4>
-      <p class="docs-link-description">Brand new to Denali? Start here!</p>
+  <nav class="nav">
+    {{#link-to 'features' class='nav-link'}}Features{{/link-to}}
+    <div class="nav-dropdown">
+      {{#basic-dropdown horizontalPosition='center' as |dd|}}
+        {{#dd.trigger class='trigger'}}
+          <div class="trigger nav-link">Docs</div>
+        {{/dd.trigger}}
+        {{#dd.content class=(concat componentCssClassName ' content')}}
+          {{#link-to 'docs.quickstart' class='docs-link'}}
+            {{inline-svg 'images/icons/docs-quickstart' class='docs-link-icon'}}
+            <h4 class='docs-link-header'>Quickstart</h4>
+            <p class="docs-link-description">Brand new to Denali? Start here!</p>
+          {{/link-to}}
+          {{#link-to 'docs.api-reference' class='docs-link'}}
+            {{inline-svg 'images/icons/docs-api-reference' class='docs-link-icon'}}
+            <h4 class='docs-link-header'>API Reference</h4>
+            <p class="docs-link-description">Detailed docs for the entire Denali framework.</p>
+          {{/link-to}}
+          {{#link-to 'docs.guides' class='docs-link'}}
+            {{inline-svg 'images/icons/docs-guides' class='docs-link-icon'}}
+            <h4 class='docs-link-header'>Guides</h4>
+            <p class="docs-link-description">In depth walkthroughs of every aspect of Denali.</p>
+          {{/link-to}}
+          {{#link-to 'docs.tutorial' class='docs-link'}}
+            {{inline-svg 'images/icons/docs-tutorial' class='docs-link-icon'}}
+            <h4 class='docs-link-header'>Tutorial</h4>
+            <p class="docs-link-description">Let's build a complete app, from zero to deploy.</p>
+          {{/link-to}}
+        {{/dd.content}}
+      {{/basic-dropdown}}
     </div>
-    <div class="docs-link">
-      {{inline-svg 'images/icons/docs-api-reference' class='docs-link-icon'}}
-      <h4 class='docs-link-header'>API Reference</h4>
-      <p class="docs-link-description">Detailed docs for the entire Denali framework.</p>
-    </div>
-    <div class="docs-link">
-      {{inline-svg 'images/icons/docs-guides' class='docs-link-icon'}}
-      <h4 class='docs-link-header'>Guides</h4>
-      <p class="docs-link-description">In depth walkthroughs of every aspect of Denali.</p>
-    </div>
-    <div class="docs-link">
-      {{inline-svg 'images/icons/docs-tutorial' class='docs-link-icon'}}
-      <h4 class='docs-link-header'>Tutorial</h4>
-      <p class="docs-link-description">Let's build a complete app, from zero to deploy.</p>
-    </div>
-  </div>
-  {{#link-to 'addons' class='nav-link'}}Addons{{/link-to}}
-  {{#link-to 'community' class='nav-link'}}Community{{/link-to}}
-  {{#link-to 'blog' class='nav-link'}}Blog{{/link-to}}
-</nav>
+    {{#link-to 'addons' class='nav-link'}}Addons{{/link-to}}
+    {{#link-to 'community' class='nav-link'}}Community{{/link-to}}
+    {{#link-to 'blog' class='nav-link'}}Blog{{/link-to}}
+  </nav>
 
-{{application/-page/nav/versions}}
+  {{application/-page/nav/versions}}
+</header>

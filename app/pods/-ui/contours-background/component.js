@@ -3,6 +3,8 @@ import Component from '@ember/component';
 
 export default Component.extend({
 
+  classNames: [ 'contours-background' ],
+
   didInsertElement() {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2ZXdhc21lciIsImEiOiJVZ2FzMGc4In0.HAC3HhFlNYMmbj3ZBV8BWw';
     this.set('map', new mapboxgl.Map({

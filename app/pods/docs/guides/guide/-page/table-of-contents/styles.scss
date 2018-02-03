@@ -1,11 +1,12 @@
 & {
-  @extend %sheet, %shadow-height-1;
+  @extend %sheet;
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   padding: 1em 0;
   border-radius: 2px;
   font-size: 0.8em;
+  box-shadow: $box-shadow-1;
 }
 
 .header {

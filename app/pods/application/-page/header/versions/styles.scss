@@ -5,13 +5,13 @@
 }
 
 &.version-dropdown {
-  @extend %shadow-height-1;
   flex-direction: column;
   height: auto;
   margin-top: 0.5em;
   padding: 0.5em 0;
   border-radius: 3px;
   background-color: $off-white;
+  box-shadow: $box-shadow-1;
 
   .version-link {
     display: block;
@@ -31,7 +31,6 @@
 }
 
 .version-trigger {
-  @extend %shadow-height-1;
   flex: 1 0 auto;
   padding: 0.5em;
   border-radius: 2px;
@@ -39,4 +38,5 @@
   font-size: 0.85em;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: $box-shadow-1;
 }
