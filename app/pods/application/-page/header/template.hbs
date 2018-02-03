@@ -1,0 +1,35 @@
+{{#link-to 'index' class='brand'}}
+  <img src="/images/logo.svg" alt="Denali logo" class="logo">
+  <div class="wordmark">Denali</div>
+{{/link-to}}
+
+<nav class="nav">
+  {{#link-to 'features' class='nav-link'}}Features{{/link-to}}
+  <div class="nav-hover-menu">
+    <div class="trigger nav-link">Docs</div>
+    <div class="content">
+      <h4 class='docs-link-header'>Quickstart</h4>
+      <p class="docs-link-description">Brand new to Denali? Start here!</p>
+    </div>
+    <div class="docs-link">
+      {{inline-svg 'images/icons/docs-api-reference' class='docs-link-icon'}}
+      <h4 class='docs-link-header'>API Reference</h4>
+      <p class="docs-link-description">Detailed docs for the entire Denali framework.</p>
+    </div>
+    <div class="docs-link">
+      {{inline-svg 'images/icons/docs-guides' class='docs-link-icon'}}
+      <h4 class='docs-link-header'>Guides</h4>
+      <p class="docs-link-description">In depth walkthroughs of every aspect of Denali.</p>
+    </div>
+    <div class="docs-link">
+      {{inline-svg 'images/icons/docs-tutorial' class='docs-link-icon'}}
+      <h4 class='docs-link-header'>Tutorial</h4>
+      <p class="docs-link-description">Let's build a complete app, from zero to deploy.</p>
+    </div>
+  </div>
+  {{#link-to 'addons' class='nav-link'}}Addons{{/link-to}}
+  {{#link-to 'community' class='nav-link'}}Community{{/link-to}}
+  {{#link-to 'blog' class='nav-link'}}Blog{{/link-to}}
+</nav>
+
+{{application/-page/nav/versions}}

@@ -1,0 +1,42 @@
+& {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0 1rem;
+}
+
+&.version-dropdown {
+  @extend %shadow-height-1;
+  flex-direction: column;
+  height: auto;
+  margin-top: 0.5em;
+  padding: 0.5em 0;
+  border-radius: 3px;
+  background-color: $off-white;
+
+  .version-link {
+    display: block;
+    padding: 0.5em 1em;
+    color: inherit;
+    font-size: 0.8em;
+    font-weight: 700;
+
+    &:hover {
+      background-color: rgba($black, 0.1);
+    }
+
+    &.active {
+      background-color: rgba($black, 0.1);
+    }
+  }
+}
+
+.version-trigger {
+  @extend %shadow-height-1;
+  flex: 1 0 auto;
+  padding: 0.5em;
+  border-radius: 2px;
+  background-color: $off-white;
+  font-size: 0.85em;
+  font-weight: 700;
+  cursor: pointer;
+}

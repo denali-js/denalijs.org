@@ -1,0 +1,12 @@
+  {{#basic-dropdown class='version' as |dd|}}
+    {{#dd.trigger class='version-trigger'}}
+      {{version.displayName}}
+    {{/dd.trigger}}
+    {{#dd.content class=(concat componentCssClassName ' version-dropdown')}}
+      {{#each versions as |version|}}
+        {{#-ui/change-route-model-link 'version' version.id class='version-link'}}
+          {{version.displayName}}
+        {{/-ui/change-route-model-link}}
+      {{/each}}
+    {{/dd.content}}
+  {{/basic-dropdown}}

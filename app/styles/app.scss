@@ -19,7 +19,7 @@ $api-example-bg: $code-bg;
 
 $container-width: 900px;
 
-$sans-serif: 'Lato', sans-serif;
+$sans-serif: 'Muli', sans-serif;
 $serif: 'Merriweather', serif;
 $monospace: 'Fira Code', monospaced;
 
@@ -154,6 +154,12 @@ input {
 }
 .container {
   @extend %container;
+}
+
+%flex {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
 }
 
 %sheet {

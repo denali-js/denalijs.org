@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="23px" viewBox="0 0 27 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>docs-quickstart</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-232.000000, -87.000000)">
+        <g id="docs-quickstart" transform="translate(232.000000, 86.272727)">
+            <polygon id="Path" fill="#5587D2" points="0.977272727 21.0909091 26.0227273 21.0909091 26.0227273 23.7272727 0.977272727 23.7272727"></polygon>
+            <path d="M26.7740909,8.75272727 C26.4972727,7.69818182 25.4031818,7.06545455 24.3486364,7.35545455 L17.3490909,9.22727273 L8.25363636,0.751363636 L5.70954545,1.42363636 L11.1668182,10.875 L4.61545455,12.6281818 L2.01863636,10.5981818 L0.107272727,11.1122727 L2.50636364,15.2777273 L3.52136364,17.0309091 L5.63045455,16.4640909 L12.63,14.5922727 L18.3640909,13.0631818 L25.3636364,11.1913636 C26.4313636,10.8881818 27.0509091,9.80727273 26.7740909,8.75272727 Z" id="Shape" fill="#6D9ADE" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

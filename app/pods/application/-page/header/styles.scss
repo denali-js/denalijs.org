@@ -1,0 +1,59 @@
+& {
+  @extend %container;
+  display: flex;
+  position: absolute;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: $white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+.logo {
+  width: 1.2em;
+  margin-right: 0.2em;
+}
+
+.wordmark {
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.75em 1em;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  &.active {
+    &::after {
+      content: '';
+      position: absolute;
+      right: 1.25em;
+      bottom: 0.4em;
+      left: 1.25em;
+      height: 3px;
+      background-color: $white;
+      border-radius: 2px;
+    }
+  }
+}

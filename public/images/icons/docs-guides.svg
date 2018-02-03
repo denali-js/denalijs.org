@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>docs-guides</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-231.000000, -202.000000)">
+        <g id="docs-guides" transform="translate(231.000000, 202.000000)">
+            <circle id="Oval-4" stroke="#5587D2" stroke-width="3" cx="12" cy="12" r="10.5"></circle>
+            <path d="M10.3332471,10.7695229 L15.9108501,5.48658371 L14.124492,12.9583992 L8.54688904,18.2413384 L10.3332471,10.7695229 Z M12.25,12.6999969 C12.6642136,12.6999969 13,12.3642105 13,11.9499969 C13,11.5357834 12.6642136,11.1999969 12.25,11.1999969 C11.8357864,11.1999969 11.5,11.5357834 11.5,11.9499969 C11.5,12.3642105 11.8357864,12.6999969 12.25,12.6999969 Z" id="Combined-Shape" fill="#6D9ADE"></path>
+        </g>
+    </g>
+</svg>

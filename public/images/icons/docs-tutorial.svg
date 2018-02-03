@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="22px" viewBox="0 0 32 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>docs-tutorial</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-421.000000, -204.000000)">
+        <g id="docs-tutorial" transform="translate(421.000000, 204.000000)">
+            <path d="M17.7777778,6.11111111 L0,6.11111111 L0,9.77777778 L17.7777778,9.77777778 L17.7777778,6.11111111 Z M17.7777778,0 L0,0 L0,3.66666667 L17.7777778,3.66666667 L17.7777778,0 Z M0,15.8888889 L11.8518519,15.8888889 L11.8518519,12.2222222 L0,12.2222222 L0,15.8888889 Z" id="Shape" fill="#6D9ADE" fill-rule="nonzero"></path>
+            <polygon id="Path" fill="#5587D2" points="29.6811594 8.55555556 32 10.9281046 21.1942029 22 14.2222222 14.8823529 16.5410628 12.5098039 21.1942029 17.254902"></polygon>
+        </g>
+    </g>
+</svg>
