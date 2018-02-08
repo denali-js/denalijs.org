@@ -6,6 +6,14 @@
   @include hero($brand-primary);
 }
 
+.contour-map {
+  bottom: -5em;
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
+
 .hero {
   @extend %flex;
   @extend %container;
@@ -89,6 +97,7 @@
   z-index: 2;
   width: 100vw;
   margin-top: -10em;
+  margin-bottom: -2px;
 
   .block {
     flex: 1 1 auto;
@@ -126,9 +135,17 @@
 
   .cta-link {
     position: relative;
+    display: flex;
+    align-items: center;
     color: $link-color;
     font-size: 1.2em;
     font-weight: 700;
+
+    .link-arrow {
+      width: 0.8em;
+      height: 0.8em;
+      margin-left: 0.5em;
+    }
   }
 
 }
@@ -194,12 +211,19 @@
         font-size: 1.15;
       }
 
-      .cta {
-        display: block;
+      .cta-link {
+        display: flex;
+        align-items: center;
         margin-top: 1em;
         color: $link-color;
         font-size: 1.2em;
         font-weight: 700;
+
+        .link-arrow {
+          width: 0.8em;
+          height: 0.8em;
+          margin-left: 0.5em;
+        }
       }
     }
   }
