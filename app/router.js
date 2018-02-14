@@ -8,21 +8,23 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
 
-  this.route('features', { resetNamespace: true });
-  this.route('community', { resetNamespace: true });
-  this.route('addons', { resetNamespace: true }, function() {});
-  this.route('docs', function() {
-    this.route('quickstart');
-    this.route('tutorial', function() {});
-    this.route('guides', function() {
-      this.route('guide');
-    });
-    this.route('api-reference', function() {
-      this.route('api');
+  this.route('features');
+  this.route('community');
+  this.route('roadmap');
+  this.route('addons', function() {
+    this.route('addon', { path: '/:addon' }, function() {
+      this.route('docs', { path: '/docs/*slug' });
+      this.route('api', { path: '/api/*slug'});
     });
   });
+  this.route('docs', { path: '/:version_id' }, function() {
+    this.route('quickstart');
+    this.route('tutorial', function() {});
+    this.route('guide', { path: 'guides/*slug' });
+    this.route('api', { path: 'api/*slug' });
+  });
   this.route('blog', function() {
-
+    this.route('post', { path: '/:slug' });
   });
 
 });

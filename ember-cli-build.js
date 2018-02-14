@@ -5,9 +5,6 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
-    nodeModulesToVendor: [
-      'node_modules/velocity-animate'
-    ],
     svg: {
     optimize: {
       plugins: [
@@ -32,7 +29,8 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('vendor/velocity.ui.js');
+  app.import('node_modules/velocity-animate/velocity.ui.min.js');
+  app.import('vendor/highlight.pack.js');
 
   return app.toTree();
 };

@@ -1,0 +1,16 @@
+& {
+  position: relative;
+  width: 100vw;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.wave {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100vw;
+  min-width: 70em;
+  height: 5em;
+  transform: translateX(-50%);
+}

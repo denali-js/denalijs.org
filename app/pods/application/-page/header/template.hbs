@@ -12,22 +12,22 @@
           <div class="trigger nav-link">Docs</div>
         {{/dd.trigger}}
         {{#dd.content class=(concat componentCssClassName ' content')}}
-          {{#link-to 'docs.quickstart' class='docs-link'}}
+          {{#link-to 'docs.quickstart' 'latest' class='docs-link'}}
             {{inline-svg 'images/icons/docs-quickstart' class='docs-link-icon'}}
             <h4 class='docs-link-header'>Quickstart</h4>
             <p class="docs-link-description">Brand new to Denali? Start here!</p>
           {{/link-to}}
-          {{#link-to 'docs.api-reference' class='docs-link'}}
+          {{#link-to 'docs.api' 'latest' class='docs-link'}}
             {{inline-svg 'images/icons/docs-api-reference' class='docs-link-icon'}}
             <h4 class='docs-link-header'>API Reference</h4>
             <p class="docs-link-description">Detailed docs for the entire Denali framework.</p>
           {{/link-to}}
-          {{#link-to 'docs.guides' class='docs-link'}}
+          {{#link-to 'docs.guide' 'latest' class='docs-link'}}
             {{inline-svg 'images/icons/docs-guides' class='docs-link-icon'}}
             <h4 class='docs-link-header'>Guides</h4>
             <p class="docs-link-description">In depth walkthroughs of every aspect of Denali.</p>
           {{/link-to}}
-          {{#link-to 'docs.tutorial' class='docs-link'}}
+          {{#link-to 'docs.tutorial' 'latest' class='docs-link'}}
             {{inline-svg 'images/icons/docs-tutorial' class='docs-link-icon'}}
             <h4 class='docs-link-header'>Tutorial</h4>
             <p class="docs-link-description">Let's build a complete app, from zero to deploy.</p>

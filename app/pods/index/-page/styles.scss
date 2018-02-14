@@ -17,11 +17,13 @@
 .hero {
   @extend %flex;
   @extend %container;
+  position: relative;
   flex-direction: row;
   align-items: flex-start;
   padding-top: 3em;
-  padding-bottom: 3em;
+  padding-bottom: 2em;
   color: $white;
+  z-index: 2;
 
   .terminal-wrapper {
     display: flex;
@@ -89,25 +91,6 @@
     font-size: 1.15em;
   }
 
-}
-
-.transition {
-  display: flex;
-  position: relative;
-  z-index: 2;
-  width: 100vw;
-  margin-top: -10em;
-  margin-bottom: -2px;
-
-  .block {
-    flex: 1 1 auto;
-    margin-top: 56px;
-    background-color: $white;
-  }
-
-  .wave {
-    flex: 0 0 auto;
-  }
 }
 
 .features {

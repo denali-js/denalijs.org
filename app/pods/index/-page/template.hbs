@@ -13,7 +13,7 @@
         developer experience, and extensive documentation.
       </p>
       <div class="cta">
-        {{#link-to 'docs.quickstart' class='cta-primary'}}Quickstart{{/link-to}}
+        {{#link-to 'docs.quickstart' 'latest' class='cta-primary'}}Quickstart{{/link-to}}
         {{#link-to 'features' class='cta-secondary'}}Features{{/link-to}}
       </div>
     </div>
@@ -31,11 +31,7 @@
 
   </div>
 
-  <div class="transition">
-    <div class="block"></div>
-    <img src='images/transition-wave.svg' class='wave'>
-    <div class="block"></div>
-  </div>
+  {{-ui/transition}}
 {{/-ui/contours-background}}
 
 <div class="features">
@@ -50,7 +46,7 @@
       power of your data store with ORM Adapters, which let you bring your
       own ORM.
     </p>
-    {{#link-to 'docs.guides' class='cta-link'}}
+    {{#link-to 'docs.guide' 'latest' 'data/orm-adapters' class='cta-link'}}
       Learn about ORM Adapters
       {{inline-svg 'images/icons/link-arrow' class='link-arrow'}}
     {{/link-to}}
@@ -82,7 +78,7 @@
       versioned docs to debugging tools, building with Denali leaves you
       with a smile.
     </p>
-    {{#link-to 'docs.guides' class='cta-link'}}
+    {{#link-to 'docs.guide' 'latest' 'cli/overview' class='cta-link'}}
       Check out the CLI docs
       {{inline-svg 'images/icons/link-arrow' class='link-arrow'}}
     {{/link-to}}

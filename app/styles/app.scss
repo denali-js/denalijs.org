@@ -1,15 +1,16 @@
 @import 'normalize';
 @import 'fira-code-font';
-@import "ember-basic-dropdown";
+@import 'syntax-highlighting';
+@import 'ember-basic-dropdown';
 
 $white: #fff;
 $black: #000;
 $off-white: darken($white, 2%);
 $brand-primary: #1359BF;
 $brand-primary-dark: #15517c;
-$text-color: #58798B;
-$text-color-dark: #3D4C5F;
-$text-color-hover: rgb(47, 55, 66);
+$text-color: rgb(45, 64, 75);
+$text-color-dark: rgb(42, 54, 70);
+$text-color-hover: rgb(21, 28, 39);
 $light-text-color: $text-color; // TODO: remove
 $link-color: $brand-primary;
 $button-primary: #00CB63;
@@ -19,7 +20,7 @@ $callout-bg: #F2F7FA;
 $callout-bg-dark: #3D4C5F;
 $guides-bg: #11865f;
 $api-bg: #3d3c8d;
-$code-bg: #393942;
+$code-bg: #f6f6fa;
 $api-example-bg: $code-bg;
 
 $container-width: 900px;
@@ -86,18 +87,6 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
   color: $text-color-dark;
   font-weight: 700;
-
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   top: 100%;
-  //   left: 0;
-  //   margin-top: 0.25em;
-  //   width: 5em;
-  //   height: 2px;
-  //   border-radius: 100px;
-  //   background-color: rgba($text-color, 0.7);
-  // }
 }
 
 %no-line-heading::after {
@@ -105,7 +94,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-  line-height: 1.3;
+  margin-top: 1em;
+  margin-bottom: 0;
+  line-height: 1.7;
 }
 
 pre {

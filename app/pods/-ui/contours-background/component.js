@@ -11,7 +11,8 @@ export default Component.extend({
       container: this.$('.contour-map').get(0),
       style: 'mapbox://styles/davewasmer/cj6s69ue353832so3rtxqvjza',
       center: [ -150.92775335734382, 62.72646930353406 ],
-      zoom: 11.16
+      zoom: 11.16,
+      scrollZoom: false
     }));
   }
 

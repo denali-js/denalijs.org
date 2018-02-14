@@ -2,6 +2,7 @@ import ENV from 'denali/config/environment';
 
 export default function() {
 
+  this.logging = true;
   this.urlPrefix = ENV.api.host;
   this.namespace = ENV.api.namespace;
 
@@ -15,45 +16,16 @@ export default function() {
              (addon.description.indexOf(query) > -1);
     });
   });
-
-  this.get('/addons/:name', function({ addons }, { params }) {
-    return addons.findBy((addon) => addon.name === params.name);
+  this.get('/addons/:id');
+  this.get('/addons/:id/versions', function({ addons }, { params }) {
+    let addon = addons.find(params.id);
+    return addon.versions;
   });
-
-  this.get('/versions', function({ versions }, { queryParams }) {
-    let id = queryParams.version;
-    if (!id) {
-      return versions.all();
-    }
-    if (id.includes('.')) {
-      return versions.find(id);
-    }
-    return versions.findBy((version) => {
-      return version.channel === id || version.name === id;
-    });
+  this.get('/versions/:id');
+  this.get('/versions/:id/doc', function({ versions }, { params }) {
+    let version = versions.find(params.id);
+    return version.doc;
   });
-
-  this.get('/versions/:id', function({ versions }, { params }) {
-    let id = params.id;
-    if (id.includes('.')) {
-      return versions.find(id);
-    }
-    return versions.findBy((version) => {
-      return version.channel === id || version.name === id;
-    });
-  });
-
-  this.get('/guides/:id', function({ guides }, { params }) {
-    let [ version, slug ] = params.id.split(':');
-    return guides.findBy((guide) => {
-      return guide.versionId === version && guide.slug === slug;
-    });
-  });
-
-  this.get('/apis/:id');
-  this.get('/api-classes/:id');
-  this.get('/api-functions/:id');
-  this.get('/api-interfaces/:id');
 
   this.passthrough('https://api.mapbox.com/**');
 

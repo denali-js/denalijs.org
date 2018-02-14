@@ -1,486 +1,123 @@
+{{#-ui/contours-background}}
+  <div class="hero">
+    <h1 class="headline">
+      Why Denali?
+    </h1>
+    <p class="subhead">
+      Choosing a framework is tricky business. Let's run through what makes
+      Denali unique, and when it might be a good choice for you.
+    </p>
+  </div>
+
+  {{-ui/transition}}
+{{/-ui/contours-background}}
+
 <div class="features">
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/testing.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Testing baked in
-        </h2>
-        <p class="description">
-          Denali has testing baked into the core framework. In fact, Denali's
-          own test suite uses the same tooling that apps and addons do. Whether
-          it's fully mocked acceptance tests or unit testing modules via
-          Denali's dependency injection system, we've got you covered.
-        </p>
-        {{#link-to 'docs.guides' class='cta-link'}}
-          Check out the testing tools
-        {{/link-to}}
+  {{#each featureSections as |section|}}
+    <div class="feature-section">
+      <h2 class="feature-section-headline">{{section.headline}}</h2>
+      <p class="feature-section-subhead">{{section.subhead}}</p>
+      <div class="feature-tiles">
+        {{#each section.features as |feature|}}
+          <div class="feature-tile">
+            {{!inline-svg (concat 'images/icons/' feature.icon) class='feature-tile-icon'}}
+            <h3 class="headline">
+              {{feature.headline}}
+            </h3>
+            <p class="description">
+              {{feature.description}}
+            </p>
+            {{!-- This silliness is because Ember can't splat :eyeroll: --}}
+            {{#if feature.linkModel2}}
+              {{#link-to feature.link feature.linkModel1 feature.linkModel2 class='cta-link'}}
+                {{feature.linkText}}
+                {{inline-svg 'images/icons/link-arrow' class='link-arrow'}}
+              {{/link-to}}
+            {{else if feature.linkModel1}}
+              {{#link-to feature.link feature.linkModel1 class='cta-link'}}
+                {{feature.linkText}}
+                {{inline-svg 'images/icons/link-arrow' class='link-arrow'}}
+              {{/link-to}}
+            {{else}}
+              {{#link-to feature.link class='cta-link'}}
+                {{feature.linkText}}
+                {{inline-svg 'images/icons/link-arrow' class='link-arrow'}}
+              {{/link-to}}
+            {{/if}}
+          </div>
+        {{/each}}
       </div>
-
     </div>
-  </div>
-
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/languages.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Bring your own language
-        </h2>
-        <p class="description">
-          The CLI is built around a powerful build system, allowing you to
-          author your code in any language you want. Apps and addons can mix
-          and match languages with ease. Plus, Denali itself is written in
-          Typescript, so type definitions are always up to date.
-        </p>
-        {{#link-to 'addons' class='cta-link'}}
-          Add a language compiler to your project
-        {{/link-to}}
-      </div>
-
-    </div>
-  </div>
-
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/realtime.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Realtime ready
-        </h2>
-        <p class="description">
-          First class realtime abstractions let you build modern mobile and web
-          apps with ease. Denali focuses on giving you the right abstractions
-          to get the job done well.
-        </p>
-        Coming soon
-      </div>
-
-    </div>
-  </div>
-
-  <div class="feature">
-    <div class="container">
-
-      <img src="/images/features/community.svg" alt="" class="graphic">
-
-      <div class="copy">
-        <h2 class="headline">
-          Helping hands when you need it
-        </h2>
-        <p class="description">
-          With an active Slack community, quick answers to StackOverflow
-          questions, a discussion forum for longer threads, and weekly free
-          office hours with core team, you'll get the help you need and feel
-          right at home.
-        </p>
-        {{#link-to 'community' class='cta-link'}}
-          Find some help
-        {{/link-to}}
-      </div>
-
-    </div>
-  </div>
-</div><div class="hero">
-  <h1 class="headline">Why Denali?</h1>
+  {{/each}}
 </div>
-
-<img class="transition-wave" src="/images/transition-wave-2.svg" alt="">
 
 <div class="comparison">
-  <div class="container">
-    <div class="body">
-      {{#liquid-bind activeComparisonSection class="active-comparison" as |activeSection|}}
-
-        {{#if (eq activeSection 'rails')}}
-          <h3 class="headline">
-            Denali strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Write in JavaScript - a single language throughout your entire stack,
-              no context switching between your frontend and backend.
-            </li>
-            <li>
-              Node's event loop model and JavaScript's async nature handles
-              the concurrency endemic to the modern web far better than
-              Rails. I.e. for most async tasks like sending emails, there's
-              no need for a job queue - just send the email asynchronously
-              from your Action.
-            </li>
-          </ul>
-          <h3 class="headline">
-            Rails strengths
-          </h3>
-          <ul>
-            <li>
-              Much larger, more mature ecosystem means easier to find help, talent,
-              third party libraries, etc.
-            </li>
-            <li>
-              Synchronous Ruby code can in some cases be easier to reason about than
-              async/await in JavaScript.
-            </li>
-          </ul>
-
-        {{else if (eq activeSection 'phoenix')}}
-          <h3 class="headline">
-            Denali strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Write in JavaScript - a single language throughout your entire stack,
-              no context switching between your frontend and backend.
-            </li>
-            <li>
-              Denali lets you bring your own ORM - it isn't tied to a specific one.
-              This lets you leverage the right datastore for the right job, without
-              sacrificing framework support.
-            </li>
-            <li>
-              JavaScript is a multi-paradigm language - write functional code
-              if you want, or switch to object-oriented when it's a better
-              fit.
-            </li>
-            <li>
-              API-first: Denali is focused on shipping APIs, first and foremost.
-              There's no views, layouts, or other HTML rendering infrastructure
-              out of the box (though you can add them if you want).
-            </li>
-          </ul>
-          <h3 class="headline">
-            Phoenix strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              The Erlang VM brings fault-tolerance to the language runtime,
-              making fault-tolerant deployment simpler since it's baked in.
-            </li>
-            <li>
-              The Erlang VM can handle concurrency extremely well - one of
-              the few runtimes that is better than Node at this. If you need
-              to scale to millions of concurrent connections, Erlang can
-              handle that more easily than Node.
-            </li>
-            <li>
-              If you enjoy functional programming, the Elixir language
-              supports powerful primitives for it.
-            </li>
-            <li>
-              HTML rendering built in. If you are building a server rendered app
-              rather than an API, Phoenix is probably a better choice than Denali.
-            </li>
-          </ul>
-
-        {{else if (eq activeSection 'sails')}}
-          <h3 class="headline">
-            Denali strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Denali's baked-in build step means support for any
-              compile-to-JS language, with no runtime performance hits. Want
-              to use Typescript? No problem - in fact, Denali itself is
-              written in Typescript!
-            </li>
-            <li>
-              Denali's addon system is a highly flexible, powerful way to
-              share code through mini app-like structures.
-            </li>
-            <li>
-              Denali lets you bring your own ORM - it isn't tied to a
-              specific one. This lets you leverage the right datastore for
-              the right job, without sacrificing framework support.
-            </li>
-            <li>
-              API-first: Denali is focused on shipping APIs, first and foremost.
-              There's no views, layouts, or other HTML rendering infrastructure
-              out of the box (though you can add them if you want).
-            </li>
-          </ul>
-          <h3 class="headline">
-            Sails strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Sails has been around much longer than Denali, meaning
-              potentially more resources to get help.
-            </li>
-            <li>
-              HTML rendering built in. If you are building a server rendered app
-              rather than an API, Sails is probably a better choice than Denali.
-            </li>
-          </ul>
-
-        {{else if (eq activeSection 'express')}}
-          <h3 class="headline">
-            Denali strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Denali's baked-in build step means support for any
-              compile-to-JS language, with no runtime performance hits. Want
-              to use Typescript? No problem - in fact, Denali itself is
-              written in Typescript!
-            </li>
-            <li>
-              Denali's addon system is a highly flexible, powerful way to
-              share code through mini app-like structures.
-            </li>
-            <li>
-              Denali provides a set of strong conventions and patterns to
-              structure your app around, making it easy to get started fast,
-              to scale up, and to work with others.
-            </li>
-          </ul>
-          <h3 class="headline">
-            Express strengths
-          </h3>
-          <ul class="comparison-points">
-            <li>
-              Express has a smaller API surface, making it simpler to
-              understand the entire framework. If you are building very
-              simple apps, there may be less mental overhead with Express.
-            </li>
-            <li>
-              The most popular Node.js server framework by far - lots of other people
-              have probably encountered any issue you might run into.
-            </li>
-          </ul>
-
-        {{else}}
-          <h3 class="headline">
-            Why should I go with Denali?
-          </h3>
-          <p>
-            We hear this a lot, and it’s tempting to answer this with the usual platitudes:
-          </p>
-          <p class="quote">
-            It's "clean", it's "modern", it's "fast", ...
-          </p>
-          <p>
-            Here’s the problem: that doesn’t tell you much about Denali, but more importantly:
-            <strong>choosing a framework like Denali isn't something that happens in a vaccuum.</strong>
-          </p>
-          <p>
-            In reality, the question  isn't:
-          </p>
-          <p class="quote">
-            Why should I choose Denali?
-          </p>
-          <p>
-            But rather:
-          </p>
-          <p class="quote">
-            Why should I choose Denali <strong>vs. ${framework}</strong>
-          </p>
-          <p>
-            So we’ve put together some comparisons with common alternatives, to
-            help you get a better sense of how Denali fits into the bigger
-            picture. Despite our bias, we tried to be as objective as we could 😉
-          </p>
-        {{/if}}
-      {{/liquid-bind}}
+  <h1 class="section-header">Framework Comparison</h1>
+  <p class="section-subhead">See how Denali stacks up against other popular frameworks, and the pros/cons for each.</p>
+  <div class="master-detail">
+    <div class="master">
+      {{#each comparisons as |comparison index|}}
+        <div class="item {{if (eq index activeComparisonIndex) 'active'}}" {{action (mut activeComparisonIndex) index}}>
+          <img src="/images/comparison/{{comparison.logo}}" alt={{comparison.headline}} class="comparison-logo">
+        </div>
+      {{/each}}
     </div>
-    <div class="menu">
-      <h3 class="headline">
-        Denali
-        <small>vs.</small>
-      </h3>
-      <div class="options">
-        <div class="option {{if (eq activeComparisonSection 'rails') 'active'}}" {{action (mut activeComparisonSection) 'rails'}}>
-          <img src="/images/comparison/rails.png" alt="" class="logo">
-          <div class="name">Ruby on Rails</div>
-          <div class="language">Ruby</div>
+    <div class="detail">
+      <h2 class="comparison-headline">
+      {{activeComparison.name}}
+      </h2>
+      <p class="summary">
+        {{activeComparison.summary}}
+      </p>
+      <div class="pros-and-cons">
+        <div class="pros">
+          <div class="headline">Advantages for Denali</div>
+          <ul>
+            {{#each activeComparison.pros as |pro|}}
+              <li class="pro">{{pro}}</li>
+            {{/each}}
+          </ul>
         </div>
-        <div class="option {{if (eq activeComparisonSection 'phoenix') 'active'}}" {{action (mut activeComparisonSection) 'phoenix'}}>
-          <img src="/images/comparison/phoenix.png" alt="" class="logo">
-          <div class="name">Phoenix</div>
-          <div class="language">Elixir</div>
-        </div>
-        <div class="option {{if (eq activeComparisonSection 'sails') 'active'}}" {{action (mut activeComparisonSection) 'sails'}}>
-          <img src="/images/comparison/sails.png" alt="" class="logo">
-          <div class="name">Sails.js</div>
-          <div class="language">Node.js</div>
-        </div>
-        <div class="option {{if (eq activeComparisonSection 'express') 'active'}}" {{action (mut activeComparisonSection) 'express'}}>
-          <img src="/images/comparison/express.png" alt="" class="logo">
-          <div class="name">Express</div>
-          <div class="language">Node.js</div>
+        <div class="cons">
+          <div class="headline">Advantages for {{activeComparison.shortName}}</div>
+          <ul>
+            {{#each activeComparison.cons as |con|}}
+              <li class="con">{{con}}</li>
+            {{/each}}
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
 <div class="doctrine">
-  <div class="container">
+  <h1 class="section-header">The Denali Doctrine</h1>
+  <p class="section-subhead">
+    The Rails Doctrine describes how <a href="http://rubyonrails.org/doctrine/">
+    technological advantages erode over time</a>. Today's features
+    are important, but Denali's vision for tomorrow is just as much so. With
+    that in mind, here's a few philosophical points that help guide our
+    direction, partially inspired by that same article. Expect these to evolve
+    over time.
+  </p>
 
-    <h2 class="headline">
-      The Denali Doctrine
-    </h2>
-
-    <p class="subhead">
-      The Rails Doctrine describes how <a href="http://rubyonrails.org/doctrine/">
-      technological advantages erode over time</a>. Today's features
-      are important, but Denali's vision for tomorrow is just as much so. With
-      that in mind, here's a few philosophical points that help guide our
-      direction, partially inspired by that same article:
-    </p>
-
-    <ol class="doctrine-points">
-
+  <ol class="doctrine-points">
+    {{#each doctrinePoints as |point|}}
       <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Optimize for developer productivity
-        </h3>
-        <p class="doctrine-description">
-          Using Denali is a user experience - and we should treat it as such.
-          We should be continually asking ourselves: what can Denali do to help
-          developers work faster, smarter, happier?
-        </p>
-        <p class="doctrine-description">
-          A great user experience is one that feels effortless. It anticpates
-          failure scenarios and handles them gracefully. It leaves the user
-          with a clear picture of "what's next", of how to solve the problem,
-          and how to accomplish their goals. With each aspect of Denali, try to
-          keep this at the heart.
-        </p>
+        <h2 class="title">
+          {{point.headline}}
+        </h2>
+        {{#each point.paragraphs as |graf|}}
+          <p class="description">{{graf}}</p>
+        {{/each}}
       </li>
+    {{/each}}
+  </ol>
 
-      <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Find the right abstractions
-        </h3>
-        <p class="doctrine-description">
-          Denali is a framework for leveraging shared solutions to shared
-          problems. The way to leverage shared solutions is to find the right
-          abstractions. The right abstraction exposes just the right levers
-          in just the right places; too many levers, and you haven't fully
-          captured the <em>shared</em> aspect of the solution. Too few, and
-          you've over-simplified the problem.
-        </p>
-        <p class="doctrine-description">
-          Put differently, a good abstraction minimizes accidental complexity
-          while maximizing control over essential complexity. It provides a
-          simple approach to solving the common use cases, while exposing
-          more power to those that need it.
-        </p>
-        <p class="doctrine-description">
-          Finding the right abstraction is hard; inventing it from whole
-          cloth is even harder. Instead, Denali tries to leverage it's
-          core/userland model (see #3) to allow for experimentation to
-          <em>discover</em> the best abstractions through real world
-          application, without subjecting users to too much API churn.
-        </p>
-      </li>
-
-      <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Stability without stagnation
-        </h3>
-        <p class="doctrine-description">
-          Denali aims to foster a stable core, while encouraging progress,
-          experimentation, and innovation through "userland" addons.
-        </p>
-        <p class="doctrine-description">
-          We often talk about “core” versus “userland”, terms inspired by
-          language used to describe an operating system kernel. “Core” (or,
-          "kernel" in OS-talk) is a minimal set of highly trusted, rock solid
-          code that exposes basic primitives (the right abstractions - see
-          #2). “Userland”, meanwhile, refers to Denali apps and addons, which
-          are less bound by the strict stability guarantees of core. This
-          reduce stability guarantee in turn allows for greater experimentation.
-        </p>
-        <p class="doctrine-description">
-          By allowing userland code to experiment and move quickly, we can
-          uncover the right abstractions, even occasionally adopting them
-          back into core, without excessive API churn.
-        </p>
-      </li>
-
-      <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Follow the 80/18 rule
-        </h3>
-        <p class="doctrine-description">
-          Denali attempts to solve 80% of use cases well. We should plan
-          features and interfaces with this group in mind, and aim make their
-          experience delightful.
-        </p>
-        <p class="doctrine-description">
-          For most of the remaining 20% (the “18%”), we make sure to provide
-          “escape hatches”. These use cases might not be the principal ones we
-          design around, but they should be possible to accomplish without
-          feeling like you are fighting the framework.
-        </p>
-        <p class="doctrine-description">
-          We purposefully leave out the remaining small fraction of use cases
-          (the “2%”). This is an admission that we’re never going to solve
-          every use case, nor should we. There are other choices out there
-          besides Denali that are likely better suited.
-        </p>
-      </li>
-
-      <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Marketing matters
-        </h3>
-        <p class="doctrine-description">
-          Most of us would like to think that technology adoption is a purely
-          rational, well thought out process of weighing tradeoffs and picking
-          the best technical solution. Unfortunately, that’s usually not reality.
-        </p>
-        <p class="doctrine-description">
-          This can be frustrating: vanity metrics and microbenchmarks often
-          don't measure realistic metrics, and most users would never come
-          close to those limits in any case. It's tempting to dismiss such
-          discussion as "unimportant", and instead focus on a "purer"
-          implementation of Denali.
-         </p>
-         <p class="doctrine-description">
-           We reject this approach. Perception and marketing matter, to some
-           extent. To phrase it more concretely: Denali will probably never
-           be the fastest web framework out there by any microbenchmark
-           standard. But we at least want to show up on the same graph.
-        </p>
-      </li>
-
-      <li class="doctrine-point">
-        <h3 class="doctrine-title">
-          Respect
-        </h3>
-        <p class="doctrine-description">
-          The Internet is a challenging place to foster great culture, so we
-          have to be intentional about it. A great culture can help a project
-          like Denali blossom and thrive - and a caustic one will kill it off
-          before it can even germinate.
-        </p>
-        <p class="doctrine-description">
-          The cardinal rule for participating in Denali's community is: treat
-          everyone with respect. Behavior to the contrary is not welcome here.
-        </p>
-        <p class="doctrine-description">
-          We aim to treat everyone with respect, to always remember the human
-          on the other side of the keyboard, to start with the assumption of
-          good faith motivation, and the always argue the best intepretation.
-        </p>
-      </li>
-
-    </ol>
-
-    <div class="doctrine-footnote">
-      Many of these ideas borrow heavily from the philosophies of other great
-      frameworks, especially Rails and Ember. We readily admit that we stand
-      on the shoulders of those giants.
-    </div>
-
+  <div class="doctrine-footnote">
+    Many of these ideas borrow heavily from the philosophies of other great
+    frameworks, especially Rails and Ember. We readily admit that we stand
+    on the shoulders of those giants.
   </div>
 </div>

@@ -1,0 +1,33 @@
+& {
+  @extend %flex;
+}
+
+.contours-background {
+  @include hero($brand-primary);
+}
+
+.quickstart-hero {
+  @extend %flex;
+  @extend %container;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  color: $white;
+  z-index: 2;
+}
+
+.quickstart-body {
+  @extend %flex;
+  @extend %container;
+  align-items: center;
+
+  .page-body {
+    line-height: 1.5;
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}
