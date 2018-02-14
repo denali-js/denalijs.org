@@ -26,6 +26,14 @@
   .page-body {
     line-height: 1.5;
 
+    .body {
+      order: 2;
+    }
+
+    .table-of-contents {
+      order: 1;
+    }
+
     p {
       line-height: 1.5;
     }

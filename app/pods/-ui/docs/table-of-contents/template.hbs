@@ -2,7 +2,11 @@
   <div class="toc-container">
     <div class="header">Contents</div>
     {{#each entries as |entry|}}
-      <a href="#{{entry.slug}}" class="toc-link {{if (eq tocPosition entry.slug) 'active'}} level-{{entry.level}}" {{action 'scrollToTarget' entry.slug}}>{{entry.text}}</a>
+      {{#if entry.slug}}
+        <a href="#{{entry.slug}}" class="toc-link {{if (eq tocPosition entry.slug) 'active'}} level-{{entry.level}}" {{action 'scrollToTarget' entry.slug}}>{{entry.text}}</a>
+      {{else}}
+        <div class="toc-group">{{entry.text}}</div>
+      {{/if}}
     {{/each}}
   </div>
 {{/sticky-element}}

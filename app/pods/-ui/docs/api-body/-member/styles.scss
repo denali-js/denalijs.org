@@ -16,20 +16,8 @@ $reference-width: 600px;
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 0.75em;
+  // margin-bottom: 0.75em;
   font-weight: 900;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 3px;
-    width: 3em;
-    margin-top: 0.2em;
-    border-radius: 3px;
-    background-color: lighten($text-color, 30%);
-  }
 }
 
 .source {

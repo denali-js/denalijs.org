@@ -27,7 +27,7 @@ export default Component.extend({
 
   didInsertElement() {
     run.next(() => {
-      let headers = this.$(document).find('.page-body h1,h2,h3,h4,h5,h6');
+      let headers = this.$(document).find('h1,h2,h3,h4,h5,h6,[data-toc-anchor]');
       this.$(document).on('scroll.toc-scrollspy', () => {
         let scroll = this.$(document).scrollTop();
         let threshold = scroll + 100;

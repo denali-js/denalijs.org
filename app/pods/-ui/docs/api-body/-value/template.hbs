@@ -1,4 +1,6 @@
-{{#if value.name}}
+{{#if hasBlock}}
+  {{yield}}
+{{else if value.name}}
   <div class="value-name">{{value.name}}</div>
 {{/if}}
 {{#if value.type}}

@@ -1,14 +1,14 @@
-<div class="member-header">
+<div class="member-header" data-toc-anchor id="{{slugify method.name}}">
   <div class="signatures">
     <div class="primary signature">
       <div class="method-name">{{method.name}}</div>
-      <div class="paren">(</div> 
+      <div class="paren">(</div>
         {{#each primarySignature.parameters as |parameter|}}
-          {{docs/apis/api/-page/value value=parameter}}
+          {{-ui/docs/api-body/-value value=parameter}}
         {{/each}}
-      <div class="paren">)</div> 
+      <div class="paren">)</div>
       <div class="return">
-        {{docs/apis/api/-page/value value=primarySignature.return forceColon=true}}
+        {{-ui/docs/api-body/-value value=primarySignature.return forceColon=true}}
       </div>
       {{#if overloads}}
         <div class="overload-count">
@@ -21,13 +21,13 @@
         {{#each overloads as |overload|}}
           <div class="signature">
             <div class="method-name">{{method.name}}</div>
-            <div class="paren">(</div> 
+            <div class="paren">(</div>
               {{#each overload.parameters as |parameter|}}
-                {{docs/apis/api/-page/value value=parameter}}
+                {{-ui/docs/api-body/-value value=parameter}}
               {{/each}}
-            <div class="paren">)</div> 
+            <div class="paren">)</div>
             <div class="return">
-              {{docs/apis/api/-page/value value=overload.returns}}
+              {{-ui/docs/api-body/-value value=overload.returns}}
             </div>
           </div>
         {{/each}}
@@ -35,14 +35,7 @@
     {{/if}}
   </div>
 
-  {{docs/apis/api/-page/flags entry=method}}
-</div>
-
-<div class="source">
-  defined in
-  <a href="https://github.com/denali-js/denali/blob/v{{version.semver}}/{{method.file}}#L{{method.line}}" target="_blank">
-    {{method.file}} on line {{method.line}}
-  </a>
+  {{-ui/docs/api-body/-flags entry=method}}
 </div>
 
 {{markdown-to-html method.description class='method-description'}}
@@ -53,7 +46,7 @@
     {{#each primarySignature.parameters as |parameter|}}
       <div class="parameter">
         <div class="parameter-name">
-          {{docs/apis/api/-page/value value=parameter}}
+          {{-ui/docs/api-body/-value value=parameter}}
         </div>
         <div class="description">
           {{parameter.description}}
@@ -65,8 +58,15 @@
 
 <div class="method-return">
   <div class="method-section-header">Returns</div>
-  {{docs/apis/api/-page/value value=primarySignature.return}}
+  {{-ui/docs/api-body/-value value=primarySignature.return}}
   <div class="description">
     {{method.description}}
   </div>
+</div>
+
+<div class="source">
+  defined in
+  <a href="https://github.com/denali-js/denali/blob/v{{version.semver}}/{{method.file}}#L{{method.line}}" target="_blank">
+    {{method.file}} on line {{method.line}}
+  </a>
 </div>

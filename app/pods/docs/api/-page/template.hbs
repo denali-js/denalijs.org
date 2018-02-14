@@ -2,13 +2,14 @@
   <div class="api-hero">
     <div class="api-nav-container">
       {{#sticky-element top=50}}
-        {{docs/api/-page/api-nav apis=doc.api currentVersion=version.displayName}}
+        {{docs/api/-page/api-nav api=doc.api currentVersion=version.displayName class='api-nav'}}
       {{/sticky-element}}
     </div>
-    {{-ui/docs/api-hero api=api class='apis-hero-intro'}}
+    {{-ui/docs/api-hero entry=api class='apis-hero-intro'}}
   </div>
   {{-ui/transition}}
 {{/-ui/contours-background}}
 <div class="api-body">
-  {{component kindComponentName api=api}}
+  {{component kindComponentName entry=api}}
+  {{-ui/docs/table-of-contents entries=outline}}
 </div>

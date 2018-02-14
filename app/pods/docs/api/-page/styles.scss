@@ -1,4 +1,4 @@
-$apis-nav-width: 11em;
+$apis-nav-width: 13em;
 
 & {
   @extend %flex;
@@ -17,10 +17,9 @@ $apis-nav-width: 11em;
   align-items: flex-start;
   padding-top: 3em;
   padding-bottom: 2em;
-  color: $white;
   z-index: 2;
 
-  .apis-nav-container {
+  .api-nav-container {
     position: absolute;
     left: 0;
     margin-top: 3em;
@@ -28,18 +27,17 @@ $apis-nav-width: 11em;
     z-index: 2;
   }
 
-  .apis-nav {
+  .api-nav {
     @extend %flex;
     @extend %sheet;
     width: $apis-nav-width;
     padding-bottom: 0.5em;
     border-radius: $border-radius;
-    color: $text-color;
-    // box-shadow: $box-shadow-1;
   }
 
   .apis-hero-intro {
     padding-left: $apis-nav-width + 2em;
+    color: $white;
   }
 }
 

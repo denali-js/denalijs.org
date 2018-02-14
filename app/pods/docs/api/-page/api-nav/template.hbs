@@ -1,30 +1,32 @@
-<nav class="apis">
-  {{#if groupByPackage}}
-    {{#each-in byPackage as |pkgName apis|}}
-      <div class="apis-group">
-        <div class="group-header">
-          {{pkgName}}
+{{#each-in api.packages as |packageName package|}}
+  <div class="package">
+    <div class="package-header">{{packageName}}</div>
+    <div class="package-list">
+
+      {{#if (not (is-object-empty package.classes))}}
+        <div class="classes">
+          {{#each-in package.classes as |className class|}}
+            {{#link-to 'docs.api' (api-slug packageName 'class' className) class="class api-link"}}{{className}}{{/link-to}}
+          {{/each-in}}
         </div>
-        <div class="group-list">
-          {{#each apis as |api|}}
-            {{#link-to 'docs.apis.api' version.id api.slug title=api.shortDisplayName class='api-link'}}
-              <i class='api-kind-icon {{api.kind}}'></i>
-              {{api.shortDisplayName}}
-            {{/link-to}}
+      {{/if}}
+
+      {{#if package.functions}}
+        <div class="functions">
+          {{#each package.functions as |function|}}
+            {{#link-to 'docs.api' (api-slug packageName 'function' function.name) class="function api-link"}}{{function.name}}{{/link-to}}
           {{/each}}
         </div>
-      </div>
-    {{/each-in}}
-  {{else}}
-    <div class="apis-group">
-      <div class="group-list">
-        {{#each ungrouped as |api|}}
-          {{#link-to 'docs.apis.api' version.id api.slug title=api.shortDisplayName class='api-link'}}
-            <i class='api-kind-icon {{api.kind}}'></i>
-            {{api.shortDisplayName}}
-          {{/link-to}}
-        {{/each}}
-      </div>
+      {{/if}}
+
+      {{#if (not (is-object-empty package.interfaces))}}
+        <div class="interfaces">
+          {{#each-in package.interfaces as |interfaceName interface|}}
+            {{#link-to 'docs.api' (api-slug packageName 'interface' interfaceName) class="interface api-link"}}{{interfaceName}}{{/link-to}}
+          {{/each-in}}
+        </div>
+      {{/if}}
+
     </div>
-  {{/if}}
-</nav>
+  </div>
+{{/each-in}}

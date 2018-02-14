@@ -6,7 +6,11 @@ export function lookupApi([ api, slug ]) {
   }
   let [ pkg, kind, id ] = slug.split('/');
   try {
-    return api.packages[pkg][kind][id];
+    let allOfKind = api.packages[pkg][kind]
+    if (Array.isArray(allOfKind)) {
+      return allOfKind.find((item) => item.name === id)
+    }
+    return allOfKind[id];
   } catch (e) {
     return null;
   }
