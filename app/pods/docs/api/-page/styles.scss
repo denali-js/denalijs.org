@@ -41,18 +41,14 @@ $apis-nav-width: 13em;
   }
 }
 
-.api-body {
+.api-main {
   @extend %flex;
   @extend %container;
   flex-direction: row;
   align-items: flex-start;
   padding-left: $apis-nav-width + 2em;
 
-  .page-body {
-    line-height: 1.5;
-
-    p {
-      line-height: 1.5;
-    }
+  .api-body {
+    padding-right: 2em;
   }
 }

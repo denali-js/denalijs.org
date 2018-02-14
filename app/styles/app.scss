@@ -37,6 +37,8 @@ $sans-serif: 'Muli', sans-serif;
 $serif: 'Merriweather', serif;
 $monospace: 'Fira Code', monospaced;
 
+@import 'markdown-content';
+
 @mixin breakpoint-below($width) {
   @media(max-width: $width) {
     @content;
