@@ -1,0 +1,23 @@
+& {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  margin-top: 4em;
+}
+
+.class-name {
+  @extend %no-line-heading;
+  margin: 0.25em 0 0;
+  font-size: 3em;
+}
+
+.class-source {
+  color: lighten($text-color, 50%);
+  font-style: italic;
+}
+
+.lede {
+  font-family: $serif;
+  font-weight: 200;
+  font-style: italic;
+}
