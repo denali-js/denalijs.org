@@ -1,0 +1,59 @@
+.guide-node {
+  @extend %flex;
+}
+
+.guide-root,
+.guide-group-toggle {
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  user-select: none;
+}
+
+.guide-root {
+  padding: 1rem;
+  border-bottom: 1px solid mix($white, $guides-bg, 90%);
+  color: mix($white, $guides-bg, 30%);
+  font-weight: 900;
+}
+
+.guide-group-toggle {
+  margin-top: 0.5em;
+  padding: 0.5rem 0.75rem 0.3rem;
+  color: mix($white, $guides-bg, 50%);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.guide-link {
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  padding: 0.25em 1rem;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  transform-origin: 2em 50%;
+
+  &.active, &:hover {
+    color: $text-color-dark;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0.5em;
+      bottom: 0;
+      width: 3px;
+      border-radius: 3px;
+      background-color: adjust-color($guides-bg, $lightness: 40%, $saturation: 80%);
+    }
+  }
+
+  &.active {
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+}

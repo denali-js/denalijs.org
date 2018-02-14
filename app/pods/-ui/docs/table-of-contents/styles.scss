@@ -1,29 +1,57 @@
 .toc-container {
   @extend %sheet;
   display: flex;
+  position: relative;
   flex-direction: column;
-  flex: 1 1 auto;
-  padding: 1em 0;
+  flex: 1 1 13em;
+  padding-bottom: 0.5em;
+  font-size: 13px;
+  line-height: 1;
   border-radius: 2px;
-  font-size: 0.8em;
-  box-shadow: $box-shadow-1;
+  // box-shadow: $box-shadow-1;
+  z-index: 2;
 }
 
 .header {
-  margin: 1em 1.5em;
-  color: lighten($text-color, 50%);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  opacity: 0.5;
+  border-bottom: 1px solid mix($white, $brand-primary, 90%);
+  font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.25px;
 }
 
 .toc-link {
-  margin: 0 1em;
-  padding: 0.5em 1em;
+  position: relative;
+  padding: 0.25em 1rem;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
+  color: inherit;
+  font-weight: 600;
+  line-height: 1.2;
 
-  &.active {
-    border-left-color: $brand-primary;
+
+  &.active, &:hover {
+    color: $text-color-dark;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0.5em;
+      bottom: 0;
+      width: 3px;
+      border-radius: 3px;
+      background-color: adjust-color($guides-bg, $lightness: 40%, $saturation: 80%);
+    }
   }
+
+  &.level-1 { margin-left: 0.00em; }
+  &.level-2 { margin-left: 0.00em; }
+  &.level-3 { margin-left: 0.40em; }
+  &.level-4 { margin-left: 0.60em; }
+  &.level-5 { margin-left: 0.80em; }
+  &.level-6 { margin-left: 1.00em; }
 }

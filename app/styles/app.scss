@@ -23,7 +23,8 @@ $api-bg: #3d3c8d;
 $code-bg: #f6f6fa;
 $api-example-bg: $code-bg;
 
-$container-width: 900px;
+$container-width: 1000px;
+$pages-body-width: 620px;
 $navbar-height: 5em;
 $border-radius: 3px;
 
@@ -176,6 +177,7 @@ input {
 }
 
 %sheet {
+  border: 1px solid rgba($black, 0.05);
   background-color: $white;
 }
 

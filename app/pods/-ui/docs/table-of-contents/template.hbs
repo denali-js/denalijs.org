@@ -1,6 +1,6 @@
 {{#sticky-element top=100}}
   <div class="toc-container">
-    <div class="header">Table of Contents</div>
+    <div class="header">Contents</div>
     {{#each entries as |entry|}}
       <a href="#{{entry.slug}}" class="toc-link {{if (eq tocPosition entry.slug) 'active'}} level-{{entry.level}}" {{action 'scrollToTarget' entry.slug}}>{{entry.text}}</a>
     {{/each}}

@@ -8,7 +8,8 @@
 }
 
 .body {
-  max-width: 640px;
+  max-width: $pages-body-width;
+  margin-bottom: 30vh;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -52,10 +53,9 @@ pre {
 blockquote {
   margin: 2em 1em;
   padding: 1em 2em 1em 1.25em;
-  background-color: mix($white, $brand-primary, 80%);
+  background-color: mix($white, $brand-primary, 90%);
   border-radius: $border-radius;
   color: $text-color-dark;
-  box-shadow: 0 2px 7px rgba(mix($black, $brand-primary, 90%), 0.1);
 
   *:first-child {
     margin-top: 0;

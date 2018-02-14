@@ -30,8 +30,7 @@ export default Component.extend({
       let headers = this.$(document).find('.page-body h1,h2,h3,h4,h5,h6');
       this.$(document).on('scroll.toc-scrollspy', () => {
         let scroll = this.$(document).scrollTop();
-        let height = window.innerHeight;
-        let threshold = scroll + (height / 4);
+        let threshold = scroll + 100;
         let candidate;
         headers.each((i, el) => {
           let position = this.$(el).offset().top;
@@ -57,10 +56,22 @@ export default Component.extend({
     this.$(document).off('scroll.toc-scrollspy');
   },
 
+  findHeaderForSlug(slug) {
+    return this.$(document).find(`#${ slug }`);
+  },
+
+  updateURL(slug) {
+    let newURL = `${ window.location.pathname.split('#')[0] }#${ slug }`;
+    history.replaceState(slug, slug, newURL);
+  },
+
   actions: {
     scrollToTarget(slug) {
-      let $target = this.$(document).find(`#${ slug }`);
-      $target.velocity('scroll', { duration: 400, easing: [250, 30] });
+      this.updateURL(slug);
+      this.findHeaderForSlug(slug).velocity('scroll', {
+        duration: 400,
+        easing: [250, 30]
+      });
     }
   }
 

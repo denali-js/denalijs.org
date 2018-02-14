@@ -1,0 +1,20 @@
+{{#if node.children}}
+  {{#if root}}
+    <div class="guide-root">Guides</div>
+  {{else}}
+    <div class="guide-group-toggle" {{action (toggle "isGroupExpanded" this)}}>
+      {{node.title}}
+    </div>
+  {{/if}}
+  {{#if isGroupExpanded}}
+    <div class="guide-group">
+      {{#each node.children as |child|}}
+        {{docs/guide/-page/guides-nav-node currentVersion=currentVersion parentSlug=slug node=child}}
+      {{/each}}
+    </div>
+  {{/if}}
+{{else}}
+  {{#link-to 'docs.guide' currentVersion slug class='guide-link'}}
+    {{node.title}}
+  {{/link-to}}
+{{/if}}
