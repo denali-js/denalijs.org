@@ -1,43 +1,31 @@
 & {
-  display: flex;
-  flex-direction: column;
+  @extend %flex;
 }
 
-.transition-wave {
-  margin-bottom: -70px;
+.hero {
+  @include hero-bg($community-primary);
+
+  .inner-hero {
+    flex-direction: column;
+  }
 }
 
-.sheet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.container {
-  flex-direction: column;
-
-}
-
-.headline {
-  margin: 0;
-  padding: 1em 0 0.5em;
-  color: white;
-  font-size: 6em;
+.section-header {
+  margin-top: 10rem;
   text-align: center;
 }
 
-.section-heading {
-  font-size: 4em;
-}
-
 .help-options {
-  margin-bottom: 8em;
+  @extend %flex;
+  @extend %container;
+  margin-bottom: 8rem;
 }
 
 .help-option {
   display: flex;
   align-items: flex-start;
-  margin-top: 3em;
-  margin-bottom: 5em;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 
   .logo {
     width: 4em;
@@ -45,23 +33,17 @@
   }
 
   .body {
-    display: flex;
-    flex-direction: column;
+    @extend %flex;
+    flex: 1 0 0;
     align-items: flex-start;
   }
 
   .title {
-    font-size: 1.3em;
-    font-weight: 900;
-  }
-
-  .description {
-    margin-top: 0.5em;
+    margin-top: 0;
   }
 
   .action {
-    @extend %btn;
-    background-color: $brand-primary-dark;
-    color: white;
+    @extend %btn-primary;
+    margin: 1rem 0;
   }
 }

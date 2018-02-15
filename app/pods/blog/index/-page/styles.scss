@@ -1,0 +1,31 @@
+& {
+  @extend %flex;
+}
+
+.hero {
+  @include hero-bg($blog-primary);
+
+  .inner-hero {
+    flex-direction: column;
+  }
+}
+
+.post-listing {
+  @extend %flex;
+  @extend %container;
+  margin: 5rem 0;
+}
+
+.post {
+  display: block;
+
+  &:hover {
+    .headline {
+      text-decoration: underline;
+    }
+  }
+
+  .headline {
+    font-size: 2.5rem;
+  }
+}

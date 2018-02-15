@@ -1,0 +1,18 @@
+{{#-ui/hero}}
+  <h1 class="headline">
+    Ascent
+  </h1>
+  <p class="subhead">
+    Ascent is the official Denali blog. Release announcments, best practices,
+    roadmap discussion and more. Guest posts welcome!
+  </p>
+{{/-ui/hero}}
+
+<div class="post-listing">
+  {{#each posts as |post|}}
+    {{#link-to 'blog.post' post.id class="post"}}
+      <h2 class="headline">{{post.title}}</h2>
+      <p class="preview">{{markdown-to-html (lede post.body)}}</p>
+    {{/link-to}}
+  {{/each}}
+</div>

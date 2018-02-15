@@ -1,14 +1,11 @@
-
-    {{#each searchResults as |addon|}}
-      {{addons/index/-page/addon class="result" addon=addon}}
-    {{/each}}
-
-      {{#if searchResults.isLoaded}}
-        <div class="no-results">
-          <img src="/images/not-found.svg" alt="" class="graphic">
-          <p class="description">
-            <strong>Bummer!</strong><br>
-            I couldn't find anything. Keep in mind it may take up to a day for addons to appear here.
-          </p>
-        </div>
-      {{/if}}
+{{#each results as |addon|}}
+  {{addons/index/-page/addon class="result" addon=addon}}
+{{else}}
+  <div class="no-results">
+    <img src="/images/not-found.svg" alt="" class="graphic">
+    <p class="description">
+      <strong>Bummer!</strong><br>
+      I couldn't find anything.
+    </p>
+  </div>
+{{/each}}

@@ -7,12 +7,13 @@ a, button {
   }
 }
 
-%btn {
-  @include shadow-medium;
+@mixin btn($color: $brand-primary) {
+  @include shadow-medium($color);
   display: flex;
   align-items: center;
   position: relative;
   padding: 0.7em 1.2em;
+  background-color: $color;
   border-radius: $border-radius;
   color: $white;
   font-weight: 900;
@@ -22,7 +23,7 @@ a, button {
               transform ease-out 0.1s;
 
   &:hover {
-    @include shadow-medium-up;
+    @include shadow-medium-up($color);
     transform: translateY(-1px);
     transition: box-shadow ease-out 0.1s,
                 transform ease-out 0.1s;
@@ -35,16 +36,15 @@ a, button {
 }
 
 %btn-primary {
-  @extend %btn;
-  background-color: $button-primary;
+  @include btn($button-primary);
 }
 
 %btn-secondary {
-  @extend %btn;
-  background-color: $button-secondary;
+  @include btn($button-secondary);
 }
 
 %btn-invert {
+  @include btn($text-color);
   background-color: $white;
-  color: $brand-primary;
+  color: $text-color;
 }

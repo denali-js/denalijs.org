@@ -8,13 +8,26 @@ export default function() {
   this.namespace = ENV.api.namespace;
 
   this.get('/addons', function({ addons }, { queryParams }) {
-    if (queryParams['filter[featured]']) {
-      return addons.where((addon) => addon.featured);
-    }
-    let query = queryParams.query;
     return addons.where((addon) => {
-      return (addon.name.indexOf(query) > -1) ||
-             (addon.description.indexOf(query) > -1);
+      let matches = true;
+      if (queryParams['filter[featured]']) {
+        matches = matches && addon.featured;
+      }
+      if (queryParams['filter[category]']) {
+        let category = queryParams['filter[category]'];
+        matches = matches && (
+          addon.category === category ||
+          category === 'all'
+        );
+      }
+      if (queryParams['filter[search]']) {
+        let search = queryParams['filter[search]'];
+        matches = matches && (
+          addon.name.includes(search) ||
+          addon.description.includes(search)
+        );
+      }
+      return matches;
     });
   });
   this.get('/addons/:id');
@@ -41,6 +54,9 @@ export default function() {
       })
     };
   });
+
+  this.get('/posts');
+  this.get('/posts/:id');
 
   this.passthrough('https://api.mapbox.com/**');
 

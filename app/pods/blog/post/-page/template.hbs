@@ -1,0 +1,12 @@
+{{#-ui/hero}}
+  <h1 class="headline">
+    {{post.title}}
+  </h1>
+  <p class="subhead">
+    {{markdown-to-html (lede post.body)}}
+  </p>
+{{/-ui/hero}}
+
+<div class="post-body">
+  {{markdown-to-html (body-without-lede post.body)}}
+</div>

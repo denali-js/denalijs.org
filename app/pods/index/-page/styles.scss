@@ -6,16 +6,14 @@
   @include hero-bg($brand-primary);
 
   .terminal-wrapper {
-    display: flex;
-    flex: 1 0 50%;
+    width: 50%;
     position: relative;
+    overflow: visible;
     z-index: 3;
   }
 
   .terminal {
     @include shadow-large;
-    display: flex;
-    flex: 0 0 auto;
     width: 50em;
     height: 35em;
     margin-left: 5em;
@@ -35,7 +33,7 @@
 
   .copy {
     @extend %flex;
-    flex: 1 0 50%;
+    width: 50%;
     justify-content: center;
   }
 

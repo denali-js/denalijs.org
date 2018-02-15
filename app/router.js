@@ -24,7 +24,7 @@ Router.map(function() {
     this.route('api', { path: 'api/*slug' });
   });
   this.route('blog', function() {
-    this.route('post', { path: '/:slug' });
+    this.route('post', { path: '/:id' });
   });
 
 });

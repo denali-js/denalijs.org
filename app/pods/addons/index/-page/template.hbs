@@ -1,16 +1,12 @@
-{{#-ui/contours-background}}
-  <div class="hero">
-    <h1 class="headline">
-      Addons
-    </h1>
-    <p class="subhead">
-      Do more, faster. Community solutions to shared problems let you build
-      better and faster than going it alone.
-    </p>
-  </div>
-
-  {{-ui/transition}}
-{{/-ui/contours-background}}
+{{#-ui/hero}}
+  <h1 class="headline">
+    Addons
+  </h1>
+  <p class="subhead">
+    Do more, faster. Community solutions to shared problems let you build
+    better and faster than going it alone.
+  </p>
+{{/-ui/hero}}
 
 <div class="featured">
   {{#each featured as |addon|}}
@@ -20,12 +16,12 @@
 
 <div class="main">
   <nav class="addon-nav">
-    {{addons/index/-page/search searchTerm=searchTerm onSearch=(action (perform search))}}
+    {{addons/index/-page/search searchTerm=searchTerm}}
     {{addons/index/-page/categories}}
   </nav>
   <div class="addon-listings">
-    {{#if searchTerm}}
-      {{addons/index/-page/search-results results=searchResults}}
+    {{#if hasResults}}
+      {{addons/index/-page/search-results results=queryResults}}
     {{else}}
       {{addons/index/-page/default-listing}}
     {{/if}}

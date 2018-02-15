@@ -4,20 +4,14 @@
 }
 
 .wrapper {
+  @extend %flex;
   @include sheet;
   @include shadow-medium;
-  display: flex;
   flex: 1 1 auto;
   align-items: center;
-  flex-direction: column;
   padding: 1em;
-  color: inherit;
   border-radius: $border-radius;
   text-align: center;
-}
-
-.headline {
-  font-family: $sans-serif;
 }
 
 .description {

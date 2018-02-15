@@ -1,39 +1,12 @@
 & {
   @extend %flex;
-  align-items: center;
-}
-
-.contours-background {
-  @include hero($addons-primary);
-}
-
-.mapboxgl-control-container {
-  display: none;
 }
 
 .hero {
-  @extend %flex;
-  @extend %container;
-  position: relative;
-  padding-top: 3em;
-  padding-bottom: 10em;
-  color: $white;
-  z-index: 2;
+  @include hero-bg($addons-primary);
 
-  .headline {
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    color: inherit;
-    // font-family: $serif;
-    font-size: 5.5em;
-    font-weight: 300;
-    line-height: 1.1;
-  }
-
-  .subhead {
-    margin-top: 0;
-    width: 70%;
-    font-size: 1.4em;
+  .inner-hero {
+    flex-direction: column;
   }
 }
 

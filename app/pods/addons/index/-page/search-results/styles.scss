@@ -1,4 +1,6 @@
-
+& {
+  flex: 1 1 auto;
+}
 .results {
   @extend %container;
   flex-wrap: wrap;
@@ -38,22 +40,20 @@
     }
   }
 
-  .no-results {
-    @include sheet;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    flex-direction: column;
-    padding: 4em 2em;
-    border-radius: 3px;
+}
 
-    .graphic {
-      height: 20vh;
-    }
-    .description {
-      max-width: 20em;
-      margin-bottom: 0;
-      text-align: center;
-    }
+.no-results {
+  @extend %flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  padding: 4rem 2rem;
+
+  .graphic {
+    height: 20vh;
+  }
+  .description {
+    margin-bottom: 0;
+    text-align: center;
   }
 }

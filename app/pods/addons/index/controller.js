@@ -5,6 +5,6 @@ export default Controller.extend({
   queryParams: [ 'search', 'category' ],
 
   search: null,
-  category: 'all',
+  category: null,
 
 })

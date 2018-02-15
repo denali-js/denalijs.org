@@ -1,0 +1,22 @@
+& {
+  @extend %flex;
+}
+
+.hero {
+  @include hero-bg($blog-primary);
+
+  .headline {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+
+  .inner-hero {
+    flex-direction: column;
+  }
+}
+
+.post-body {
+  @extend %flex;
+  @extend %container;
+  margin: 5rem 0;
+}

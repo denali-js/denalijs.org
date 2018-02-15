@@ -3,6 +3,7 @@ export default function(server) {
   server.loadFixtures('addons');
   server.loadFixtures('docs');
   server.loadFixtures('versions');
+  server.loadFixtures('posts');
 
   let docs = server.schema.docs.all().models;
   server.schema.versions.all().models.forEach((version) => {
