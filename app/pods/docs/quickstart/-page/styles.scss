@@ -6,9 +6,8 @@
   @include hero-bg($brand-primary);
 }
 
-.page-hero,
-.page-body {
-  @extend %container;
+.page-hero {
+  padding-left: 0;
 }
 
 .page-body {
@@ -18,8 +17,6 @@
   .table-of-contents {
     order: 1;
     margin-top: -3rem;
-    margin-left: 0;
-    margin-right: 2rem;
     flex-basis: 15em;
   }
 }

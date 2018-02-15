@@ -7,6 +7,9 @@
 
 .content {
   flex: 1 1 $long-form-width;
+  // https://weblog.west-wind.com/posts/2016/Feb/15/Flexbox-Containers-PRE-tags-and-managing-Overflow
+  min-width: 0;
   margin-top: 0rem;
   margin-bottom: 30vh;
+  padding: 0 2rem;
 }

@@ -1,54 +1,29 @@
-$apis-nav-width: 13em;
-
 & {
   @extend %flex;
-  position: relative;
 }
 
-.contours-background {
-  @include hero($api-primary);
-}
+.hero {
+  @include hero-bg($api-primary);
 
-.api-hero {
-  @extend %flex;
-  @extend %container;
-  position: relative;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-top: 3em;
-  padding-bottom: 2em;
-  z-index: 2;
+  .headline {
+    font-size: 4rem;
+  }
 
-  .api-nav-container {
-    position: absolute;
-    left: 0;
-    margin-top: 3em;
-    margin-right: 2em;
-    z-index: 2;
+  .api-hero-overview,
+  .api-hero {
+    @extend %container;
   }
 
   .api-nav {
-    @extend %flex;
-    @include sheet;
-    width: $apis-nav-width;
-    padding-bottom: 0.5em;
-    border-radius: $border-radius;
-  }
-
-  .apis-hero-intro {
-    padding-left: $apis-nav-width + 2em;
-    color: $white;
+    width: $api-nav-width;
   }
 }
 
-.api-main {
-  @extend %flex;
+.api-body {
   @extend %container;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-left: $apis-nav-width + 2em;
+  padding-left: $api-nav-width;
+}
 
-  .api-body {
-    padding-right: 2em;
-  }
+.api-content {
+  flex-basis: $long-form-width;
 }

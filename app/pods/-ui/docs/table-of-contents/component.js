@@ -18,11 +18,11 @@ export default Component.extend({
       let [ , headerLevel, headerText ] = results;
       headers.push({
         level: headerLevel.length,
-        text: headerText,
+        title: headerText,
         slug: kebabCase(headerText).replace(/[^A-z0-9]/g, '')
       });
     }
-    return headers
+    return { children: headers };
   }),
 
   didInsertElement() {

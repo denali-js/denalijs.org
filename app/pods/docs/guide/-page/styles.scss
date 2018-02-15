@@ -1,6 +1,3 @@
-$guides-nav-width: 11em;
-
-
 & {
   @extend %flex;
 }
@@ -12,29 +9,12 @@ $guides-nav-width: 11em;
     font-size: 4rem;
   }
 
-  .guides-nav-container {
-    position: absolute;
-    left: 0;
-    z-index: 2;
-  }
-
   .guides-nav {
-    @extend %flex;
-    @include sheet;
-    @include shadow-small;
     width: $guides-nav-width;
-    padding-bottom: 1rem;
-    border-radius: $border-radius;
-    color: $text-color;
-  }
-
-  .page-hero {
-    @extend %container;
-    padding-left: $guides-nav-width + 2em;
   }
 }
 
 .page-body {
   @extend %container;
-  padding-left: $guides-nav-width + 2em;
+  padding-left: $guides-nav-width;
 }

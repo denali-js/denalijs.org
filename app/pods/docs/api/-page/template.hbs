@@ -1,23 +1,24 @@
-{{#-ui/contours-background}}
-  <div class="api-hero">
-    <div class="api-nav-container">
-      {{#sticky-element top=50}}
-        {{docs/api/-page/api-nav api=doc.api currentVersion=version.displayName class='api-nav'}}
-      {{/sticky-element}}
-    </div>
-    {{#if isOverview}}
-      {{docs/api/-page/overview-hero doc=doc class='apis-hero-intro'}}
-    {{else}}
-      {{-ui/docs/api-hero entry=api class='apis-hero-intro'}}
-    {{/if}}
-  </div>
-  {{-ui/transition}}
-{{/-ui/contours-background}}
-<div class="api-main">
+{{#-ui/hero}}
+
+  {{#-ui/nav-list title='API Reference' root=apiNav class='api-nav' as |node slug|}}
+    {{#link-to 'docs.api' version.displayName slug}}
+      {{node.title}}
+    {{/link-to}}
+  {{/-ui/nav-list}}
+
   {{#if isOverview}}
-    {{docs/api/-page/overview doc=doc}}
+    {{docs/api/-page/overview-hero doc=doc class='api-hero-overview'}}
   {{else}}
-    {{component kindComponentName entry=api class='api-body'}}
-    {{-ui/docs/table-of-contents entries=outline}}
+    {{-ui/docs/api-hero entry=api}}
   {{/if}}
+
+{{/-ui/hero}}
+
+{{#if isOverview}}
+  {{docs/api/-page/overview doc=doc class='api-body'}}
+{{else}}
+<div class="api-body">
+  {{component kindComponentName entry=api class='api-content'}}
+  {{-ui/docs/table-of-contents entries=outlineNav}}
 </div>
+{{/if}}

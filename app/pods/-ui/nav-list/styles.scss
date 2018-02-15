@@ -1,16 +1,18 @@
 & {
   position: relative;
+  flex: 0 0 auto;
   color: $text-color;
 }
 
 .list-container {
   position: absolute;
   left: 0;
+  right: 0;
   z-index: 2;
 }
 
 .list-title {
-  padding: 1rem 1rem 0 0.8rem;
+  padding: 1rem 0.8rem;
   font-size: $font-size-small;
   font-weight: 900;
   line-height: 1;
@@ -24,6 +26,7 @@
   @include sheet;
   @include shadow-small;
   max-height: calc(100vh - 10rem);
+  overflow-x: hidden;
   overflow-y: auto;
   padding-bottom: 1em;
 
@@ -45,14 +48,29 @@
 
 .group-toggle {
   margin-top: 1rem;
+  margin-bottom: 0.2rem;
   padding: 0 0.8rem;
   font-size: $font-size-extra-small;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+// Group toggles normally have their own margin-top,
+// but the list title has a margin-bottom in case the
+// nav list doesn't have a group toggle right after the
+// title. So if it does, get rid of the group toggle's
+// margin-top so we don't double up
+.list-title + .nav-list-node {
+  > .group-toggle {
+    margin-top: 0;
+  }
 }
 
 .leaf > a {
   display: block;
-  padding: 0.1em 1rem;
+  padding: 0.4em 1rem;
+  line-height: 1.2;
   transform-origin: 0 50%;
 }

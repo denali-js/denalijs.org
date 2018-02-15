@@ -3,11 +3,11 @@
   align-self: center;
   width: $container-width;
 
-  @media(max-width: 900px) {
-    width: 100%;
-    padding-left: 2em;
-    padding-right: 2em;
-  }
+  // @media(max-width: $container-width - 4rem) {
+  //   width: 100%;
+  //   padding-left: 2em;
+  //   padding-right: 2em;
+  // }
 }
 
 %flex {

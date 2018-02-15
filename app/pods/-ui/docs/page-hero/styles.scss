@@ -1,3 +1,6 @@
 & {
-  flex-direction: column;
+  @extend %flex;
+  flex: 1 1 auto;
+  padding-left: 2rem;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-import { forEach, isEmpty } from 'lodash';
+import { forEach, map, isEmpty } from 'lodash';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { lookupApi } from 'denali/helpers/lookup-api';
@@ -25,7 +25,38 @@ export default Component.extend({
     return this.get('slug') === 'overview';
   }),
 
-  outline: computed('api', 'kind', function() {
+  apiNav: computed('doc.api', function() {
+    let api = this.get('doc.api');
+    return {
+      children: map(api.packages, (pkg, packageName) => {
+        return {
+          title: packageName,
+          slug: packageName,
+          children: map(pkg.classes, (_, className) => {
+            return {
+              title: className,
+              slug: `classes/${ className }`,
+              kind: 'class'
+            };
+          }).concat(pkg.functions.map(({ name }) => {
+            return {
+              title: name,
+              slug: `functions/${ name }`,
+              kind: 'function'
+            };
+          })).concat(map(pkg.interfaces, (_, interfaceName) => {
+            return {
+              title: interfaceName,
+              slug: `interfaces/${ interfaceName }`,
+              kind: 'interface'
+            };
+          }))
+        }
+      })
+    };
+  }),
+
+  outlineNav: computed('api', 'kind', function() {
     let api = this.get('api');
     let kind = this.get('kind');
     if (kind === 'function') {
@@ -35,50 +66,58 @@ export default Component.extend({
     if (kind === 'class') {
       // Static properties
       if (!isEmpty(api.staticProperties)) {
-        outline.push({ text: 'Static Properties' });
-        forEach(api.staticProperties, (property, name) => {
-          outline.push({
-            slug: slugify([ name ]),
-            text: name,
-            level: 1
-          });
+        outline.push({
+          title: 'Static Properties',
+          children: map(api.staticProperties, (property, name) => {
+            return {
+              slug: slugify([ name ]),
+              title: name,
+              level: 1
+            };
+          })
         });
       }
       // Static methods
       if (!isEmpty(api.staticMethods)) {
-        outline.push({ text: 'Static Methods' });
-        forEach(api.staticMethods, (property, name) => {
-          outline.push({
-            slug: slugify([ name ]),
-            text: `${ name }()`,
-            level: 1
-          });
+        outline.push({
+          title: 'Static Methods',
+          children: map(api.staticMethods, (property, name) => {
+            return {
+              slug: slugify([ name ]),
+              title: `${ name }()`,
+              level: 1
+            };
+          })
         });
       }
     }
     // Instance properties
     if (!isEmpty(api.properties)) {
-      outline.push({ text: 'Properties' });
-      forEach(api.properties, (property, name) => {
-        outline.push({
-          slug: slugify([ name ]),
-          text: name,
-          level: 1
-        });
+      outline.push({
+        title: 'Properties',
+        children: map(api.properties, (property, name) => {
+          return {
+            slug: slugify([ name ]),
+            title: name,
+            level: 1
+          };
+        })
       });
     }
     // Instance methods
     if (!isEmpty(api.methods)) {
-      outline.push({ text: 'Methods' });
-      forEach(api.methods, (property, name) => {
-        outline.push({
-          slug: slugify([ name ]),
-          text: `${ name }()`,
-          level: 1
-        });
+      outline.push({
+        title: 'Methods',
+        children: map(api.methods, (property, name) => {
+          return {
+            slug: slugify([ name ]),
+            title: `${ name }()`,
+            level: 1
+          };
+        })
       });
     }
-    return outline;
+    return { children: outline };
   })
 
 });

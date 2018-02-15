@@ -1,12 +1,5 @@
-{{#sticky-element top=100}}
-  <div class="toc-container">
-    <div class="header">Contents</div>
-    {{#each entries as |entry|}}
-      {{#if entry.slug}}
-        <a href="#{{entry.slug}}" class="toc-link {{if (eq tocPosition entry.slug) 'active'}} level-{{entry.level}}" {{action 'scrollToTarget' entry.slug}}>{{entry.text}}</a>
-      {{else}}
-        <div class="toc-group">{{entry.text}}</div>
-      {{/if}}
-    {{/each}}
-  </div>
-{{/sticky-element}}
+{{#if entries}}
+  {{#-ui/nav-list title='Contents' root=entries offset=100 as |node slug|}}
+      <a href="#{{node.slug}}" class="toc-link {{if (and node.slug (eq tocPosition node.slug)) 'active'}} level-{{node.level}}" {{action 'scrollToTarget' node.slug}}>{{node.title}}</a>
+  {{/-ui/nav-list}}
+{{/if}}

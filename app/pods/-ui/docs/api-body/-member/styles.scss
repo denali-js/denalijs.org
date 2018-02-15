@@ -1,22 +1,18 @@
-$reference-width: 600px;
-
 & {
   display: flex;
 }
 
 .reference {
-  display: flex;
-  flex: 0.5 0 $reference-width;
-  flex-direction: column;
-  padding: 3em 3em;
-  border-bottom: 1px solid rgba($black, 0.1);
+  @extend %flex;
+  flex-shrink: 1;
+  padding: 3rem 0;
+  border-bottom: 1px solid $off-white-border;
 }
 
 .member-header {
   display: flex;
   align-items: center;
   position: relative;
-  // margin-bottom: 0.75em;
   font-weight: 900;
 }
 
@@ -26,7 +22,6 @@ $reference-width: 600px;
   opacity: 0.4;
 
   a {
-    color: inherit;
     text-decoration: underline;
     text-decoration-style: dotted;
   }
