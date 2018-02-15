@@ -5,10 +5,4 @@
 
 .main {
   @extend %flex;
-  position: relative;
-
-  > .liquid-container,
-  > .liquid-container > .liquid-child {
-    @extend %flex;
-  }
 }

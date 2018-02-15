@@ -21,6 +21,10 @@ export default Component.extend({
     return `-ui/docs/api-body/${ kind }`;
   }),
 
+  isOverview: computed('slug', function() {
+    return this.get('slug') === 'overview';
+  }),
+
   outline: computed('api', 'kind', function() {
     let api = this.get('api');
     let kind = this.get('kind');

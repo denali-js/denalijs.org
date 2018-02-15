@@ -2,28 +2,8 @@
   @extend %flex;
 }
 
-.contours-background {
-  @include hero($brand-primary);
-}
-
-.contour-map {
-  bottom: -5em;
-}
-
-.mapboxgl-control-container {
-  display: none;
-}
-
 .hero {
-  @extend %flex;
-  @extend %container;
-  position: relative;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-top: 3em;
-  padding-bottom: 2em;
-  color: $white;
-  z-index: 2;
+  @include hero-bg($brand-primary);
 
   .terminal-wrapper {
     display: flex;
@@ -33,6 +13,7 @@
   }
 
   .terminal {
+    @include shadow-large;
     display: flex;
     flex: 0 0 auto;
     width: 50em;
@@ -40,7 +21,6 @@
     margin-left: 5em;
     background-color: #23241E;
     border-radius: 3px;
-    box-shadow: $box-shadow-2;
   }
 
   .window-controls {
@@ -56,101 +36,62 @@
   .copy {
     @extend %flex;
     flex: 1 0 50%;
-  }
-
-  .headline {
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    color: inherit;
-    font-family: $serif;
-    font-size: 5.5em;
-    font-weight: 300;
-    line-height: 1.1;
-  }
-
-  .subhead {
-    font-size: 1.4em;
-
-    strong {
-      font-weight: 900;
-    }
+    justify-content: center;
   }
 
   .cta {
     display: flex;
+    font-size: $font-size-large;
   }
 
   .cta-primary {
     @extend %btn-primary;
-    font-size: 1.15em;
-    margin-right: 1em;
+    font-size: $font-size-large;
+    margin-right: 1rem;
   }
 
   .cta-secondary {
     @extend %btn-secondary;
-    font-size: 1.15em;
   }
 
 }
 
 .features {
   @extend %container;
-  display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   justify-content: space-between;
-  padding: 6em 0;
+  padding: 7rem 0;
 }
 
 .feature {
   @extend %flex;
   flex: 0 0 calc(33% - 2em);
+  font-size: $font-size-large;
 
   .headline {
     position: relative;
-    margin-bottom: 0.5em;
-    font-size: 1.35em;
+    font-size: $font-size-large-plus;
   }
-
-  .description {
-    margin-top: 0;
-    font-size: 1.2em;
-  }
-
-  .cta-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: $link-color;
-    font-size: 1.2em;
-    font-weight: 700;
-
-    .link-arrow {
-      width: 0.8em;
-      height: 0.8em;
-      margin-left: 0.5em;
-    }
-  }
-
 }
 
 .callout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @extend %flex;
   background-color: $callout-bg;
   overflow: hidden;
 
+  .container {
+    @extend %container;
+  }
+
   .copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @extend %flex;
     flex: 0 0 50%;
-    padding: 2em 2em 2em 0;
+    justify-content: center;
+    padding: 2rem 2rem 2rem 0;
 
     .headline {
       margin: 0;
-      font-weight: 900;
-      line-height: 1.2;
     }
 
     .description {
@@ -160,13 +101,12 @@
   }
 
   .media {
-    display: flex;
-    flex-direction: column;
+    @extend %flex;
+    position: relative;
     flex: 0 0 50%;
     justify-content: space-around;
-    position: relative;
     overflow-x: visible;
-    padding: 2em 0;
+    padding: 2rem 0;
 
     .bg {
       position: absolute;
@@ -176,62 +116,41 @@
     }
 
     .tile {
+      @include shadow-medium;
       position: relative;
-      margin: 1em 0 1em 6em;
+      margin: 1rem 0 1rem 6rem;
       padding: 1.5em;
       background-color: $white;
       border-radius: $border-radius;
-      box-shadow: $box-shadow-1;
 
       .headline {
         margin-top: 0;
-        margin-bottom: 0.2em;
         font-weight: 700;
-      }
-
-      .description {
-        margin: 0;
-        font-size: 1.15;
-      }
-
-      .cta-link {
-        display: flex;
-        align-items: center;
-        margin-top: 1em;
-        color: $link-color;
-        font-size: 1.2em;
-        font-weight: 700;
-
-        .link-arrow {
-          width: 0.8em;
-          height: 0.8em;
-          margin-left: 0.5em;
-        }
       }
     }
   }
 }
 
 .testimonials {
+  @extend %flex;
   @extend %container;
-  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 8em 0;
+  padding: 8rem 0;
 }
 
 .testimonial {
-  display: flex;
+  @extend %flex;
   flex: 0 0 42%;
-  flex-direction: column;
 
   .quote {
     position: relative;
     color: $text-color-dark;
-    font-family: $serif;
     font-style: italic;
     font-weight: 700;
-    font-size: 1.35em;
+    font-size: $font-size-large;
+    letter-spacing: -0.5px;
 
     &::before {
       content: '“';
@@ -247,12 +166,12 @@
     display: flex;
     align-items: center;
     margin-top: 0.25em;
-    font-size: 1.15em;
+    font-size: $font-size-large-minus;
     line-height: 1.2;
 
     .avatar {
       height: 3em;
-      margin-right: 0.5em;
+      margin-right: 1ch;
       border-radius: 500px;
     }
   }
@@ -260,18 +179,18 @@
 
 .users {
   @extend %flex;
-  padding: 3em 0 6em;
+  padding: 3rem 0 6rem;
   background-color: $callout-bg-dark;
 
   .container {
-    flex-direction: column;
+    @extend %flex;
+    @extend %container;
   }
 
   .headline {
-    padding-bottom: 1em;
+    margin-bottom: 2rem;
     color: $white;
-    font-size: 1.35em;
-    font-weight: 900;
+    font-size: $font-size-extra-large;
     text-align: center;
   }
 

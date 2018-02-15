@@ -1,9 +1,6 @@
-{{#-ui/contours-background}}
-  <div class="quickstart-hero">
-    {{-ui/docs/page-hero page=(lookup-page doc.pages 'quickstart')}}
-  </div>
-  {{-ui/transition}}
-{{/-ui/contours-background}}
-<main class="quickstart-body">
-  {{-ui/docs/page-body page=(lookup-page doc.pages 'quickstart')}}
-</main>
+{{#with (lookup-page doc.pages 'quickstart') as |page|}}
+  {{#-ui/hero}}
+    {{-ui/docs/page-hero page=page}}
+  {{/-ui/hero}}
+  {{-ui/docs/page-body page=page}}
+{{/with}}

@@ -1,0 +1,73 @@
+// Basic colors
+$white: #fff;
+$black: #000;
+
+// Brand colors
+$brand-primary: #1359BF;
+$brand-primary-dark: #15517c;
+
+// UI colors
+$text-color: rgb(45, 64, 75);
+$text-color-dark: rgb(42, 54, 70);
+$text-color-hover: rgb(21, 28, 39);
+$link-color: $brand-primary;
+$button-primary: #00CB63;
+$button-secondary: #19aace;
+$callout-bg: #F2F7FA;
+$callout-bg-dark: #3D4C5F;
+$code-bg: #f6f6fa;
+$off-white-bg: mix($white, $brand-primary, 98%);
+$off-white-border: mix($white, $brand-primary, 92%);
+
+// Sections colors
+$features-primary: #dd4a57;
+$guides-primary: #11865f;
+$api-primary: #3d3c8d;
+$addons-primary: #9fa835;
+$community-primary: #fff;
+$blog-primary: #fff;
+
+// Layout
+$container-width: 70rem;
+$pages-body-width: 45rem;
+$long-form-width: 45rem;
+$navbar-height: 4.5rem;
+$guides-nav-width: 12rem;
+$border-radius: 3px;
+
+// Shadows
+$default-shadow-color: $brand-primary;
+@mixin shadow-small($color: $default-shadow-color) {
+  $shadow-color: rgba(mix($color, $black), 0.2);
+  box-shadow: 0 2px 3px $shadow-color;
+}
+@mixin shadow-medium($color: $default-shadow-color) {
+  $shadow-color: rgba(mix($color, $black), 0.2);
+  box-shadow: 0 2px 4px $shadow-color,
+              0 6px 9px $shadow-color;
+}
+@mixin shadow-medium-up($color: $default-shadow-color) {
+  $shadow-color: rgba(mix($color, $black), 0.3);
+  box-shadow: 0 4px 6px $shadow-color,
+              0 8px 14px $shadow-color;
+}
+@mixin shadow-large($color: $default-shadow-color) {
+  $shadow-color: rgba($color, 0.17);
+  box-shadow: 0 8px 12px $shadow-color,
+              0 12px 30px $shadow-color;
+}
+
+// Fonts
+$sans-serif: 'Muli', sans-serif;
+$monospace: 'Fira Code', monospaced;
+
+$font-base: 14;
+$font-size-extra-large: (24 / $font-base) * 1rem;
+$font-size-large-plus: (19 / $font-base) * 1rem;
+$font-size-large: (17 / $font-base) * 1rem;
+$font-size-large-minus: (15 / $font-base) * 1rem;
+$font-size-base-plus: (16 / $font-base) * 1rem;
+$font-size-base: 1rem;
+$font-size-base-minus: (12 / $font-base) * 1rem;
+$font-size-small: (12 / $font-base) * 1rem;
+$font-size-extra-small: (11 / $font-base) * 1rem;

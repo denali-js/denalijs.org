@@ -8,9 +8,9 @@
   &::-webkit-scrollbar-thumb {
     border: 3px solid $white;
     border-radius: 12px;
-    background-color: mix($white, $api-bg, 90%);
+    background-color: mix($white, $api-primary, 90%);
     &:hover {
-      background-color: mix($white, $api-bg, 80%);
+      background-color: mix($white, $api-primary, 80%);
     }
   }
   &::-webkit-scrollbar-track {
@@ -20,7 +20,7 @@
 
 .package-header {
   padding: 0.5rem 0.75rem 0.3rem;
-  color: mix($white, $api-bg, 30%);
+  color: mix($white, $api-primary, 30%);
   font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
@@ -56,7 +56,7 @@
       bottom: 0;
       width: 3px;
       border-radius: 3px;
-      background-color: adjust-color($api-bg, $lightness: 50%, $saturation: 80%);
+      background-color: adjust-color($api-primary, $lightness: 50%, $saturation: 80%);
     }
   }
 

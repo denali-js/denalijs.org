@@ -1,0 +1,9 @@
+<div class="header">Categories</div>
+{{#link-to (query-params category='all') class='category-link'}}
+  All
+{{/link-to}}
+{{#each categories as |category|}}
+  {{#link-to (query-params category=category.id) class='category-link'}}
+    {{category.name}}
+  {{/link-to}}
+{{/each}}

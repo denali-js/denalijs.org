@@ -1,0 +1,39 @@
+.search {
+  display: flex;
+  position: relative;
+  margin-bottom: 1.5em;
+
+  .search-icon,
+  .busy {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    height: 1em;
+    opacity: 0.5;
+  }
+
+  .busy {
+    margin-top: 0.8em;
+    margin-left: 1.5em;
+    color: $brand-primary;
+  }
+
+  .search-term {
+    display: flex;
+    min-width: 8em;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+    border: 1px solid darken($white, 7%);
+    border-radius: $border-radius;
+    background-color: darken($white, 2%);
+    color: $text-color;
+    transition: box-shadow ease-out 0.1s;
+
+    &:focus {
+      @include shadow-medium;
+      transition: box-shadow ease-out 0.1s;
+      outline: none;
+    }
+  }
+
+}

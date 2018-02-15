@@ -31,22 +31,3 @@ $reference-width: 600px;
     text-decoration-style: dotted;
   }
 }
-
-.example {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1em;
-  border-bottom: 1px solid rgba($black, 0.1);
-  background-color: $api-example-bg;
-  color: $off-white;
-}
-
-.missing-example {
-  align-self: center;
-  color: rgba($white, 0.5);
-  font-size: 0.8em;
-  font-weight: 300;
-  text-decoration: underline;
-}

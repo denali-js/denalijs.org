@@ -1,20 +1,12 @@
 & {
-  display: flex;
+  @extend %flex;
   flex: 1 1 auto;
-  align-items: flex-start;
+  flex-direction: row;
   align-self: stretch;
-  font-size: 15px;
-  line-height: 1.7;
 }
 
-.body {
-  max-width: $pages-body-width;
+.content {
+  flex: 1 1 $long-form-width;
+  margin-top: 0rem;
   margin-bottom: 30vh;
-}
-
-.table-of-contents {
-  position: relative;
-  flex: 1 1 auto;
-  margin-top: -4em;
-  margin-left: 2em;
 }

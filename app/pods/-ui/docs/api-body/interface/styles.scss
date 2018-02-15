@@ -6,7 +6,6 @@
 }
 
 .class-name {
-  @extend %no-line-heading;
   margin: 0.25em 0 0;
   font-size: 3em;
 }
@@ -17,7 +16,7 @@
 }
 
 .lede {
-  font-family: $serif;
+  // font-family: $serif;
   font-weight: 200;
   font-style: italic;
 }

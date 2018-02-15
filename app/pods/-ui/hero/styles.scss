@@ -1,0 +1,42 @@
+.mapboxgl-canvas {
+  opacity: 0.8;
+}
+
+.inner-hero {
+  @extend %container;
+  position: relative;
+  justify-content: center;
+  min-height: 40rem;
+  padding-top: $navbar-height + 4rem;
+  padding-bottom: 4rem;
+  color: $white;
+  z-index: 2;
+}
+
+.headline {
+  margin: 0;
+  font-size: 6rem;
+  line-height: 0.9;
+  letter-spacing: -2.5px;
+}
+
+.subhead, .subhead > p {
+  max-width: $container-width * 0.7;
+  margin: 1em 0;
+  font-size: $font-size-extra-large;
+  line-height: 1.3;
+
+  strong {
+    font-weight: 900;
+  }
+}
+
+// Get rid of the margin if it's a markdown subhead, which
+// is annoyingly wrapped in a div
+div.subhead {
+  margin-top: 0;
+}
+
+.subhead > p:first-child {
+  margin-top: 0.5em;
+}

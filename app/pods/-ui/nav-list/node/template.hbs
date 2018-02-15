@@ -1,0 +1,14 @@
+{{#if node.children}}
+  <div class="guide-group-toggle" {{action (toggle "isGroupExpanded" this)}}>
+    {{node.title}}
+  </div>
+  {{#if isGroupExpanded}}
+    <div class="guide-group">
+      {{#each node.children as |child|}}
+        {{-ui/nav-list/node context=context node=child}}
+      {{/each}}
+    </div>
+  {{/if}}
+{{else}}
+  {{yield}}
+{{/if}}

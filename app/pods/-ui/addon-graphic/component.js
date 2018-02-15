@@ -9,6 +9,8 @@ export default Component.extend({
     let name = this.get('addon.name') || '?';
     if (name.indexOf('denali-') === 0) {
       name = name.slice('denali-'.length);
+    } else if (name.indexOf('@denali-js/') === 0) {
+      name = name.slice('@denali-js/'.length);
     }
     return name.charAt(0).toLowerCase();
   })

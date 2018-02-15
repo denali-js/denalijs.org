@@ -1,4 +1,5 @@
 import ENV from 'denali/config/environment';
+import { startCase } from 'lodash';
 
 export default function() {
 
@@ -25,6 +26,20 @@ export default function() {
   this.get('/versions/:id/doc', function({ versions }, { params }) {
     let version = versions.find(params.id);
     return version.doc;
+  });
+
+  this.get('/categories', function({ addons }) {
+    let allCategories = addons.all().models.map((a) => a.category);
+    let uniqueCategories = [ ...new Set(allCategories) ];
+    return {
+      data: uniqueCategories.map((category) => {
+        return {
+          type: 'category',
+          id: category,
+          attributes: { name: startCase(category) }
+        };
+      })
+    };
   });
 
   this.passthrough('https://api.mapbox.com/**');

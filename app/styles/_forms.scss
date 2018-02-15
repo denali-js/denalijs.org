@@ -1,0 +1,8 @@
+input {
+  border: 1px solid lighten($text-color, 30%);
+  &:focus {
+    outline: none;
+    border-color: $brand-primary;
+    transition: border ease-out 0.2s;
+  }
+}

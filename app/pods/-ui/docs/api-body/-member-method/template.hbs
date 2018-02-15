@@ -38,6 +38,13 @@
   {{-ui/docs/api-body/-flags entry=method}}
 </div>
 
+<div class="source">
+  defined in
+  <a href="https://github.com/denali-js/denali/blob/v{{version.semver}}/{{method.file}}#L{{method.line}}" target="_blank">
+    {{method.file}} on line {{method.line}}
+  </a>
+</div>
+
 {{markdown-to-html method.description class='method-description'}}
 
 {{#if primarySignature.parameters}}
@@ -62,11 +69,4 @@
   <div class="description">
     {{method.description}}
   </div>
-</div>
-
-<div class="source">
-  defined in
-  <a href="https://github.com/denali-js/denali/blob/v{{version.semver}}/{{method.file}}#L{{method.line}}" target="_blank">
-    {{method.file}} on line {{method.line}}
-  </a>
 </div>

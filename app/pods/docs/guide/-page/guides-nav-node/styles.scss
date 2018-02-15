@@ -13,15 +13,15 @@
 
 .guide-root {
   padding: 1rem;
-  border-bottom: 1px solid mix($white, $guides-bg, 90%);
-  color: mix($white, $guides-bg, 30%);
+  border-bottom: 1px solid mix($white, $guides-primary, 90%);
+  color: mix($white, $guides-primary, 30%);
   font-weight: 900;
 }
 
 .guide-group-toggle {
   margin-top: 0.5em;
   padding: 0.5rem 0.75rem 0.3rem;
-  color: mix($white, $guides-bg, 50%);
+  color: mix($white, $guides-primary, 50%);
   font-size: 12px;
   cursor: pointer;
 }
@@ -48,7 +48,7 @@
       bottom: 0;
       width: 3px;
       border-radius: 3px;
-      background-color: adjust-color($guides-bg, $lightness: 40%, $saturation: 80%);
+      background-color: adjust-color($guides-primary, $lightness: 40%, $saturation: 80%);
     }
   }
 

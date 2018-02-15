@@ -1,0 +1,28 @@
+& {
+  @extend %flex;
+}
+
+.header {
+  margin-bottom: 0.5em;
+  color: $text-color;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.category-link {
+  display: block;
+  padding: 0.25em 0;
+  color: $text-color;
+  font-size: 1.15em;
+  transform-origin: 0 50%;
+
+  &:hover {
+    color: $text-color-dark;
+  }
+
+  &.active {
+    color: $text-color-dark;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,11 @@
+{{#each groups as |group|}}
+  <section class="listing-group">
+    <h2 class="group-headline">{{group.headline}}</h2>
+    <p class="group-description">{{group.description}}</p>
+    <div class="group-examples">
+      {{#each group.examples as |example|}}
+        {{addons/index/-page/default-listing/addon addonId=example}}
+      {{/each}}
+    </div>
+  </section>
+{{/each}}

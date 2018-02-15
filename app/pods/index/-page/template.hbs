@@ -1,38 +1,32 @@
-{{#-ui/contours-background}}
-  <div class="hero">
-
-    <div class="copy">
-      <h1 class="headline">
-        Ship fast
-        <br>
-        &amp; scale.
-      </h1>
-      <p class="subhead">
-        A <strong>layered conventions Node.js framework</strong> for
-        building <strong>ambitious APIs</strong> with a powerful addon system, best-in-class
-        developer experience, and extensive documentation.
-      </p>
-      <div class="cta">
-        {{#link-to 'docs.quickstart' 'latest' class='cta-primary'}}Quickstart{{/link-to}}
-        {{#link-to 'features' class='cta-secondary'}}Features{{/link-to}}
-      </div>
+{{#-ui/hero}}
+  <div class="copy">
+    <h1 class="headline">
+      Ship fast
+      <br>
+      &amp; scale.
+    </h1>
+    <p class="subhead">
+      A <strong>layered conventions Node.js framework</strong> for
+      building <strong>ambitious APIs</strong> with a powerful addon system, best-in-class
+      developer experience, and extensive documentation.
+    </p>
+    <div class="cta">
+      {{#link-to 'docs.quickstart' 'latest' class='cta-primary'}}Quickstart{{/link-to}}
+      {{#link-to 'features' class='cta-secondary'}}Features{{/link-to}}
     </div>
-
-    <div class="terminal-wrapper">
-      <div class="terminal">
-        <div class="window-controls">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div class="asciicast-container"></div>
-      </div>
-    </div>
-
   </div>
 
-  {{-ui/transition}}
-{{/-ui/contours-background}}
+  <div class="terminal-wrapper">
+    <div class="terminal">
+      <div class="window-controls">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="asciicast-container"></div>
+    </div>
+  </div>
+{{/-ui/hero}}
 
 <div class="features">
 
@@ -109,7 +103,7 @@
       </p>
     </div>
     <div class="media">
-      <img src="/images/layers.svg" class="bg">
+      <img src="/images/feature-graphics/layers.svg" class="bg">
       <div class="tile">
         <h3 class="headline">
           Powerful abstractions

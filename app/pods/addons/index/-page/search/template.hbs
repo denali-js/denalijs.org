@@ -1,0 +1,8 @@
+<div class="search">
+  {{#if search.isRunning}}
+    <div class="busy"></div>
+  {{else}}
+    <img src="/images/search.svg" alt="" class="search-icon">
+  {{/if}}
+  <input class='search-term' type='search' value={{searchTerm}} placeholder='Search addons ...' onkeyup={{action (perform search) value='target.value'}} autofocus>
+</div>

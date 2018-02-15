@@ -1,0 +1,8 @@
+<div class="guides-nav-container">
+  {{#sticky-element top=offset}}
+    <div class="list-title">{{title}}</div>
+    {{#each node.children as |child|}}
+      {{-ui/nav-list/node context=context node=child}}
+    {{/each}}
+  {{/sticky-element}}
+</div>

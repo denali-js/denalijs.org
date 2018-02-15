@@ -1,0 +1,50 @@
+a, button {
+  transition: transform ease-out 0.1s;
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform ease-out 0.1s;
+  }
+}
+
+%btn {
+  @include shadow-medium;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.7em 1.2em;
+  border-radius: $border-radius;
+  color: $white;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow ease-out 0.1s,
+              transform ease-out 0.1s;
+
+  &:hover {
+    @include shadow-medium-up;
+    transform: translateY(-1px);
+    transition: box-shadow ease-out 0.1s,
+                transform ease-out 0.1s;
+  }
+
+  &:active {
+    transform: scale(0.97);
+    transition: transform ease-out 0.1s;
+  }
+}
+
+%btn-primary {
+  @extend %btn;
+  background-color: $button-primary;
+}
+
+%btn-secondary {
+  @extend %btn;
+  background-color: $button-secondary;
+}
+
+%btn-invert {
+  background-color: $white;
+  color: $brand-primary;
+}

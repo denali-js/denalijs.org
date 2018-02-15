@@ -2,40 +2,24 @@
   @extend %flex;
 }
 
-.contours-background {
-  @include hero($brand-primary);
+.hero {
+  @include hero-bg($brand-primary);
 }
 
-.quickstart-hero {
-  @extend %flex;
+.page-hero,
+.page-body {
   @extend %container;
-  position: relative;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-top: 3em;
-  padding-bottom: 2em;
-  color: $white;
-  z-index: 2;
 }
 
-.quickstart-body {
-  @extend %flex;
-  @extend %container;
-  align-items: center;
-
-  .page-body {
-    line-height: 1.5;
-
-    .body {
-      order: 2;
-    }
-
-    .table-of-contents {
-      order: 1;
-    }
-
-    p {
-      line-height: 1.5;
-    }
+.page-body {
+  .content {
+    order: 2;
+  }
+  .table-of-contents {
+    order: 1;
+    margin-top: -3rem;
+    margin-left: 0;
+    margin-right: 2rem;
+    flex-basis: 15em;
   }
 }

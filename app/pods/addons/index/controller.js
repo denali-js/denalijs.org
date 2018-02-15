@@ -2,8 +2,9 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
 
-  queryParams: [ 'query' ],
+  queryParams: [ 'search', 'category' ],
 
-  query: null
+  search: null,
+  category: 'all',
 
 })

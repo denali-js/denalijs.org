@@ -1,14 +1,16 @@
-{{#-ui/contours-background}}
-  <div class="guide-hero">
-    <div class="guides-nav-container">
-      {{#sticky-element top=50}}
-        {{docs/guide/-page/guides-nav-node node=(lookup-page doc.pages 'guides') currentVersion=version.displayName root=true class='guides-nav'}}
-      {{/sticky-element}}
-    </div>
-    {{-ui/docs/page-hero page=(lookup-page doc.pages (concat 'guides/' slug)) class='guides-hero-intro'}}
-  </div>
-  {{-ui/transition}}
-{{/-ui/contours-background}}
-<div class="guide-body">
-  {{-ui/docs/page-body page=(lookup-page doc.pages (concat 'guides/' slug))}}
-</div>
+{{#with (lookup-page doc.pages (concat 'guides/' slug)) as |page|}}
+  {{#-ui/hero}}
+
+    {{#-ui/nav-list root=(lookup-page doc.pages 'guides') as |node|}}
+      {{#link-to 'docs.guide' currentVersion node.slug}}
+        {{node.title}}
+      {{/link-to}}
+    {{/-ui/nav-list}}
+
+    {{-ui/docs/page-hero page=page}}
+
+  {{/-ui/hero}}
+
+  {{-ui/docs/page-body page=page}}
+
+{{/with}}

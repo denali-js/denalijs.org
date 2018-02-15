@@ -1,120 +1,66 @@
 & {
-  display: flex;
-  flex-direction: column;
+  @extend %flex;
+  align-items: center;
 }
 
-.search {
+.contours-background {
+  @include hero($addons-primary);
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
+
+.hero {
+  @extend %flex;
   @extend %container;
-  display: flex;
   position: relative;
-  justify-content: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding-top: 3em;
+  padding-bottom: 10em;
+  color: $white;
+  z-index: 2;
 
-  .search-icon,
-  .busy {
-    position: absolute;
-    left: 10%;
-    margin-top: 1em;
-    margin-left: 1em;
-    height: 1.5em;
-    opacity: 0.5;
+  .headline {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    color: inherit;
+    // font-family: $serif;
+    font-size: 5.5em;
+    font-weight: 300;
+    line-height: 1.1;
   }
 
-  .busy {
-    margin-top: 0.8em;
-    margin-left: 1.5em;
-    color: $brand-primary;
+  .subhead {
+    margin-top: 0;
+    width: 70%;
+    font-size: 1.4em;
   }
-
-  .search-term {
-    display: flex;
-    width: 80%;
-    padding: 0.8em 0.8em 0.8em 2.5em;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.3em;
-    box-shadow: 0 2px 8px rgba($black, 0.3);
-    transition: box-shadow ease-out 0.1s;
-
-    &:focus {
-      box-shadow: 0 4px 16px rgba($black, 0.3);
-      transition: box-shadow ease-out 0.1s;
-      outline: none;
-    }
-  }
-
 }
 
-.featured-addons,
-.results {
+.featured {
   @extend %container;
-  flex-wrap: wrap;
-
-  .addon {
-    .wrapper {
-      box-shadow: 0 4px 16px rgba($black, 0.2);
-      transition: box-shadow ease-out 0.1s,
-                  transform ease-out 0.1s;
-
-      &:hover {
-        box-shadow: 0 7px 28px rgba($black, 0.3),
-                    0 3px 8px rgba($black, 0.2);
-        transform: translateY(-2px);
-        transition: box-shadow ease-out 0.1s,
-                    transform ease-out 0.1s;
-      }
-    }
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: -6em;
+  margin-bottom: 6em;
+  z-index: 2;
 }
 
-.featured-addons {
-  .addon {
-    width: 33%;
-    padding: 1em;
-
-    .wrapper {
-      flex-direction: column;
-    }
-  }
+.main {
+  @extend %flex;
+  @extend %container;
+  flex-direction: row;
 }
 
-.results {
-  .addon {
-    flex: 1 1 auto;    
-    margin: 0.5em 0;
+.addon-nav {
+  display: flex;
+  flex: 0 0 20%;
+  flex-direction: column;
+  margin-right: 2em;
+}
 
-    .wrapper {
-      padding: 2em;
-    }
-
-    .graphic {
-      font-size: 3em;
-    }
-
-    .headline {
-      @extend %no-line-heading;
-      margin-bottom: 0;
-      font-size: 2em;
-    }
-  }
-
-  .no-results {
-    @extend %sheet-alternate;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    flex-direction: column;
-    padding: 4em 2em;
-    border-radius: 3px;
-
-    .graphic {
-      height: 20vh; 
-    }
-    .description {
-      max-width: 20em;
-      margin-bottom: 0;
-      text-align: center;
-    }
-  }
+.addon-listings {
+  display: flex;
+  flex: 1 1 auto;
 }

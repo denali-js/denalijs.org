@@ -2,106 +2,37 @@
   @extend %flex;
 }
 
-.contours-background {
-  @include hero(#963a6c);
-}
-
-.contour-map {
-  bottom: -5em;
-}
-
-.mapboxgl-control-container {
-  display: none;
-}
-
 .hero {
-  @extend %flex;
-  @extend %container;
-  position: relative;
-  align-items: center;
-  padding-top: 3em;
-  padding-bottom: 6em;
-  color: $white;
-  z-index: 2;
+  @include hero-bg($features-primary);
 
-  .headline {
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    color: inherit;
-    font-family: $serif;
-    font-size: 5.5em;
-    font-weight: 300;
-    line-height: 1.1;
-  }
-
-  .subhead {
-    width: 70%;
-    font-size: 1.4em;
-    text-align: center;
-
-    strong {
-      font-weight: 900;
-    }
-  }
-
-  .cta {
-    display: flex;
-  }
-
-  .cta-primary {
-    @extend %btn-primary;
-    font-size: 1.15em;
-    margin-right: 1em;
-  }
-
-  .cta-secondary {
-    @extend %btn-secondary;
-    font-size: 1.15em;
-  }
-
-}
-
-.transition {
-  position: relative;
-  z-index: -1;
-
-  .bg {
-    @include hero(#5b96e7);
-    position: absolute;
-    top: -25em;
-    width: 100vw;
-    height: 30em;
-    padding: 0;
-    transform: skewX(5deg) rotate(5deg);
+  .inner-hero {
+    flex-direction: column;
   }
 }
 
 .section-header {
-  margin-top: 10em;
-  margin-bottom: 0;
+  margin-top: 10rem;
   text-align: center;
 }
 
 .section-subhead {
   @extend %container;
-  display: block;
-  margin: 0 auto;
-  font-size: 1.5em;
-  text-align: center;
+  font-size: $font-size-large;
+  justify-content: center;
 }
 
 .features {
   @extend %flex;
   position: relative;
-  padding-top: 5em;
+  padding-top: 5rem;
 }
 
 .feature-section {
   @extend %flex;
-  padding: 6em 0;
-  background-color: mix($white, $brand-primary, 97%);
-  border-top: 1px solid mix($white, $brand-primary, 92%);
-  border-bottom: 1px solid mix($white, $brand-primary, 92%);
+  padding: 6rem 0;
+  background-color: $off-white-bg;
+  border-top: 1px solid $off-white-border;
+  border-bottom: 1px solid $off-white-border;
 
   &:nth-child(odd) {
     background-color: transparent;
@@ -109,14 +40,13 @@
   }
 
   .feature-section-headline {
-    margin-bottom: 0.25em;
     text-align: center;
+    font-size: $font-size-extra-large;
   }
 
   .feature-section-subhead {
-    margin-top: 0;
     text-align: center;
-    font-size: 1.15em;
+    font-size: $font-size-large;
   }
 }
 
@@ -133,13 +63,8 @@
   flex: 0 0 28%;
   margin: 2em 0;
 
-  .headline {
-    margin-bottom: 0;
-  }
-
   .description {
     flex: 1 0 auto;
-    margin-top: 0.5em;
   }
 }
 
@@ -154,13 +79,12 @@
 
   .master {
     position: relative;
-    padding: 3em 0;
+    padding: 3rem 0;
 
     &::after {
-      $border-color: mix($white, $brand-primary, 90%);
       content: '';
       position: absolute;
-      background: linear-gradient(rgba($border-color, 0) 0, $border-color 5%, $border-color 95%, rgba($border-color, 0) 100%);
+      background: linear-gradient(rgba($off-white-bg, 0) 0, $off-white-bg 5%, $off-white-bg 95%, rgba($off-white-bg, 0) 100%);
       width: 1px;
       top: 0;
       bottom: 0;
@@ -172,30 +96,33 @@
     display: flex;
     align-items: center;
     margin-bottom: -1px;
-    padding: 1em;
-    border-top: 1px solid mix($white, $brand-primary, 90%);
-    border-bottom: 1px solid mix($white, $brand-primary, 90%);
+    padding: 1rem;
+    border-top: 1px solid $off-white-border;
+    border-bottom: 1px solid $off-white-border;
+    opacity: 0.5;
     cursor: pointer;
 
     &.active, &:hover {
       $bg-color: mix($white, $brand-primary, 95%);
-      background: linear-gradient(-90deg, $bg-color 70%, $white 100%);
+      background: linear-gradient(-90deg, $off-white-bg 70%, $white 100%);
+      opacity: 1;
     }
 
     .comparison-logo {
-      width: 8em;
+      width: 8rem;
     }
   }
 
   .detail {
-    padding: 3em;
+    padding: 3rem;
 
     .summary {
-      font-size: 1.15em;
+      font-size: $font-size-large;
     }
 
     .pros-and-cons {
       display: flex;
+      margin-top: 1rem;
     }
 
     .pros, .cons {
@@ -203,13 +130,14 @@
       margin-right: 5%;
 
       .headline {
-        font-size: 1.15em;
+        font-size: $font-size-base-plus;
         font-weight: 700;
       }
 
       ul {
         margin: 0;
         padding: 0 0 0 1.2em;
+        font-size: $font-size-base;;
       }
 
       li {
@@ -220,51 +148,45 @@
 }
 
 .doctrine {
-  line-height: 1.5;
+  @extend %flex;
 
   .section-subhead {
-    max-width: 650px;
-    font-size: 1.2em;
-    line-height: 1.5;
+    display: block;
+    max-width: $long-form-width;
+    font-size: $font-size-large-minus;
   }
 }
 
 .doctrine-points {
-  margin: 5em 0 0 0;
+  margin: 5rem 0 0 0;
   padding: 0;
 }
 
 .doctrine-point {
-  display: flex;
-  flex-direction: column;
+  @extend %flex;
   align-items: center;
-  padding: 5em 0;
+  padding: 5rem 0;
 
   &:nth-child(odd) {
-    border-top: 1px solid mix($white, $brand-primary, 92%);
-    border-bottom: 1px solid mix($white, $brand-primary, 92%);
-    background-color: mix($white, $brand-primary, 98%);
+    border-top: 1px solid $off-white-border;
+    border-bottom: 1px solid $off-white-border;
+    background-color: $off-white-bg;
   }
 
   .title {
     @extend %container;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto 0.5em auto;
+    max-width: $long-form-width;
   }
 
   .description {
     @extend %container;
-    max-width: 600px;
-    margin: 0.5em 0;
-    font-size: 1.15em;
-    line-height: 1.5;
+    max-width: $long-form-width;
+    font-size: $font-size-large;
   }
 }
 
 .doctrine-footnote {
   @extend %container;
-  margin: 5em auto;
-  max-width: 600px;
-  text-align: center;
+  margin: 5rem auto;
+  max-width: $long-form-width;
 }

@@ -1,0 +1,26 @@
+@keyframes busy {
+  to {transform: rotate(360deg);}
+}
+.busy {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: inherit;
+    animation: busy .6s linear infinite;
+  }
+}
+
+@mixin dot($size: 1em, $color: $white) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  background-color: $color;
+}

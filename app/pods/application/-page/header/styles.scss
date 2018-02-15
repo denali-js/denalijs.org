@@ -1,12 +1,10 @@
 &.header {
   @extend %container;
-  display: flex;
   position: absolute;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  height: $navbar-height;
   color: $white;
   z-index: 10;
 }
@@ -15,9 +13,12 @@
   display: flex;
   align-items: center;
   position: absolute;
+  top: 50%;
   left: 0;
+  height: $navbar-height;
+  transform: translateY(-50%);
   color: inherit;
-  font-size: 1.28em;
+  font-size: 1.2rem;
 }
 
 .logo {
@@ -39,7 +40,6 @@
 .nav-link {
   position: relative;
   padding: 0.75em 1em;
-  color: inherit;
   font-weight: 900;
   text-decoration: none;
   text-align: center;
@@ -57,6 +57,7 @@
 }
 
 &.content {
+  @include shadow-large($black);
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -65,7 +66,6 @@
   padding: 1em;
   border-radius: $border-radius;
   background-color: $white;
-  box-shadow: $box-shadow-2;
   color: $text-color;
 
   &::before {
@@ -80,6 +80,11 @@
     border-radius: $border-radius;
     background-color: $white;
   }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .docs-link {
@@ -109,7 +114,7 @@
   margin-top: 0.5em;
   margin-bottom: 0;
   color: $text-color-dark;
-  font-size: 1.2em;
+  font-size: $font-size-large;
   font-weight: 700;
   transition: color 0.1s ease-out;
 }
@@ -119,4 +124,6 @@
   margin-bottom: 0;
   color: $text-color;
   transition: color 0.1s ease-out;
+  font-size: $font-size-base;
+  line-height: 1.3;
 }

@@ -6,7 +6,7 @@ $apis-nav-width: 13em;
 }
 
 .contours-background {
-  @include hero($api-bg);
+  @include hero($api-primary);
 }
 
 .api-hero {
@@ -29,7 +29,7 @@ $apis-nav-width: 13em;
 
   .api-nav {
     @extend %flex;
-    @extend %sheet;
+    @include sheet;
     width: $apis-nav-width;
     padding-bottom: 0.5em;
     border-radius: $border-radius;

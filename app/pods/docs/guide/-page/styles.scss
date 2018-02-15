@@ -1,60 +1,40 @@
 $guides-nav-width: 11em;
 
+
 & {
   @extend %flex;
-  position: relative;
 }
 
-.contours-background {
-  @include hero($guides-bg);
-}
+.hero {
+  @include hero-bg($guides-primary);
 
-.guide-hero {
-  @extend %flex;
-  @extend %container;
-  position: relative;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-top: 3em;
-  padding-bottom: 2em;
-  color: $white;
-  z-index: 2;
+  .headline {
+    font-size: 4rem;
+  }
 
   .guides-nav-container {
     position: absolute;
     left: 0;
-    margin-top: 3em;
-    margin-right: 2em;
     z-index: 2;
   }
 
   .guides-nav {
     @extend %flex;
-    @extend %sheet;
+    @include sheet;
+    @include shadow-small;
     width: $guides-nav-width;
-    padding-bottom: 0.5em;
+    padding-bottom: 1rem;
     border-radius: $border-radius;
     color: $text-color;
-    // box-shadow: $box-shadow-1;
   }
 
-  .guides-hero-intro {
+  .page-hero {
+    @extend %container;
     padding-left: $guides-nav-width + 2em;
   }
 }
 
-.guide-body {
-  @extend %flex;
+.page-body {
   @extend %container;
-  flex-direction: row;
-  align-items: flex-start;
   padding-left: $guides-nav-width + 2em;
-
-  .page-body {
-    line-height: 1.5;
-
-    p {
-      line-height: 1.5;
-    }
-  }
 }

@@ -5,11 +5,19 @@
         {{docs/api/-page/api-nav api=doc.api currentVersion=version.displayName class='api-nav'}}
       {{/sticky-element}}
     </div>
-    {{-ui/docs/api-hero entry=api class='apis-hero-intro'}}
+    {{#if isOverview}}
+      {{docs/api/-page/overview-hero doc=doc class='apis-hero-intro'}}
+    {{else}}
+      {{-ui/docs/api-hero entry=api class='apis-hero-intro'}}
+    {{/if}}
   </div>
   {{-ui/transition}}
 {{/-ui/contours-background}}
 <div class="api-main">
-  {{component kindComponentName entry=api class='api-body'}}
-  {{-ui/docs/table-of-contents entries=outline}}
+  {{#if isOverview}}
+    {{docs/api/-page/overview doc=doc}}
+  {{else}}
+    {{component kindComponentName entry=api class='api-body'}}
+    {{-ui/docs/table-of-contents entries=outline}}
+  {{/if}}
 </div>

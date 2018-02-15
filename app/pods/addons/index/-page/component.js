@@ -14,7 +14,7 @@ export default Component.extend({
   },
 
   featuredAddons: computed(function() {
-    this.get('store').query('addon', { filter: { featured: true } });
+    this.get('store').peekAll('addon').filterBy('featured');
   }),
 
   searchTermEmpty: empty('searchTerm'),
