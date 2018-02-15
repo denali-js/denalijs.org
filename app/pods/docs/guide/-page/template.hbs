@@ -1,8 +1,8 @@
 {{#with (lookup-page doc.pages (concat 'guides/' slug)) as |page|}}
   {{#-ui/hero}}
 
-    {{#-ui/nav-list root=(lookup-page doc.pages 'guides') as |node|}}
-      {{#link-to 'docs.guide' currentVersion node.slug}}
+    {{#-ui/nav-list title='Guides' root=(lookup-page doc.pages 'guides') as |node slug|}}
+      {{#link-to 'docs.guide' version.displayName slug}}
         {{node.title}}
       {{/link-to}}
     {{/-ui/nav-list}}

@@ -1,14 +1,18 @@
 {{#if node.children}}
-  <div class="guide-group-toggle" {{action (toggle "isGroupExpanded" this)}}>
+  <div class="group-toggle" {{action (toggle "isGroupExpanded" this)}}>
     {{node.title}}
   </div>
   {{#if isGroupExpanded}}
-    <div class="guide-group">
+    <div class="group">
       {{#each node.children as |child|}}
-        {{-ui/nav-list/node context=context node=child}}
+        {{#-ui/nav-list/node parentSlug=slug node=child as |leaf slug|}}
+          {{yield leaf slug}}
+        {{/-ui/nav-list/node}}
       {{/each}}
     </div>
   {{/if}}
 {{else}}
-  {{yield}}
+  <div class="leaf">
+    {{yield node slug}}
+  </div>
 {{/if}}

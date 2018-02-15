@@ -1,0 +1,58 @@
+& {
+  position: relative;
+  color: $text-color;
+}
+
+.list-container {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+.list-title {
+  padding: 1rem 1rem 0 0.8rem;
+  font-size: $font-size-small;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.inner-list {
+  @include sheet;
+  @include shadow-small;
+  max-height: calc(100vh - 10rem);
+  overflow-y: auto;
+  padding-bottom: 1em;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 3px solid $white;
+    border-radius: 12px;
+    background-color: darken($white, 15%);
+    &:hover {
+      background-color: darken($white, 25%);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.group-toggle {
+  margin-top: 1rem;
+  padding: 0 0.8rem;
+  font-size: $font-size-extra-small;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.leaf > a {
+  display: block;
+  padding: 0.1em 1rem;
+  transform-origin: 0 50%;
+}
