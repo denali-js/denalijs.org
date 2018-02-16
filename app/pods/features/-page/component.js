@@ -134,7 +134,7 @@ export default Component.extend({
           icon: 'open-lock',
           headline: 'Parallel & Isolated Tests',
           description: `
-            Automaticlly parallelized tests with process level isolation help
+            Automatically parallelized tests with process level isolation help
             you maintain a tight testing feedback loop and clean, leak free
             tests.
           `,
