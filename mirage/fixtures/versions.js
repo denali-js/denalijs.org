@@ -1,17 +1,18 @@
 import { faker } from 'ember-cli-mirage';
 export default [
   {
-    id: '@denali-js:core@v0.1.x',
+    id: 1,
     version: 'v0.1.x',
     displayName: 'v0.1.x',
     compiledAt: faker.date.recent,
-    addonId: '@denali-js:core',
+    addonId: '@denali-js/core',
   },
   {
-    id: '@denali-js:core@latest',
-    version: 'v0.1.x',
-    displayName: 'latest',
+    id: 2,
+    version: 'latest',
+    displayName: 'master',
     compiledAt: faker.date.recent,
-    addonId: '@denali-js:core',
+    addonId: '@denali-js/core',
+    docsUrl: 'https://fileserver.example.com/docs/@denali-js:core/master'
   }
 ]

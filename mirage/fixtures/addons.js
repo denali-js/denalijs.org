@@ -1,24 +1,24 @@
 export default [
   {
-    id: '@denali-js:core',
+    id: '@denali-js/core',
     name: '@denali-js/core',
     description: 'The core Denali framework',
     category: 'core',
   },
   {
-    id: '@denali-js:babel',
+    id: '@denali-js/babel',
     name: '@denali-js/babel',
     description: 'Compile your app with Babel',
     category: 'languages',
   },
   {
-    id: '@denali-js:eslint',
+    id: '@denali-js/eslint',
     name: '@denali-js/eslint',
     description: 'Lint your app with ESLint',
     category: 'linters',
   },
   {
-    id: '@denali-js:typescript',
+    id: '@denali-js/typescript',
     name: '@denali-js/typescript',
     description: 'Compile your app with Typescript',
     category: 'languages',

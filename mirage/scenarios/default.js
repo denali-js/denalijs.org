@@ -1,19 +1,12 @@
 export default function(server) {
 
   server.loadFixtures('addons');
-  server.loadFixtures('docs');
   server.loadFixtures('versions');
   server.loadFixtures('posts');
 
-  let docs = server.schema.docs.all().models;
-  server.schema.versions.all().models.forEach((version) => {
-    version.doc = docs.find((d) => d.versionId === version.id);
-    version.save();
-  });
-
-  let versions = server.schema.docs.all().models;
+  let versions = server.schema.versions.all().models;
   server.schema.addons.all().models.forEach((addon) => {
-    addon.version = versions.find((d) => d.addonId === addon.id);
+    addon.version = versions.find((v) => v.addonId === addon.id);
     addon.save();
   });
 

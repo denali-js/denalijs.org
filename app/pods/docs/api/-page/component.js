@@ -8,8 +8,8 @@ import { singularize } from 'ember-inflector';
 
 export default Component.extend({
 
-  api: computed('doc', 'slug', function() {
-    return lookupApi([ this.get('doc.api'), this.get('slug') ]);
+  api: computed('docs', 'slug', function() {
+    return lookupApi([ this.get('docs.api'), this.get('slug') ]);
   }),
 
   kind: computed('slug', function() {
@@ -25,8 +25,8 @@ export default Component.extend({
     return this.get('slug') === 'overview';
   }),
 
-  apiNav: computed('doc.api', function() {
-    let api = this.get('doc.api');
+  apiNav: computed('docs.api', function() {
+    let api = this.get('docs.api');
     return {
       children: map(api.packages, (pkg, packageName) => {
         return {

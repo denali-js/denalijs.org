@@ -7,7 +7,7 @@
   {{/-ui/nav-list}}
 
   {{#if isOverview}}
-    {{docs/api/-page/overview-hero doc=doc class='api-hero-overview'}}
+    {{docs/api/-page/overview-hero docs=docs class='api-hero-overview'}}
   {{else}}
     {{-ui/docs/api-hero entry=api}}
   {{/if}}
@@ -15,7 +15,7 @@
 {{/-ui/hero}}
 
 {{#if isOverview}}
-  {{docs/api/-page/overview doc=doc class='api-body'}}
+  {{docs/api/-page/overview docs=docs class='api-body'}}
 {{else}}
 <div class="api-body">
   {{component kindComponentName entry=api class='api-content'}}

@@ -1,5 +1,6 @@
 import ENV from 'denali/config/environment';
 import { startCase } from 'lodash';
+import docs from './fixtures/docs';
 
 export default function() {
 
@@ -35,10 +36,13 @@ export default function() {
     let addon = addons.find(params.id);
     return addon.versions;
   });
-  this.get('/versions/:id');
-  this.get('/versions/:id/doc', function({ versions }, { params }) {
-    let version = versions.find(params.id);
-    return version.doc;
+  this.get('/versions', function({ versions }, { queryParams }) {
+    return versions.where((v) => v.addonId === queryParams.addon && v.version === queryParams.version).models[0];
+  });
+
+  this.get('https://fileserver.example.com/docs/:addon_id/:version', function(server, { params }) {
+    // let [ addon, version ] = params.docs_id.split('/');
+    return docs.find((d) => d.addon === params.addon_id && d.version === params.version);
   });
 
   this.get('/categories', function({ addons }) {

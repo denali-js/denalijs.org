@@ -4,8 +4,8 @@ export default Route.extend({
 
   model(params) {
     return this.store.queryRecord('version', { addon: '@denali-js/core', version: params.version_id }).then((version) => {
-      return version.get('doc').then((doc) => {
-        return { version, doc };
+      return version.getDocs().then((docs) => {
+        return { version, docs };
       });
     });
   }

@@ -45,6 +45,7 @@
     "ember-concurrency": "^0.8.14",
     "ember-data": "~2.18.0",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "^3.4.4",
     "ember-inline-svg": "^0.1.11",
     "ember-load-initializers": "^1.0.0",
     "ember-lodash": "^4.18.0",
