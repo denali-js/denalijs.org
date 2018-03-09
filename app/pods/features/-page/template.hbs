@@ -12,8 +12,10 @@
 <div class="features">
   {{#each featureSections as |section|}}
     <div class="feature-section">
-      <h2 class="feature-section-headline">{{section.headline}}</h2>
-      <p class="feature-section-subhead">{{section.subhead}}</p>
+      <div class="container">
+        <h2 class="feature-section-headline">{{section.headline}}</h2>
+        <p class="feature-section-subhead">{{section.subhead}}</p>
+      </div>
       <div class="feature-tiles">
         {{#each section.features as |feature|}}
           <div class="feature-tile">

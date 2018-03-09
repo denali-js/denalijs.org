@@ -11,9 +11,12 @@
 }
 
 .page-body {
+  @extend %container;
+
   .content {
     order: 2;
   }
+
   .table-of-contents {
     order: 1;
     margin-top: -3rem;

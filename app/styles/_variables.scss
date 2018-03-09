@@ -8,6 +8,7 @@ $brand-primary-dark: #15517c;
 
 // UI colors
 $text-color: rgb(45, 64, 75);
+$text-color-light: rgb(90, 102, 117);
 $text-color-dark: rgb(42, 54, 70);
 $text-color-hover: rgb(21, 28, 39);
 $link-color: $brand-primary;
@@ -20,7 +21,7 @@ $off-white-bg: mix($white, $brand-primary, 98%);
 $off-white-border: mix($white, $brand-primary, 92%);
 
 // Sections colors
-$features-primary: #dd4a57;
+$features-primary: #b12732;
 $guides-primary: #11865f;
 $api-primary: #3d3c8d;
 $addons-primary: #b18016;
@@ -34,6 +35,7 @@ $long-form-width: 45rem;
 $table-of-contents-width: 12rem;
 $navbar-height: 4.5rem;
 $guides-nav-width: 12rem;
+$quickstart-nav-width: 12rem;
 $api-nav-width: 12rem;
 $border-radius: 3px;
 

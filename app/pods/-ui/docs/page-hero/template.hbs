@@ -1,2 +1,4 @@
 <h1 class="headline">{{page.title}}</h1>
-{{markdown-to-html (lede page.contents) class='subhead'}}
+{{#if showLede}}
+  {{markdown-to-html (lede page.contents) class='subhead'}}
+{{/if}}

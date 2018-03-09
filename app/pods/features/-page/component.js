@@ -9,18 +9,18 @@ export default Component.extend({
       headline: 'Developer Experience',
       subhead: 'Features that make Denali a joy to build with.',
       features: [
-        {
-          icon: 'open-lock',
-          headline: 'Layered Conventions',
-          description: `
-            Layered conventions means that the framework attempts to
-            provide good defaults for most users, but also exposes lower
-            level abstractions as escape valves when you need it.
-          `,
-          link: 'blog.post',
-          linkModel1: 'fixme',
-          linkText: 'Read the blog post'
-        },
+        // {
+        //   icon: 'open-lock',
+        //   headline: 'Layered Conventions',
+        //   description: `
+        //     Layered conventions means that the framework attempts to
+        //     provide good defaults for most users, but also exposes lower
+        //     level abstractions as escape valves when you need it.
+        //   `,
+        //   link: 'blog.post',
+        //   linkModel1: 'fixme',
+        //   linkText: 'Read the blog post'
+        // },
         {
           icon: 'open-lock',
           headline: 'Write in any language',

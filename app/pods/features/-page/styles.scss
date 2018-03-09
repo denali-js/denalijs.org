@@ -24,28 +24,31 @@
 .features {
   @extend %flex;
   position: relative;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 .feature-section {
   @extend %flex;
-  padding: 6rem 0;
-  background-color: $off-white-bg;
-  border-top: 1px solid $off-white-border;
-  border-bottom: 1px solid $off-white-border;
+  padding: 2rem 0;
 
   &:nth-child(odd) {
     background-color: transparent;
     border: none;
   }
 
+  .container {
+    @extend %container, %flex;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $off-white-border;
+  }
+
   .feature-section-headline {
-    text-align: center;
-    font-size: $font-size-extra-large;
+    font-size: $font-size-extra-large * 1.2;
   }
 
   .feature-section-subhead {
-    text-align: center;
+    margin-top: 0.25em;
+    color: $text-color-light;
     font-size: $font-size-large;
   }
 }
@@ -62,6 +65,10 @@
   @extend %flex;
   flex: 0 0 28%;
   margin: 2em 0;
+
+  .headline {
+    font-weight: 700;
+  }
 
   .description {
     flex: 1 0 auto;
