@@ -2,6 +2,7 @@
   {{#sticky-element top=offset}}
     <div class="inner-list">
       <div class="list-title">{{title}}</div>
+      {{log root.children}}
       {{#each root.children as |child|}}
         {{#-ui/nav-list/node node=child as |leaf slug|}}
           {{yield leaf slug}}

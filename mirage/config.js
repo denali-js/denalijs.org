@@ -37,7 +37,9 @@ export default function() {
     return addon.versions;
   });
   this.get('/versions', function({ versions }, { queryParams }) {
-    return versions.where((v) => v.addonId === queryParams.addon && v.version === queryParams.version).models[0];
+    let version = versions.where((v) => v.addonId === queryParams.addon && v.version === queryParams.version).models[0];
+    version.displayName = queryParams.version;
+    return version;
   });
 
   this.get('https://fileserver.example.com/docs/:addon_id/:version', function(server, { params }) {
