@@ -1,4 +1,4 @@
-import { forEach, map, isEmpty } from 'lodash';
+import { map, isEmpty } from 'lodash';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { lookupApi } from 'denali/helpers/lookup-api';

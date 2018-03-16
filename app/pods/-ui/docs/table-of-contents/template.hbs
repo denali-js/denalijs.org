@@ -1,4 +1,4 @@
-{{#if entries}}
+{{#if entries.children}}
   {{#-ui/nav-list title='Contents' root=entries offset=100 as |node slug|}}
       <a href="#{{node.slug}}" class="toc-link {{if (and node.slug (eq tocPosition node.slug)) 'active'}} level-{{node.level}}" {{action 'scrollToTarget' node.slug}}>{{node.title}}</a>
   {{/-ui/nav-list}}
