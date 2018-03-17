@@ -57,7 +57,7 @@
     <div class="master">
       {{#each comparisons as |comparison index|}}
         <div class="item {{if (eq index activeComparisonIndex) 'active'}}" {{action (mut activeComparisonIndex) index}}>
-          <img src="/images/comparison/{{comparison.logo}}" alt={{comparison.headline}} class="comparison-logo">
+          <img src="{{comparison.logo}}" alt={{comparison.headline}} class="comparison-logo">
         </div>
       {{/each}}
     </div>

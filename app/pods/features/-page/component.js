@@ -270,7 +270,7 @@ export default Component.extend({
 
   comparisons: [
     {
-      logo: 'rails.png',
+      logo: '/images/comparison/rails.png',
       name: 'Ruby on Rails (Ruby)',
       shortName: 'Rails',
       summary: `
@@ -288,7 +288,7 @@ export default Component.extend({
       ]
     },
     {
-      logo: 'phoenix.png',
+      logo: '/images/comparison/phoenix.png',
       name: 'Phoenix (Elixir)',
       shortName: 'Phoenix',
       summary: `
@@ -311,7 +311,7 @@ export default Component.extend({
       ]
     },
     {
-      logo: 'sails.png',
+      logo: '/images/comparison/sails.png',
       name: 'Sails.js (Node)',
       shortName: 'Sails',
       summary: `
@@ -333,7 +333,7 @@ export default Component.extend({
       ]
     },
     {
-      logo: 'express.png',
+      logo: '/images/comparison/express.png',
       name: 'Express (Node)',
       shortName: 'Express',
       summary: `
