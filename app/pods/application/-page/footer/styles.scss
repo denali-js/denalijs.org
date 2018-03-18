@@ -5,6 +5,10 @@
   text-align: center;
   opacity: 0.7;
 
+  @media(max-width: $container-width - 4rem) {
+    padding: 2em 0;
+  }
+
   a {
     text-decoration: underline;
   }

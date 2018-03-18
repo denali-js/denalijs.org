@@ -3,7 +3,7 @@
 }
 
 .hero {
-  @include hero-bg($guides-primary);
+  @include hero-base($guides-primary);
 
   .headline {
     font-size: 4rem;

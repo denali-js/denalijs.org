@@ -3,7 +3,7 @@
 }
 
 .hero {
-  @include hero-bg($brand-primary);
+  @include hero-base($brand-primary);
 
   .terminal-wrapper {
     width: 50%;
@@ -67,6 +67,11 @@
   flex: 0 0 calc(33% - 2em);
   font-size: $font-size-large;
 
+  @media(max-width: $container-width - 4rem) {
+    flex: auto;
+    margin-bottom: 3rem;
+  }
+
   .headline {
     position: relative;
     font-size: $font-size-large-plus;
@@ -77,6 +82,11 @@
   @extend %flex;
   background-color: $callout-bg;
   overflow: hidden;
+
+  @media(max-width: $container-width - 4rem) {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
 
   .container {
     @extend %container;
@@ -136,11 +146,22 @@
   align-items: center;
   justify-content: space-around;
   padding: 8rem 0;
+
+  @media(max-width: $container-width - 4rem) {
+    flex-direction: column;
+    align-items: left;
+    padding: 4rem 3rem;
+  }
 }
 
 .testimonial {
   @extend %flex;
   flex: 0 0 42%;
+
+  @media(max-width: $container-width - 4rem) {
+    flex: 0 0 80%;
+    margin-bottom: 3rem;
+  }
 
   .quote {
     position: relative;
@@ -180,6 +201,10 @@
   padding: 3rem 0 6rem;
   background-color: $callout-bg-dark;
 
+  @media(max-width: $container-width - 4rem) {
+    margin: 0 -1rem;
+  }
+
   .container {
     @extend %flex;
     @extend %container;
@@ -196,5 +221,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media(max-width: $container-width - 4rem) {
+      flex-direction: column;
+    }
   }
 }

@@ -3,7 +3,7 @@
 }
 
 .hero {
-  @include hero-bg($features-primary);
+  @include hero-base($features-primary);
 
   .inner-hero {
     flex-direction: column;

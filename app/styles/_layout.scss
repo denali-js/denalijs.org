@@ -2,6 +2,12 @@
   display: flex;
   align-self: center;
   width: $container-width;
+
+  @media(max-width: $container-width - 4rem) {
+    width: 100%;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
 
 %flex {
@@ -16,6 +22,15 @@
   background-color: $white;
 }
 
-@mixin hero-bg($base-color, $offset-color: adjust-color($base-color, $hue: -10deg, $lightness: +15%)) {
+@mixin hero($_) {
+  @warn 'removed';
+}
+
+@mixin hero-base($base-color, $offset-color: adjust-color($base-color, $hue: -10deg, $lightness: +15%)) {
   background-image: linear-gradient(52deg, $base-color, $offset-color);
+
+  @media(max-width: $container-width - 4rem) {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
 }

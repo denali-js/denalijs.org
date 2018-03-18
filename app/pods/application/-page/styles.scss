@@ -1,6 +1,10 @@
 & {
   @extend %flex;
   width: 100%;
+
+  @media(max-width: $container-width - 4rem) {
+    padding: 0 1rem;
+  }
 }
 
 .main {

@@ -3,7 +3,7 @@
 }
 
 .hero {
-  @include hero-bg($addons-primary);
+  @include hero-base($addons-primary);
 
   .inner-hero {
     flex-direction: column;

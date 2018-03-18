@@ -3,7 +3,7 @@
 }
 
 .hero {
-  @include hero-bg($brand-primary);
+  @include hero-base($brand-primary);
 }
 
 .page-hero {

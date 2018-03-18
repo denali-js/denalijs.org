@@ -18,6 +18,10 @@
   font-size: 6rem;
   line-height: 0.9;
   letter-spacing: -1.5px;
+
+  @media(max-width: $container-width - 4rem) {
+    font-size: 3.5rem;
+  }
 }
 
 .subhead, .subhead > p {
